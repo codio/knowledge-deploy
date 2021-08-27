@@ -1,0 +1,445 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Plagiarism detection allows you to check for code copying and potential cases of cheating between members of a course." name="description" />
+
+    <title>Plagiarism Checker &#8212;   documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.a51115b1206b8cbfeff9cff2c3058b7d.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.15.3/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.15.3/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.15.3/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/codio.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/search.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.44f2d10023dc91dde182.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+    <script defer="defer" src="../../_static/js/algolia.js"></script>
+    <link rel="canonical" href="https://docs.codio.com/instructors/teaching/plagiarism.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Data downloading" href="datadownload.html" />
+    <link rel="prev" title="Removing Students" href="remove.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-dark-codio navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/logo-white.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../getstarted.html">
+  Overview
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../authoring.html">
+  Authoring
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../common.html">
+  Developing Code
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../setupcourses.html">
+  Courses Set up
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../teaching.html">
+  Teaching
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../admin.html">
+  Admin
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        <span class="bd-search-codio">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search ..." aria-label="Search ..." autocomplete="off" >
+  <i class="icon fas fa-search"></i>
+</span>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="viewstudentwork.html">
+   Viewing student work
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="grading/grading.html">
+   Grading
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="grading/grade-freetext.html">
+     Grading Free Text Questions
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="grading/nbgrader.html">
+     Auto-Grade with nbgrader
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="grading/release-grades.html">
+     Release Grades
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="insights.html">
+   Learning Insights
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="playback.html">
+   Code Playback
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="commenting.html">
+   Code Commenting
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cursor.html">
+   Cursor Presence
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="resetpassword.html">
+   Resetting student passwords
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="remove.html">
+   Removing Students
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Plagiarism Checker
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="datadownload.html">
+   Data downloading
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="addstudents.html">
+   Inviting students to your course
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+            
+            
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="remove.html" title="previous page">
+      <i class="left-prev-icon icon fa fa-angle-left"></i>
+      <span class="left-prev-title">Previous</span>
+    </a>
+    <a class='right-next' id="next-link" href="datadownload.html" title="next page">
+      <span class="right-next-title">Next</span>
+      <i class="right-next-icon icon fa fa-angle-right"></i>
+    </a>
+
+              </div>
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="plagiarism-checker">
+<span id="plagiarism"></span><h1>Plagiarism Checker<a class="headerlink" href="#plagiarism-checker" title="Permalink to this headline">¶</a></h1>
+<p>Plagiarism detection allows you to check for code copying and potential cases of cheating between members of a course. With the current version, Codio will compare the code projects of all students within a course for a specific teaching assignment.</p>
+<p>If you want to include other reference code to include in the cross comparison, then you will need to create a dummy student account, add that dummy student to the course and upload the reference code as that student for that assignment. The Codio <a class="reference internal" href="../setupcourses/add-remove-students.html#add-remove-students"><span class="std std-ref">Test Student</span></a> accounts could be used for this purpose</p>
+<p>Plagiarism detection is best used with programming project assignments rather than Codio authored projects. It will work in both cases but it is really designed to test general coding projects rather than lots of auto-graded assessments within a assignment.</p>
+<p>Codio does not determine whether cheating has or has not taken place and leaves the decision making up to you.</p>
+<p>To run the Plagiarism checker you need to first select the assignment within the course and then press press the actions button next to the assignment name.</p>
+<blockquote>
+<div><img alt="Plagiarism start" src="../../_images/plag-button.png" />
+</div></blockquote>
+<div class="section" id="courses">
+<h2>Courses<a class="headerlink" href="#courses" title="Permalink to this headline">¶</a></h2>
+<p>In order to use this feature you need to set up a course. If you are not using Codio as your main IDE and want to use only the plagiarism detection feature then you should still follow these instructions and ask your students to upload their code into the project using Git or by uploading files manually.</p>
+</div>
+<div class="section" id="access-plagiarism-features">
+<h2>Access Plagiarism features<a class="headerlink" href="#access-plagiarism-features" title="Permalink to this headline">¶</a></h2>
+<p>When in your course, select your assignment and then click the <strong>Actions</strong> button (button to the top right of the screen) to show the available actions that includes Plagiarism</p>
+<blockquote>
+<div><img alt="Plagiarism start" src="../../_images/plag-button.png" />
+</div></blockquote>
+</div>
+<div class="section" id="run">
+<h2>Run<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h2>
+<p>You can see the <strong>Plagiarism</strong> button near in the upper part of the screen. When you press this you are taken to the following screen.</p>
+<blockquote>
+<div><img alt="Plagiarism summary" src="../../_images/plag-summary.png" />
+</div></blockquote>
+<p>This screen will show you any plagiarism reports that were run in the past. You can open these if you wish.</p>
+<p>On the left you can:</p>
+<ul class="simple">
+<li><p>enter a relative path in the workspace to check.</p></li>
+<li><p>upload items to compare against (e.g. previous years information).</p></li>
+<li><p>restrict the file types that should be checked. It is possible to add multiple file types by pressing the <strong>Add Extension</strong> button.</p></li>
+</ul>
+<p>These filters can be useful to avoid generating unnecessary noise in your report.</p>
+<p>Once you are ready to run a new report, press the <strong>Start</strong> button, which will package up all the files and pass them to the detection engine. You are free to leave the screen at this point and return to it later to see whether the report has been generated.</p>
+<p>Codio will include all code from all students in the report, irrespective of whether the assignment is marked by the student as completed.</p>
+</div>
+<div class="section" id="the-report">
+<h2>The report<a class="headerlink" href="#the-report" title="Permalink to this headline">¶</a></h2>
+<p>Once the report has been generated it can be opened by clicking the <strong>Open</strong> button. A typical report is shown below. The interpretation of the report is explained below.</p>
+<blockquote>
+<div><img alt="Plagiarism main report" src="../../_images/plag-main-report.png" />
+</div></blockquote>
+</div>
+<div class="section" id="drilling-down">
+<h2>Drilling down<a class="headerlink" href="#drilling-down" title="Permalink to this headline">¶</a></h2>
+<p>You can drill down in various ways. The two most common and useful ways are</p>
+<div class="section" id="edits">
+<h3>Edits<a class="headerlink" href="#edits" title="Permalink to this headline">¶</a></h3>
+<p>Shows the differences between the two or more students with similarities. Things that have been added by one student are shown in green, things removed in red and those that are identical are not shaded at all.</p>
+<blockquote>
+<div><img alt="Plagiarism edits" src="../../_images/plag-edits.png" />
+</div></blockquote>
+</div>
+<div class="section" id="side-by-side">
+<h3>Side-by-side<a class="headerlink" href="#side-by-side" title="Permalink to this headline">¶</a></h3>
+<p>This shows the code of those students with similarities in their code in a side-by-side viewer.</p>
+<blockquote>
+<div><img alt="Plagiarism side by side" src="../../_images/plag-sidebyside.png" />
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="downloading-raw-data">
+<h2>Downloading raw data<a class="headerlink" href="#downloading-raw-data" title="Permalink to this headline">¶</a></h2>
+<p>Should you wish to analyse the report data in other software tools, Codio allows you to download a CSV file of the report output. You will find a button <strong>Download CSV</strong> located at the top right of the main report screen.</p>
+</div>
+<div class="section" id="main-report-results">
+<h2>Main report results<a class="headerlink" href="#main-report-results" title="Permalink to this headline">¶</a></h2>
+<p>The main report output is a ranking of the submissions. Several metrics are used, and then an overall rank is produced for each entry. The top line for each entry shows its overall rank as well as the score on each metric. Next to the score is the ranking within that metric.</p>
+<blockquote>
+<div><img alt="Plagiarism main report" src="../../_images/plag-main-report.png" />
+</div></blockquote>
+<p>The metrics are</p>
+<ul class="simple">
+<li><p><strong>Points</strong> - every incidence of matching text generates some number of points, and the points metric shows the cumulative score for these entries.</p></li>
+<li><p><strong>Regions</strong> - counts how many distinct regions (of some maximum size) had matches.</p></li>
+<li><p><strong>Coverage</strong> - on average, what fraction of the overall text consisted of matching regions.</p></li>
+<li><p><strong>Tokens</strong> - how many words (in absolute numbers) were found in the matching regions.</p></li>
+<li><p><strong>Placings</strong> - a weighted average of the other ranks, which is similar to the overall rank, but can sometimes reveal differences.</p></li>
+</ul>
+<p>The other items for each entry are:</p>
+<ul class="simple">
+<li><p><strong>File names</strong> - links are provided to the individual files in a match. Next to each file is shown its individual coverage and the number of suspicious tokens out of its total token count.</p></li>
+<li><p><strong>Edits</strong> - highlights the changes between the two files. This is mostly useful when large portions of the files are similar.</p></li>
+<li><p><strong>Side-by-side</strong> - the matching files (limit 3) are shown side by side, to make comparison easier</p></li>
+</ul>
+</div>
+<div class="section" id="individual-files">
+<h2>Individual Files<a class="headerlink" href="#individual-files" title="Permalink to this headline">¶</a></h2>
+<p>The plagiarism detection works by trying to identify “rare matches,” sequences of words that are similar only in a small number of files. In general, the more rare matches two files have in common, the more suspiciously they are viewed.</p>
+<p>To convey information about the rare matches, the reports use size, color, and hover text. When you view a file, either individually or side-by-side, you will see that some portions of it are colored, and that the font size changes. Anything colored is a rare match - words that matched between these two (or more) files, but were otherwise rare in the rest. So, to a first-order approximation, the more colored text, the more suspicious similarities.</p>
+<p>Clicking on a colored region in a side-by-side view should bring up the matching region for the other file. In the case that multiple matches exist, the first match may be shown. In rare cases, the corresponding match may be hidden by other matches, so alignment may not occur. The match still exists and is real, but because of presentation decisions, may have become hidden.</p>
+<p>Size is based on how many files had the rare text. The fewer files that had the rare text, the larger the font size. The largest font is used when only two files have a piece of matching text. If you hover the mouse over a word, you’ll get a pop-up showing the type of match and how many files were involved.</p>
+<p>The red region typically tries to indicate the “anchor” text, the shortest sequence that was rare in a particular match. So, if two students had the same misspelling in an otherwise common sentence, the misspelled words would show up as red, indicating they were the core of the match. However, the entire sentence around them would also be unique because of the misspellings, so the rest of the sentence would be blue. If there are multiple, overlapping anchor regions, additional words may appear in purple next to the red region. Hovering over a word will show an actual match in which the word was involved. Words can be involved in many matches.</p>
+<p>There are actually many types of matches. If you hover over any text, you’ll also see a parenthetical comment that indicates the type of match.</p>
+<ul class="simple">
+<li><p><strong>Text/case/space match</strong> - the text in the region matched, including the case of the text and the spacing. The only differences may be in punctuation that is considered unimportant.</p></li>
+<li><p><strong>Text/case match</strong> - like the text/case/space match, but without match on the spacing.</p></li>
+<li><p><strong>Text match</strong> - the text matches (again, modulo punctuation), but the spacing and case may differ.</p></li>
+<li><p><strong>No-comment match</strong> - once the comments have been removed, the text matches (again, modulo punctuation), but the spacing and case may differ.</p></li>
+<li><p><strong>Text reordered</strong> - the same set of words appears in the files, but there’s some change in the order of the words</p></li>
+<li><p><strong>No-comment reordered</strong> - once the comments have been removed, the same set of words appears in the files, but there’s some change in the order of the words</p></li>
+<li><p><strong>Structure/space match</strong> - the same structure appears in the files, with matching spacing, but the variables/functions may have different names.</p></li>
+<li><p><strong>Structural match</strong> - the same structure appears in the files, but the variables/functions may have different names.</p></li>
+<li><p><strong>Structure reordered</strong> - the same structure appears in the files, in a different order, and the variables/functions may have different names.</p></li>
+</ul>
+<p>Codio also highlights trailing whitespace at the ends of lines. When two files match in trailing whitespace, it is often the case that they were copied electronically since trailing whitespace is not normally visible when reading text from a screen or in printouts.</p>
+</div>
+<div class="section" id="interpreting-matches">
+<h2>Interpreting Matches<a class="headerlink" href="#interpreting-matches" title="Permalink to this headline">¶</a></h2>
+<p>Not all rare matches indicate plagiarism, and it is important to use good judgment to determine whether a result identified by Codio is actually suspicious. In general, it is a good idea to use the side-by-side examination and start at the top-ranked files, working downward until you encounter a series of files that you determine are not actually suspicious.</p>
+<p>When examining files, it is often good to find the corresponding places in two files and see if the differences appear to be coincidental or if it looks like the differences are more than chance. For example, sometimes, two students may have a large block of text highlighted, and this may stem from copying a project description from a course page but making similar grammatical changes. In other cases, students may have very few rare matches scattered in their code, but the matches may come from things like similar words in comments, which are much less constrained than code. In all cases, it is imperative that human judgment is used to determine whether a match from Codio represents plagiarism or not.</p>
+<p>Note that Codio will not necessarily find all plagiarized text. In particular, it focuses on only rare matches, so if two students have copied code that is very constrained and very similar to other solutions, it will not be detected. However, if there are very few ways to write a solution to the problem, any plagiarism detection will be difficult. In such cases, plagiarized code may show only a few rare matches, which is why human judgment is so important in interpreting the results.</p>
+</div>
+</div>
+
+
+              </div>
+              
+
+          </main>
+          
+
+      </div>
+    </div>
+    
+  <script src="../../_static/js/index.44f2d10023dc91dde182.js"></script>
+
+
+    
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright Codio 2020. All Rights Reserved.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-39233819-4"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-39233819-4');
+</script>
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/2227229.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+  </body>
+</html>

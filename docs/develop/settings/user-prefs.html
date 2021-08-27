@@ -1,0 +1,336 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="User Preferences allow you to set things such as keyboard shortcuts, themes and editor settings that apply to you when you're logged in." name="description" />
+
+    <title>User Preferences &#8212;   documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.a51115b1206b8cbfeff9cff2c3058b7d.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.15.3/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.15.3/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.15.3/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/codio.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/search.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.44f2d10023dc91dde182.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+    <script defer="defer" src="../../_static/js/algolia.js"></script>
+    <link rel="canonical" href="https://docs.codio.com/develop/settings/user-prefs.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Project Preferences" href="project-prefs.html" />
+    <link rel="prev" title="SSH Key" href="ssh-key.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-dark-codio navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../student.html">
+  <img src="../../_static/logo-white.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../accessing-codio.html">
+  Accessing Codio
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../courses.html">
+  Your Courses
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../tools.html">
+  Tools
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../develop.html">
+  Developing Code
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        <span class="bd-search-codio">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search ..." aria-label="Search ..." autocomplete="off" >
+  <i class="icon fas fa-search"></i>
+</span>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../students/accessing-codio/accessing-codio.html">
+   Accessing Codio
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../students/accessing-codio/joining.html">
+     Join a Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../students/accessing-codio/paying.html">
+     Pay for Codio Subscription
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../students/accessing-codio/faq.html">
+     Frequently Asked Questions
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="settings.html">
+   Account Settings
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="user-profile.html">
+     User Profile
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="manage-password.html">
+     Manage Password
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ssh-key.html">
+     SSH Key
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     User Preferences
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="project-prefs.html">
+     Project Preferences
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bitbucket.html">
+     Connect to BitBucket
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="github.html">
+     Connect to GitHub
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="upload-ssh-key-remote-server.html">
+     Upload SSH Key to Remote Server
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+            
+            
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="ssh-key.html" title="previous page">
+      <i class="left-prev-icon icon fa fa-angle-left"></i>
+      <span class="left-prev-title">Previous</span>
+    </a>
+    <a class='right-next' id="next-link" href="project-prefs.html" title="next page">
+      <span class="right-next-title">Next</span>
+      <i class="right-next-icon icon fa fa-angle-right"></i>
+    </a>
+
+              </div>
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="user-preferences">
+<span id="user-prefs"></span><h1>User Preferences<a class="headerlink" href="#user-preferences" title="Permalink to this headline">¶</a></h1>
+<p>Codio offers a full collection of settings that apply to only you when you’re logged in. These user preferences cover all aspects of Codio usage, from code editor settings (tab stops, indentation, colors, fonts, etc.) to keyboard shortcuts.</p>
+<img alt="User Preferences" src="../../_images/prefs-user.png" />
+<p>You can customize these preferences at the user level (only affects you) or the project level (affects everyone using the project). For more information see <a class="reference internal" href="project-prefs.html#project-prefs"><span class="std std-ref">Project Preferences</span></a>. When logged in to Codio, the default preferences are used first, then any user preference overrides are applied, and finally any project-level preferences are applied.</p>
+<p>You access the <strong>User Preferences</strong> from the <strong>Codio &gt; Preferences &gt; User</strong> menu option when you are in a project.</p>
+<img alt="User Preference Menu" src="../../_images/prefs-menu.png" />
+<ul class="simple">
+<li><p><strong>Default Preferences</strong> are displayed in the right column and are read only.</p></li>
+<li><p><strong>Your (User) Preferences</strong> are displayed in the left column. When your account is created, the <strong>Your Preferences</strong> column is empty until you specify an override to the default preferences.</p></li>
+</ul>
+<p>Below is an example of user settings that override the Codio default preferences:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[editor]</span>
+<span class="na">theme</span><span class="o">=</span><span class="s">eclipse</span>
+<span class="na">font_size</span><span class="o">=</span><span class="s">13</span>
+
+<span class="k">[code-beautifier]</span>
+<span class="na">indent_level</span><span class="o">=</span><span class="s">4</span>
+<span class="na">indent_with_tabs</span><span class="o">=</span><span class="s">true</span>
+</pre></div>
+</div>
+<div class="section" id="more-information">
+<h2>More information<a class="headerlink" href="#more-information" title="Permalink to this headline">¶</a></h2>
+<p>For more information about specific settings, see the relevant topic:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../develop/ide/editing/keyboard-shortcuts.html#shortcuts"><span class="std std-ref">Keyboard Shortcuts</span></a></p></li>
+<li><p><a class="reference internal" href="../develop/ide/editing/autocomplete.html#autocomplete"><span class="std std-ref">Autocomplete</span></a></p></li>
+<li><p><a class="reference internal" href="../develop/ide/editing/code-beautifier.html#code-beautifier"><span class="std std-ref">Code Beautifier</span></a></p></li>
+<li><p><a class="reference internal" href="../develop/ide/editing/junit.html#junit"><span class="std std-ref">JUnit Testing Framework</span></a></p></li>
+<li><p><a class="reference internal" href="../develop/ide/editing/git.html#git"><span class="std std-ref">Git and GitHub</span></a></p></li>
+<li><p><a class="reference internal" href="../develop/ide/editing/preview.html#preview"><span class="std std-ref">Preview</span></a></p></li>
+<li><p><a class="reference internal" href="../develop/ide/editing/search-replace.html#search-replace"><span class="std std-ref">Search and Replace</span></a></p></li>
+</ul>
+</div>
+</div>
+
+
+              </div>
+              
+
+          </main>
+          
+
+      </div>
+    </div>
+    
+  <script src="../../_static/js/index.44f2d10023dc91dde182.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright Codio 2020. All Rights Reserved.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

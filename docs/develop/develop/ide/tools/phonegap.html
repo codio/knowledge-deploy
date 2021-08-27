@@ -1,0 +1,862 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Using Phonegap:Build" name="description" />
+
+    <title>Phonegap &#8212;   documentation</title>
+    
+  <link href="../../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../../_static/css/index.a51115b1206b8cbfeff9cff2c3058b7d.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.15.3/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/codio.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/search.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+    
+  <link rel="preload" as="script" href="../../../../_static/js/index.44f2d10023dc91dde182.js">
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+    <script defer="defer" src="../../../../_static/js/algolia.js"></script>
+    <link rel="canonical" href="https://docs.codio.com/develop/develop/ide/tools/phonegap.html" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Desktop App" href="desktopapp.html" />
+    <link rel="prev" title="Remote SSH Terminal Access" href="ssh.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-dark-codio navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../../student.html">
+  <img src="../../../../_static/logo-white.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../accessing-codio.html">
+  Accessing Codio
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../courses.html">
+  Your Courses
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../tools.html">
+  Tools
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../../../develop.html">
+  Developing Code
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        <span class="bd-search-codio">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search ..." aria-label="Search ..." autocomplete="off" >
+  <i class="icon fas fa-search"></i>
+</span>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../projects/projects.html">
+   Developing Code
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project-permissions.html">
+     Project Permissions
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project-settings.html">
+     Project Settings
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/create-import-project.html">
+     Create or Import a Project
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/access-projects.html">
+     Access Projects
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/copy-project.html">
+     Copy a Project
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/export-project.html">
+     Export a Project
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../stacks/stacks.html">
+   Stacks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../stacks/using-stacks.html">
+     Using Stacks
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../stacks/stack-planning.html">
+     Stack planning
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../stacks/create-stack.html">
+     Create a Stack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../stacks/modify-stack.html">
+     Modify a Stack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../stacks/update-stack.html">
+     Update a Stack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../stacks/switch-stack.html">
+     Switch Project to New Stack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../packs/packs.html">
+   Starter Packs
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../packs/create-starter-pack.html">
+     Create Starter Pack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../packs/starter-pack-guidelines.html">
+     Starter Pack Guidelines
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../packs/update-starter-pack.html">
+     Update a Starter Pack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../workspace/workspace.html">
+   IDE Workspace
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../workspace/panels.html">
+     Panels, Tabs, and Layouts
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../workspace/open-file.html">
+     Open a File
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../workspace/upload-download-files.html">
+     Upload and Download Files
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../workspace/add-delete-folders.html">
+     Add and Delete Folders
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../workspace/add-delete-files.html">
+     Add and Delete Files
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../editing/code-editing.html">
+   Code Editing Features
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/abbreviations.html">
+     Abbreviations
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/autocomplete.html">
+     Autocomplete
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/code-beautifier.html">
+     Code Beautifier
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/color-picker.html">
+     Color Picker and Preview
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/command-bar.html">
+     Command Bar
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/cursor.html">
+     Cursor Features
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/av-chat.html">
+     Audio Video Chat
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/force-language-highlighting.html">
+     Force Language Highlighting
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/connect-github-codio.html">
+     Connecting a Codio Box to a GitHub Repo
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/junit.html">
+     JUnit Testing Framework
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/keyboard-shortcuts.html">
+     Keyboard Shortcuts
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/preview.html">
+     Preview
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/quick-open.html">
+     Quick Open
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/real-time-collaboration.html">
+     Real-Time Code Collaboration
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/save-files.html">
+     Save Files
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/search-replace.html">
+     Search and Replace
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/share-project.html">
+     Share Project
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/git.html">
+     Git and GitHub
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../tools/dyslexia.html">
+   Tools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../tools/lexikon.html">
+     Lexikon
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../tools/code-playback.html">
+     Code Playback
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../tools/code-commenting.html">
+     Code Commenting
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="deployment.html">
+   IDE Tools
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="ghapi.html">
+     Git Hub API
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ssh.html">
+     Remote SSH Terminal Access
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Phonegap
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="desktopapp.html">
+     Desktop App
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../boxes/overview.html">
+   IDE Box Overview
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/ide-access-permissions.html">
+     IDE Access Permissions
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/terminal.html">
+     Terminal Window
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/access.html">
+     Access Codio Box via SSH
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/ext-access.html">
+     External Access to Boxes and Ports
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/always-on.html">
+     Always-On Boxes
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/restart-reset.html">
+     Restart or Reset Box
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/runmenu.html">
+     Customize Run Button
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/startup.html">
+     Autostart Services
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../boxes/installsw/install-software.html">
+   Installing Software Packages
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/installsw/file-locations.html">
+     File and Software Locations
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/installsw/default-installed.html">
+     Preinstalled Software Packages
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/installsw/parts-coding.html">
+     Add Your Own Software Packages
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/installsw/langserver.html">
+     Language Server Protocol
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/installsw/gui.html">
+     GUI Based Output
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../debugger/debugger.html">
+   Debugger
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../debugger/create-debug-target.html">
+     Create and Manage Debugger Targets
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../debugger/start-debug.html">
+     Start Debug Session
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+            
+            
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="ssh.html" title="previous page">
+      <i class="left-prev-icon icon fa fa-angle-left"></i>
+      <span class="left-prev-title">Previous</span>
+    </a>
+    <a class='right-next' id="next-link" href="desktopapp.html" title="next page">
+      <span class="right-next-title">Next</span>
+      <i class="right-next-icon icon fa fa-angle-right"></i>
+    </a>
+
+              </div>
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="phonegap">
+<h1>Phonegap<a class="headerlink" href="#phonegap" title="Permalink to this headline">¶</a></h1>
+<p>You access Codio’s <strong>Phonegap:Build</strong> features from the <strong>Tools-&gt;Phonegap</strong> menu.</p>
+<p>Our Phonegap support provides a comfortable integration with Adobe’s Phonegap Build platform. You should first create an account at <a class="reference external" href="http://build.phonegap.com">http://build.phonegap.com</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>At the time of writing, the <strong>PhoneGap:Build</strong> free plan supports a maximum project size of 50MB and 1000MB or 1GB for paid plans. Account plan details can be found <a class="reference external" href="https://build.phonegap.com/plans">here</a>.</p>
+</div>
+<div class="section" id="authentication">
+<h2>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">¶</a></h2>
+<p>To access Phonegap:Build from Codio you should set up an Authentication token. This is available in your Phonegap:Build account.</p>
+<p>Go to your Phonegap <a class="reference external" href="https://build.phonegap.com/people/edit">account details</a> and select the <strong>Client Application</strong> tab. If you do not see an authentication token, click <strong>Reset</strong> to obtain one.</p>
+<div class="figure align-default">
+<img alt="instructions" src="../../../../_images/phonegap-token-help.gif" />
+</div>
+<p>In Codio, select the <strong>Change Token</strong> button and paste in your key.</p>
+<p><img alt="Authentication token" src="../../../../_images/authtoken.png" /></p>
+</div>
+<div class="section" id="the-config-xml-file">
+<h2>The config.xml file<a class="headerlink" href="#the-config-xml-file" title="Permalink to this headline">¶</a></h2>
+<p>To build apps at Phonegap:Build, a``config.xml`` file is required in the root of your project. If one doesnot yet exist, Codio will ask if you want to create one.</p>
+<div class="figure align-default">
+<img alt="phonegap config" src="../../../../_images/config.png" />
+</div>
+<p>This will create a default file for you and associated image resources for Splash Screen and Icon images in <code class="docutils literal notranslate"><span class="pre">pg-images</span></code> folder.</p>
+<p>Your <code class="docutils literal notranslate"><span class="pre">config.xml</span></code> needs to contain specific lines for each platform you want to target. For example, to build for iOS, Android and Windows Phone you need to include</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;gap:platforms&gt;</span>
+    <span class="nt">&lt;gap:platform</span> <span class="na">name=</span><span class="s">&quot;ios&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;gap:platform</span> <span class="na">name=</span><span class="s">&quot;android&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;gap:platform</span> <span class="na">name=</span><span class="s">&quot;winphone&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/gap:platforms&gt;</span>
+</pre></div>
+</div>
+<p>If you only want to build for one platform (for example Android) you would only need to include</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;gap:platforms&gt;</span>
+    <span class="nt">&lt;gap:platform</span> <span class="na">name=</span><span class="s">&quot;android&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/gap:platforms&gt;</span>
+</pre></div>
+</div>
+<p>Useful resources and references for the config.xml file can be found on the Phonegap site:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://docs.phonegap.com/phonegap-build/configuring/">config.xml</a></p></li>
+<li><p><a class="reference external" href="http://docs.phonegap.com/phonegap-build/configuring/preferences/">Custom
+preferences</a></p></li>
+<li><p><a class="reference external" href="http://docs.phonegap.com/phonegap-build/configuring/icons-and-splash/">Icons and Splash
+Screens</a></p></li>
+<li><p><a class="reference external" href="http://docs.phonegap.com/phonegap-build/configuring/plugins/">Phonegap:Build
+plugins</a></p></li>
+</ul>
+</div>
+<div class="section" id="build">
+<h2>Build<a class="headerlink" href="#build" title="Permalink to this headline">¶</a></h2>
+<p>When you are ready to build your app, you press the  <strong>Build</strong> button in the Phonegap Build Area section. Make sure you   have <cite>created and configured your ``config.xml`</cite> file as above.</p>
+<p>You should have set up your code signing keys in your Phonegap:Build account (more on keys below) and you should select which keys you wish to use for each platform you defined in your <code class="docutils literal notranslate"><span class="pre">&lt;gap:platforms&gt;</span></code> tag in the <code class="docutils literal notranslate"><span class="pre">config.xml</span></code> file.</p>
+<p>Keys are configured from the <strong>Account &gt; Edit Setting &gt; Signing Keys</strong> tab in your Phonegap:Build account.</p>
+<div class="figure align-default">
+<img alt="Build settings" src="../../../../_images/buildsettings.png" />
+</div>
+<div class="section" id="a-bit-about-keys">
+<h3>A bit about Keys<a class="headerlink" href="#a-bit-about-keys" title="Permalink to this headline">¶</a></h3>
+<p>Phonegap has very good documentation on how to generate your keys as well as how to configure your Phonegap:Build account.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://docs.phonegap.com/phonegap-build/signing/android/">Android</a></p></li>
+<li><p><a class="reference external" href="http://docs.phonegap.com/phonegap-build/signing/ios/">iOS</a></p></li>
+</ul>
+<p><em>Note If you do not see anything in the ``Keys`` area, review your ``&lt;gap:platforms&gt;`` content in the config.xml file</em></p>
+<div class="section" id="android">
+<h4>Android<a class="headerlink" href="#android" title="Permalink to this headline">¶</a></h4>
+<p>To build and test, you don’t need to do anything. You can leave the field empty . If you want to deploy a codesigned App, (which you will need to deploy via Google Play) then you need to generate a proper Certificate.</p>
+</div>
+<div class="section" id="ios">
+<h4>iOS<a class="headerlink" href="#ios" title="Permalink to this headline">¶</a></h4>
+<p>Apple requires both a Codesigning Certificate and a Mobile Provisioning Profile. You need different ones for development and for App Store deployment.</p>
+</div>
+<div class="section" id="windows">
+<h4>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h4>
+<p>Windows does not require any certificates to build.</p>
+</div>
+</div>
+<div class="section" id="build-settings">
+<h3>Build Settings<a class="headerlink" href="#build-settings" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="private-application">
+<h4>Private Application<a class="headerlink" href="#private-application" title="Permalink to this headline">¶</a></h4>
+<p>Depending on the Phonegap:Build account plan you have, you can build a number of private applications. Check this box if you want to build as a private application. See <a class="reference external" href="https://build.phonegap.com/plans">here</a> for more information on Phonegap:Build plans</p>
+</div>
+<div class="section" id="enable-debug">
+<h4>Enable Debug<a class="headerlink" href="#enable-debug" title="Permalink to this headline">¶</a></h4>
+<p>Checking this box enables Phonegap Build debugging to allow you to use standard Web Inspector tools available from the PhoneGap Build site to debug PhoneGap apps while they are running on your device.</p>
+<p>For more information on this see <a class="reference external" href="http://docs.phonegap.com/references/developer-app/debugging/">Remote Debugging Tools</a></p>
+</div>
+<div class="section" id="enable-hydrates">
+<h4>Enable Hydrates<a class="headerlink" href="#enable-hydrates" title="Permalink to this headline">¶</a></h4>
+<p>Checking this box enables Phonegap:Build Hydration. Hydration is a tool that has two main benefits:</p>
+<ul class="simple">
+<li><p>Compilation times are improved significantly.</p></li>
+<li><p>Updates are pushed directly to the application installed on a device.</p></li>
+</ul>
+<p>For more information on this see <a class="reference external" href="http://docs.phonegap.com/phonegap-build/tools/hydration/">Hydration</a></p>
+</div>
+</div>
+<div class="section" id="initiate-build">
+<h3>Initiate Build<a class="headerlink" href="#initiate-build" title="Permalink to this headline">¶</a></h3>
+<p>When you have selected keys and any settings, simply press the Build button. Codio now passes all information through to the Phonegap:Build platform, where the build is run in the background.</p>
+<p>If the status does not complete in a reasonable time, you can do one of the following</p>
+<ul class="simple">
+<li><p>go to your Phonegap:Build account and click the main Apps tab, where    you should see your app and its status</p></li>
+<li><p>check the status of the Phonegap:Build service <a class="reference external" href="http://status.build.phonegap.com/">here</a></p></li>
+</ul>
+</div>
+<div class="section" id="download-your-app">
+<h3>Download your App<a class="headerlink" href="#download-your-app" title="Permalink to this headline">¶</a></h3>
+<p>When the build is completed you can deploy the app to your device in the following ways.</p>
+<ul class="simple">
+<li><p>download the native file and manually upload to your device</p></li>
+<li><p>scan the QR code to download from Phonegap:Build to your device</p></li>
+</ul>
+<div class="figure align-default">
+<img alt="Build" src="../../../../_images/build.png" />
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+
+          </main>
+          
+
+      </div>
+    </div>
+    
+  <script src="../../../../_static/js/index.44f2d10023dc91dde182.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright Codio 2020. All Rights Reserved.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,1044 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="LTI 1.3 for Canvas" name="description" />
+
+    <title>LTI 1.3 for Canvas &#8212;   documentation</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.a51115b1206b8cbfeff9cff2c3058b7d.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.15.3/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code-tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/codio.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/search.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.44f2d10023dc91dde182.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/code-tabs.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    <script defer="defer" src="../../../_static/js/algolia.js"></script>
+    <link rel="canonical" href="https://docs.codio.com/instructors/admin/integration/lti1-3Canvas.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="LTI 1.3 Dynamic Registration" href="lti1-3DynReg.html" />
+    <link rel="prev" title="LTI 1.3 for Brightspace/D2L" href="lti1-3BS-D2L.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-dark-codio navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../index.html">
+  <img src="../../../_static/logo-white.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../getstarted.html">
+  Overview
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../authoring.html">
+  Authoring
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../common.html">
+  Developing Code
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../../setupcourses.html">
+  Courses Set up
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../teaching.html">
+  Teaching
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../admin.html">
+  Admin
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        <div id="docsearch"></div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../setupcourses/courses.html">
+   Courses Set Up
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/create-course.html">
+     Create a New Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/clone-course.html">
+     Clone a Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/parent-child-courses.html">
+     Working with Parent/Child Courses
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/export-course-data.html">
+     Data Exports
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/archive-course.html">
+     Archive Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/delete-course.html">
+     Delete Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/rename-course.html">
+     Rename Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/share-course.html">
+     Share Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/search-course.html">
+     Search and Order Courses
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/add-remove-assignment.html">
+     Add and Remove Course Assignments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/modify-assignments.html">
+     Modify Assignments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/rename-reorder-assignments.html">
+     Rename/Reorder Modules and Assignments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/preview-course.html">
+     Preview Courses and Assignments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/batch-assignment-update.html">
+     Batch Assignment Update
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/add-teachers.html">
+     Add or Remove Teachers in a Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/add-ta.html">
+     Add Teaching Assistant to a Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/add-remove-students.html">
+     Add, Remove or Archive Students in a Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/change-student-password.html">
+     Change Student Passwords
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/course-contact.html">
+     Course contact URL
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/course-revoke-sudo-access.html">
+     Revoke sudo access for all assignments in the course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/export-assignment-data.html">
+     Export Assignment Data
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/export-lti.html">
+     Export LTI Settings
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/lmsconnect.html">
+     Connecting to your LMS
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/mark-assignments-complete.html">
+     Mark Assignment as Complete/Uncomplete
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/notification-email.html">
+     Automated Emails
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/view-student-username.html">
+     View Student Usernames
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/course-module-progress.html">
+     Gamification
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/virtualmachine.html">
+     Virtual Machines
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../setupcourses/resources/codioresources.html">
+   Codio instructional resources
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/resources/editingresources.html">
+     Editing Resources
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../setupcourses/resources/resourcetools/crunch.html">
+   Additional resources
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/resources/resourcetools/flode.html">
+     Flode
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/resources/resourcetools/jeroo.html">
+     Jeroo
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/resources/resourcetools/scratch.html">
+     Scratch
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/resources/resourcetools/pencilcode.html">
+     Pencil Code
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/resources/resourcetools/pyret.html">
+     Pyret
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/resources/resourcetools/tkinter.html">
+     Tkinter
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/resources/resourcetools/lexikon.html">
+     Lexikon
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/resources/resourcetools/turtle.html">
+     Turtle
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/resources/resourcetools/processing-and-p5.html">
+     Processing and p5
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro.html">
+   Integrating with your LMS system (Canvas etc.)
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="lms-systems/system-specific-directions.html">
+     System specific instructions
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="lms-systems/canvas.html">
+       Canvas
+       <i class="fas icon fa-angle-right">
+       </i>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="lms-systems/blackboard.html">
+       Blackboard
+       <i class="fas icon fa-angle-right">
+       </i>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="lms-systems/d2l.html">
+       D2L
+       <i class="fas icon fa-angle-right">
+       </i>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="lms-systems/moodle.html">
+       Moodle
+       <i class="fas icon fa-angle-right">
+       </i>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="lms-systems/google-classroom.html">
+       Google Classroom
+       <i class="fas icon fa-angle-right">
+       </i>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="lms-systems/schoology.html">
+       Schoology
+       <i class="fas icon fa-angle-right">
+       </i>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lms-students.html">
+     User account creation
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="grading.html">
+     Grading
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lti-app.html">
+     LTI App
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lti-keys-and-urls-information.html">
+     LTI Keys and URLs
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lti-course-copy.html">
+     LTI Course copy
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="commoncartridge.html">
+     Common Cartridge
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lti1-3.html">
+     LTI version 1.3
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lti1-3BS-D2L.html">
+     LTI 1.3 for Brightspace/D2L
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     LTI 1.3 for Canvas
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lti1-3DynReg.html">
+     LTI 1.3 Dynamic Registration
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../setupcourses/assignment-settings/assignment-settings.html">
+   Managing assignments
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/assignment-settings/assignment-actions.html">
+     Assignment Action Buttons
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/assignment-settings/pin-assignment.html">
+     Pin and Unpin Assignment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/assignment-settings/disable-assignment.html">
+     Disable Assignment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/assignment-settings/visibility-completed.html">
+     Visibility on Completed
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/assignment-settings/visibility-disabled.html">
+     Visibility on Disabled
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/assignment-settings/allow-student-reset.html">
+     Reset Assignment by Student
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/assignment-settings/prerequisite-assignments.html">
+     Prerequisite Assignments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/assignment-settings/disable-mark-completed.html">
+     Disable Mark as Completed
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/assignment-settings/disable-download.html">
+     Disable Download
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/assignment-settings/assignment-duration.html">
+     Assignment Duration
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/assignment-settings/penalties.html">
+     Penalties
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/assignment-settings/exam-proctoring.html">
+     Exam Proctoring
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/assignment-settings/assignment-surveys.html">
+     Assignment Surveys
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/assignment-settings/assignment-gigabox.html">
+     Gigabox Slot
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/assignment-settings/prime-assignment-containers.html">
+     Prime Assignment Containers
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/assignment-settings/groupwork.html">
+     Pair Programming
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/assignment-settings/grade-weights.html">
+     Grade Weights
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/assignment-settings/assign-grade-template.html">
+     Assign Grading Template to an Assignment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/assignment-settings/mandatory.html">
+     Mandatory Progress
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/assignment-settings/virtual-coach.html">
+     Virtual Coach
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+            
+            
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="lti1-3BS-D2L.html" title="previous page">
+      <i class="left-prev-icon icon fa fa-angle-left"></i>
+      <span class="left-prev-title">Previous</span>
+    </a>
+    <a class='right-next' id="next-link" href="lti1-3DynReg.html" title="next page">
+      <span class="right-next-title">Next</span>
+      <i class="right-next-icon icon fa fa-angle-right"></i>
+    </a>
+
+              </div>
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="lti-1-3-for-canvas">
+<span id="lti1-3canvas"></span><h1>LTI 1.3 for Canvas<a class="headerlink" href="#lti-1-3-for-canvas" title="Permalink to this headline">¶</a></h1>
+<p>See this page for a video demonstration:</p>
+<p><a class="reference internal" href="lti1-3.html#lti1-3"><span class="std std-ref">LTI 1.3 integration</span></a></p>
+<div class="section" id="part-1-in-canvas-create-a-developer-key">
+<h2>Part 1: In Canvas - Create a Developer Key<a class="headerlink" href="#part-1-in-canvas-create-a-developer-key" title="Permalink to this headline">¶</a></h2>
+<p>The Canvas user who carries out these steps must be a system administrator.</p>
+<div class="section" id="in-codio">
+<h3>In Codio:<a class="headerlink" href="#in-codio" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Go to your organization account settings by clicking on your user name in the bottom left of your dashboard and then selecting your organization within <strong>Organizations</strong>.</p></li>
+<li><p>Select the <strong>LTI Integrations</strong> tab.</p></li>
+<li><p>Scroll down to the <strong>LTI Integration 1.3</strong> section; you should see the following fields. Keep this page open.</p></li>
+</ol>
+<blockquote>
+<div><img alt="LTI 1.3 settings in Codio" src="../../../_images/codiolti13settings.png" />
+</div></blockquote>
+</div>
+<div class="section" id="in-canvas">
+<h3>In Canvas:<a class="headerlink" href="#in-canvas" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple" start="4">
+<li><p>Select <strong>Admin -&gt; Developer</strong> Keys.</p></li>
+<li><p>Click on <strong>+Developer Key</strong> and select <strong>+LTI key</strong>.</p></li>
+</ol>
+<blockquote>
+<div><img alt="Creating a Canvas Developer key" src="../../../_images/canvasdeveloperkey.png" />
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>Complete the <strong>Key Name</strong>, <strong>Title</strong> and <strong>Description</strong> fields.</p></li>
+<li><p>From Codio, under <strong>LTI 1.3 Integration</strong>, copy the <strong>LTI URL</strong> and paste it into the <strong>Target Link URI field</strong> in Canvas.</p></li>
+<li><p>From Codio copy the <strong>Initiate Login URL</strong> and paste it into the <strong>OpenID Connect Initiation URL</strong>.</p></li>
+<li><p>Copy the <strong>Redirect URL</strong> and paste it into the <strong>Canvas Redirect URI</strong> field.</p></li>
+</ol>
+<blockquote>
+<div><img alt="Adding the Developer key values" src="../../../_images/developerkeyvalues.png" />
+</div></blockquote>
+<ol class="arabic simple" start="10">
+<li><p>In Canvas, change <strong>JWK Method</strong> to <strong>Public JWK URL</strong>.</p></li>
+<li><p>From Codio, copy the <strong>Keyset URL</strong> and paste it into the <strong>Public JWK URL</strong> field.</p></li>
+</ol>
+<blockquote>
+<div><img alt="JWK URL" src="../../../_images/canvasJWK.png" />
+</div></blockquote>
+<ol class="arabic simple" start="12">
+<li><p>Expand the <strong>LTI Advantage Services</strong> section and toggle each field on.</p></li>
+<li><p>Expand the <strong>Additional Settings</strong> section</p></li>
+</ol>
+<ul>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">codio.com</span></code> in both the <strong>Domain</strong> and <strong>Tool Id</strong> fields.</p></li>
+<li><p>Select the <strong>Privacy level</strong> as <strong>Public</strong>.</p>
+<img alt="LTI Advantage Services" src="../../../_images/canvasadvantage.png" />
+</li>
+</ul>
+<p>14. Scroll down to the <strong>Placements</strong> field. You can add a placement by starting to type the name and then selecting it when it appears.
+Placements that should be included (remove any others): Link Selection, Editor Button, Assignment Selection and Course Navigation.</p>
+<blockquote>
+<div><img alt="LTI Placements" src="../../../_images/canvasplacements.png" />
+</div></blockquote>
+<ol class="arabic simple" start="15">
+<li><p>Expand each of the following fields, and copy the static links below:</p></li>
+</ol>
+<ul>
+<li><dl class="simple">
+<dt><strong>Link Selection</strong></dt><dd><ul class="simple">
+<li><p>Select <strong>LtiDeepLinkingRequest</strong></p></li>
+<li><p><strong>Target Link URI:</strong> <code class="docutils literal notranslate"><span class="pre">https://apollo.codio.com/lti/resource_selection</span></code></p></li>
+<li><p><strong>Icon Url:</strong> <code class="docutils literal notranslate"><span class="pre">https://static-assets.codio.com/dashboard/images/icons/favicon-16x16.da14ae918fd9bc3b.png</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<img alt="Link Selection" src="../../../_images/canvaslinkselect.png" />
+</li>
+<li><dl class="simple">
+<dt><strong>Editor button</strong></dt><dd><ul class="simple">
+<li><p><strong>Target Link URI:</strong> <code class="docutils literal notranslate"><span class="pre">https://apollo.codio.com/lti/editor_button</span></code></p></li>
+<li><p><strong>Icon Url:</strong> <code class="docutils literal notranslate"><span class="pre">https://static-assets.codio.com/dashboard/images/icons/favicon-16x16.da14ae918fd9bc3b.png</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<img alt="Editor Button" src="../../../_images/canvaseditorbutton.png" />
+</li>
+<li><dl class="simple">
+<dt><strong>Assignment Selection</strong></dt><dd><ul class="simple">
+<li><p>Select <strong>LtiDeepLinkingRequest</strong></p></li>
+<li><p><strong>Target Link URI:</strong> <code class="docutils literal notranslate"><span class="pre">https://apollo.codio.com/lti/resource_selection</span></code></p></li>
+<li><p><strong>Icon Url:</strong> <code class="docutils literal notranslate"><span class="pre">https://static-assets.codio.com/dashboard/images/icons/favicon-16x16.da14ae918fd9bc3b.png</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<img alt="Assignment Selection" src="../../../_images/canvasassignment.png" />
+</li>
+<li><dl class="simple">
+<dt><strong>Course Navigation</strong></dt><dd><ul class="simple">
+<li><p><strong>Target Link URI:</strong> <code class="docutils literal notranslate"><span class="pre">https://apollo.codio.com/lti/course_navigation</span></code></p></li>
+<li><p><strong>Icon Url:</strong> <code class="docutils literal notranslate"><span class="pre">https://static-assets.codio.com/dashboard/images/icons/favicon-16x16.da14ae918fd9bc3b.png</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<img alt="Course Navigation" src="../../../_images/canvasnavigation.png" />
+</li>
+</ul>
+<ol class="arabic simple" start="16">
+<li><p>Press <strong>Save</strong> in bottom right corner</p></li>
+<li><p>You will be back at the list of developer keys.</p></li>
+</ol>
+<ul>
+<li><p>Update <strong>State</strong> to: on</p></li>
+<li><p>Copy the number in the <strong>Details</strong> column (for use in Parts 2 and 3)</p>
+<img alt="Developer Key" src="../../../_images/canvasdetails.png" />
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="part-2-create-an-application-in-your-course-in-canvas">
+<h2>Part 2: Create an application in your course in Canvas<a class="headerlink" href="#part-2-create-an-application-in-your-course-in-canvas" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>In Canvas:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>Select an existing course or create a new course.</dt><dd><ul class="simple">
+<li><p>Optional: create a test course called Codio Test Course before you do it with a production course.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>In your course, go to <strong>Settings → Apps → + App</strong></p></li>
+<li><p>In Configuration Type, select: <strong>By Client ID</strong></p></li>
+<li><p>Paste number you copied in Part 1 into <strong>Client ID</strong> field</p></li>
+</ol>
+<ul>
+<li><p><strong>Submit → Install</strong></p>
+<img alt="Add App" src="../../../_images/addlti13app.png" />
+</li>
+</ul>
+<ol class="arabic simple" start="5">
+<li><p>After you click install, click the gear icon by the tool you just created</p></li>
+</ol>
+<ul class="simple">
+<li><p>Select <strong>Deployment ID</strong></p></li>
+</ul>
+<ol class="arabic simple" start="6">
+<li><p>Copy the ID displayed, it will be used in Part 3</p></li>
+</ol>
+<blockquote>
+<div><img alt="Deployment ID" src="../../../_images/canvasdeployment.png" />
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="part-3-create-an-lti-configuration-in-codio">
+<h2>Part 3: Create an LTI configuration in Codio<a class="headerlink" href="#part-3-create-an-lti-configuration-in-codio" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>In Codio:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>In your org → <strong>LTI Integrations</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Scroll down to <strong>LTI 1.3 Configurations</strong></p></li>
+<li><p>Click <strong>Add Integration</strong></p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<blockquote>
+<div><img alt="LTI 1.3 Configurations" src="../../../_images/addlti13integration.png" />
+</div></blockquote>
+<dl>
+<dt>Updating the fields in Platform Information</dt><dd><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>replace [CANVAS DOMAIN] with your institution’s domain in steps 5-7</p>
+</div>
+</dd>
+</dl>
+<ol class="arabic simple" start="2">
+<li><p><strong>Platform ID:</strong> <code class="docutils literal notranslate"><span class="pre">https://canvas.instructure.com</span></code></p></li>
+<li><p><strong>Client ID:</strong> copied from Developer Keys at end of Part 1</p></li>
+<li><p><strong>Deployment Id:</strong> copied in Part 2</p></li>
+<li><p><strong>Public Keyset URL:</strong> <code class="docutils literal notranslate"><span class="pre">https://[CANVAS</span> <span class="pre">DOMAIN]/api/lti/security/jwks</span></code></p></li>
+<li><p><strong>Access Token URL:</strong> <code class="docutils literal notranslate"><span class="pre">https://[CANVAS</span> <span class="pre">DOMAIN]/login/oauth2/token</span></code></p></li>
+<li><p><strong>Authentication Request URL:</strong> <code class="docutils literal notranslate"><span class="pre">https://[CANVAS</span> <span class="pre">DOMAIN]/api/lti/authorize_redirect</span></code></p></li>
+<li><p>Click <strong>Create</strong></p></li>
+</ol>
+<blockquote>
+<div><img alt="Create LTI Integration" src="../../../_images/canvasplatform.png" />
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="part-4-adding-a-resource">
+<h2>Part 4: Adding a resource<a class="headerlink" href="#part-4-adding-a-resource" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>In Canvas:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Go to Assignments in your course, select <strong>+Assignment</strong>.</p></li>
+<li><p>Give your assignment a name.</p></li>
+<li><p>Select a number of points.</p></li>
+<li><p>Under <strong>Submission Type</strong>, select <strong>External Tool</strong>.</p></li>
+<li><p>Select Find.</p></li>
+</ol>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Do not use LTI Integration URL to assign an assignment</p>
+</div>
+</div></blockquote>
+<p>6. Select the tool created in Part 1.
+- Choose the Course and Assignment to connect to
+- Recommended: Select Load in a new tab</p>
+<blockquote>
+<div><img alt="Create an Assignment" src="../../../_images/createassignment.png" />
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>Select <strong>Save</strong> at bottom of the page</p></li>
+</ol>
+<p>Note: these settings are not final and can be edited in Canvas at a later time.</p>
+</div>
+</div>
+<div class="section" id="important-notes-on-course-copy-in-canvas">
+<h2>Important Notes on Course Copy in Canvas:<a class="headerlink" href="#important-notes-on-course-copy-in-canvas" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>In Canvas, once you copy the course, you must enter a unique SIS ID in Course Settings.</dt><dd><ul>
+<li><p>An SIS ID that is different from the Blueprint Course (Canvas’ Parent Course) is required for Codio to spawn a corresponding child course.</p></li>
+<li><p>An SIS ID is optional for the Blueprint Course.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+
+
+              </div>
+              
+
+          </main>
+          
+
+      </div>
+    </div>
+    
+  <script src="../../../_static/js/index.44f2d10023dc91dde182.js"></script>
+
+
+    
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright Codio 2023. All Rights Reserved.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EL440DKDDY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EL440DKDDY');
+</script>
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/2227229.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+  </body>
+</html>

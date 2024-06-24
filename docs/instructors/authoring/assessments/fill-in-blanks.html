@@ -1,0 +1,730 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Fill in the blanks questions can use either free text or offer options to be chosen from a drop-down list." name="description" />
+
+    <title>Fill in the Blanks &#8212;   documentation</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.a51115b1206b8cbfeff9cff2c3058b7d.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.15.3/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code-tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/codio.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/search.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.44f2d10023dc91dde182.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/code-tabs.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    <script defer="defer" src="../../../_static/js/algolia.js"></script>
+    <link rel="canonical" href="https://docs.codio.com/instructors/authoring/assessments/fill-in-blanks.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Free Text" href="free-text.html" />
+    <link rel="prev" title="Multiple Choice" href="multiple-choice.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-dark-codio navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../index.html">
+  <img src="../../../_static/logo-white.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../getstarted.html">
+  Overview
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../../authoring.html">
+  Authoring
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../common.html">
+  Developing Code
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../setupcourses.html">
+  Courses Set up
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../teaching.html">
+  Teaching
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../admin.html">
+  Admin
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        <div id="docsearch"></div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../guides/intro.html">
+   Authoring
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/project_book.html">
+     Project or course assignment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/author_student.html">
+     Author and student views
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/toc.html">
+     Table of contents management
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/page_editing.html">
+     Page editing overview
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/authoring_guidelines.html">
+     Authoring Guidelines
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/markdown_content.html">
+     Markdown content editing
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/previewing_content.html">
+     Previewing content
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/html_content.html">
+     HTML content editing
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/teacher_only.html">
+     Teacher only content
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/solution_templating.html">
+     Solution File Templating
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/freeze_code.html">
+     Freezing Code
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/custom_button.html">
+     Custom Buttons in Guides
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/add_media.html">
+     Adding media
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/open_close_content.html">
+     Open/close tabs from content
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/hide_folders.html">
+     Hiding folders
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/excludingfiles.html">
+     Excluding Files/Folders
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/latex.html">
+     Latex for math expressions
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/cpumemdisk.html">
+     System Resources
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../guides/settings/page.html">
+   Guides Settings and Page actions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/settings/opentabs.html">
+     Open tabs
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/settings/assessments.html">
+     Assessment Settings
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/settings/media.html">
+     Media Settings for a Guide
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/settings/global.html">
+     Global Guide Settings
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="add-assessment.html">
+   Auto-graded assessments
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="assessments.html">
+     Assessments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="student-submission.html">
+     Student submission options
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assessment-security.html">
+     Assessment Security
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="auto-grade-scripts.html">
+     Assignment Level Scripts
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="parameterized.html">
+     Parameterized assessments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="delete-assessment.html">
+     Delete an Assessment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="edit-assessment.html">
+     Edit an Assessment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="duplicate-assessment.html">
+     Duplicate an Assessment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="edit-assessment-points.html">
+     Edit Assessment Points
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="standard-code-test.html">
+     Standard Code Test
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="advanced-code-test.html">
+     Advanced Code Test
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="partial-points.html">
+     Partial Points
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="multiple-choice.html">
+     Multiple Choice
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Fill in the Blanks
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="free-text.html">
+     Free Text
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="autograde-free-text.html">
+     Free Text Autograde
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="grade-book.html">
+     Grade Book
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="parsons-puzzle.html">
+     Parsons Puzzle
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="random.html">
+     Random Assessment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="math-assessments.html">
+     Math Assessments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ungraded-assessments.html">
+     Ungraded Assessments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sense-network.html">
+     Sense Network
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../setupcourses/library/assessmentslibrary.html">
+   Assessments Libraries
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/library/global-library.html">
+     Codio Global Assessments Library
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/library/search-library.html">
+     Search Assessments Library
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/library/add-questions-from-library.html">
+     Add Questions from Assessments Library
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/library/add-questions-to-library.html">
+     Add Questions to an Assessments Library
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/library/unlink-assessment.html">
+     Unlink an Assessment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/library/update-assess-from-library.html">
+     Update an Existing Assessment in Library
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+            
+            
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="multiple-choice.html" title="previous page">
+      <i class="left-prev-icon icon fa fa-angle-left"></i>
+      <span class="left-prev-title">Previous</span>
+    </a>
+    <a class='right-next' id="next-link" href="free-text.html" title="next page">
+      <span class="right-next-title">Next</span>
+      <i class="right-next-icon icon fa fa-angle-right"></i>
+    </a>
+
+              </div>
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="fill-in-the-blanks">
+<span id="fill-in-blanks"></span><h1>Fill in the Blanks<a class="headerlink" href="#fill-in-the-blanks" title="Permalink to this headline">¶</a></h1>
+<p>A <strong>Fill in the blank question</strong> can use either free text or offer options to be chosen from a drop-down list:</p>
+<blockquote>
+<div><ul>
+<li><p>Free Text Answers - Shows a question where the student must complete the missing words (fill in the blank) by entering the answers.</p>
+<img alt="Free Text" src="../../../_images/assessments-fitb1.png" />
+</li>
+<li><p>Drop-Down Answers - The possible answers are available in a drop-down list where the student chooses the correct answer.</p>
+<img alt="Drop-Down" src="../../../_images/assessments-fitb2.png" />
+</li>
+</ul>
+</div></blockquote>
+<p>Follow these steps to set up fill in the blank assessments:</p>
+<ol class="arabic">
+<li><p>On the <strong>General</strong> page, enter the following information:</p>
+<img alt="General" src="../../../_images/assessment_general.png" />
+</li>
+</ol>
+<blockquote>
+<div><ul>
+<li><p><strong>Name</strong> - Enter a short name that describes the test. This name is displayed in the teacher dashboard so the name should reflect the challenge and thereby be clear when reviewing.</p>
+<blockquote>
+<div><p>Toggle the <strong>Show Name</strong> setting to hide the name in the challenge text the student sees.</p>
+</div></blockquote>
+</li>
+<li><p><strong>Instruction</strong> - Enter the instructions to be shown to the students.</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic" start="2">
+<li><p>Click <strong>Execution</strong> in the navigation pane and complete the following information:</p>
+<img alt="Execution" src="../../../_images/assessment_fitb_exec.png" />
+</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Text</strong> - Enter the question in markdown, including the correct answer specification. For example:</p></li>
+</ul>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">prime</span> <span class="pre">number</span> <span class="pre">(or</span> <span class="pre">a</span> <span class="pre">prime)</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">&lt;&lt;&lt;natural&gt;&gt;&gt;</span> <span class="pre">number</span> <span class="pre">greater</span> <span class="pre">than</span> <span class="pre">&lt;&lt;&lt;1&gt;&gt;&gt;</span> <span class="pre">that</span> <span class="pre">has</span> <span class="pre">no</span> <span class="pre">positive</span> <span class="pre">divisors</span> <span class="pre">other</span> <span class="pre">than</span> <span class="pre">&lt;&lt;&lt;1&gt;&gt;&gt;</span> <span class="pre">and</span> <span class="pre">&lt;&lt;&lt;itself&gt;&gt;&gt;.</span></code></p>
+<blockquote>
+<div><ul>
+<li><p><strong>Show Possible Values</strong> - Toggle to display possible options for the correct answer:</p>
+<ul>
+<li><p>For text-free questions, blank fields are available for the student to enter the correct answer.</p></li>
+<li><p>For drop-down questions, all the correct values (anything within the <cite>&lt;&lt;&lt; &gt;&gt;&gt;</cite> chevrons) are provided in each of the answer positions in a randomized order. You can also add incorrect answers (one per line).</p>
+<img alt="Distractors" src="../../../_images/distractors.png" />
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Regular Expression Support</strong></p>
+<p>Codio regular expression matching follows the Java language standards.</p>
+<p>Examples of regular expressions supported for blank fields:</p>
+<ul class="simple">
+<li><p>Answer allows any characters -  <code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;/./&gt;&gt;&gt;</span></code></p></li>
+<li><p>Answer starts with word “begin” -  <code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;/^begin/&gt;&gt;&gt;</span></code></p></li>
+<li><p>Answer ends with word “end” -  <code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;/end$/&gt;&gt;&gt;</span></code></p></li>
+<li><p>Answer can contain one or more spaces in “this is”  -  <code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;/this\s+is/&gt;&gt;&gt;</span></code></p></li>
+<li><p>Answer contains 1 or 2 or 3 -  <code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;/[1</span> <span class="pre">2</span> <span class="pre">3]/&gt;&gt;&gt;</span></code></p></li>
+<li><p>Answer allows color or colour -  <code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;/colou?r/&gt;&gt;&gt;</span></code></p></li>
+<li><p>Answer allows yes or “yes” -  <code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;&quot;yes&quot;,</span> <span class="pre">&quot;&quot;yes&quot;&quot;&gt;&gt;&gt;</span></code></p></li>
+<li><p>Answer allows hat or cat -  <code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;/[hc]at/&gt;&gt;&gt;</span></code></p></li>
+<li><p>Answer allows i==0 or i == 0 -  <code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;/i</span> <span class="pre">?==</span> <span class="pre">?0/&gt;&gt;&gt;</span></code></p></li>
+<li><p>Answer must only contain digits -  <code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;/^[\d]+$/&gt;&gt;&gt;</span></code></p></li>
+<li><p>Answer must only contain non-digits -  <code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;/^[\D]+$/&gt;&gt;&gt;</span></code></p></li>
+<li><p>Answer requires word character -  <code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;/^[\w]+$/&gt;&gt;&gt;</span></code></p></li>
+<li><p>Answer requires non-word character -  <code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;/^[\W]+$/&gt;&gt;&gt;</span></code></p></li>
+<li><p>Answer allows several answers (Place1 or Place2) -  <code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;&quot;Place1&quot;,</span> <span class="pre">&quot;Place2&quot;&gt;&gt;&gt;</span></code></p></li>
+<li><p>Answer requires case sensitivity - <code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;/[A-Z]/&gt;&gt;&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;/[a-z]/&gt;&gt;&gt;</span></code></p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic" start="3">
+<li><p>Click <strong>Grading</strong> in the navigation pane and complete the following fields:</p>
+<img alt="Grading" src="../../../_images/assessment_fitb_grading.png" />
+</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Points</strong> - Enter the score for correctly answering the question. You can choose any positive numeric value. If this is an ungraded assessment, enter zero (0).</p></li>
+<li><p><strong>Show Expected Answer</strong> - Toggle to show the students the expected output when they have submitted an answer for the question. To suppress expected output, disable the setting.</p></li>
+<li><p><strong>Define Number of Attempts</strong> - enable to allow and set the number of attempts students can make for this assessment. If disabled, the student can make unlimited attempts.</p></li>
+<li><p><strong>Show Rationale to Students</strong> - Toggle to display the rationale for the answer, to the student. This guidance information will be shown to students after they have submitted their answer and any time they view the assignment after marking it as completed. You can set when to show this selecting from <strong>Never</strong>, <strong>After x attempts</strong>, <strong>If score is greater than or equal to a % of the total</strong> or <strong>Always</strong></p></li>
+<li><p><strong>Rationale</strong> - Enter guidance for the assessment. This is always visible to the teacher when the project is opened in the course or when opening the student’s project.</p></li>
+<li><p><strong>Use maximum score</strong> - Toggle to enable assessment final score to be the highest score attained of all runs.</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic" start="4">
+<li><p>Click on the <strong>Parameters</strong> tab if you wish to set up <strong>Parameterized Assessments</strong>. See <a class="reference internal" href="parameterized.html#parameterized"><span class="std std-ref">Parameterized Assessments</span></a> for more information.</p></li>
+<li><p>Click <strong>Metadata</strong> in the left navigation pane and complete the following fields:</p>
+<img alt="Metadata" src="../../../_images/assessment_metadata.png" />
+</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Bloom’s Level</strong> - Click the drop-down and choose the level of Bloom’s Taxonomy: <a class="reference external" href="https://cft.vanderbilt.edu/guides-sub-pages/blooms-taxonomy/">https://cft.vanderbilt.edu/guides-sub-pages/blooms-taxonomy/</a> for the current assessment.</p></li>
+<li><p><strong>Learning Objectives</strong> The objectives are the specific educational goal of the current assessment. Typically, objectives begin with Students Will Be Able To (SWBAT). For example, if an assessment asks the student to predict the output of a recursive code segment, then the Learning Objectives could be <em>SWBAT follow the flow of recursive execution</em>.</p></li>
+<li><p><strong>Tags</strong> - The <strong>Content</strong> and <strong>Programming Language</strong> tags are provided and required. To add another tag, click <strong>Add Tag</strong> and enter the name and values.</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic" start="6">
+<li><p>Click <strong>Files</strong> in the left navigation pane and check the check boxes for additional external files to be included with the assessment when adding it to an assessment library. The files are then included in the <strong>Additional content</strong> list.</p>
+<img alt="Files" src="../../../_images/assessment_files.png" />
+</li>
+<li><p>Click <strong>Create</strong> to complete the process.</p></li>
+</ol>
+</div>
+
+
+              </div>
+              
+
+          </main>
+          
+
+      </div>
+    </div>
+    
+  <script src="../../../_static/js/index.44f2d10023dc91dde182.js"></script>
+
+
+    
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright Codio 2023. All Rights Reserved.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EL440DKDDY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EL440DKDDY');
+</script>
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/2227229.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+  </body>
+</html>

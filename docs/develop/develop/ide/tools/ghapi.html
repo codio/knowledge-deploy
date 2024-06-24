@@ -1,0 +1,922 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="to automate the publication of assignments" name="description" />
+
+    <title>Git Hub API &#8212;   documentation</title>
+    
+  <link href="../../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../../_static/css/index.a51115b1206b8cbfeff9cff2c3058b7d.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.15.3/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/codio.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/search.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+    
+  <link rel="preload" as="script" href="../../../../_static/js/index.44f2d10023dc91dde182.js">
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    <script defer="defer" src="../../../../_static/js/algolia.js"></script>
+    <link rel="canonical" href="https://docs.codio.com/develop/develop/ide/tools/ghapi.html" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Remote SSH Terminal Access" href="ssh.html" />
+    <link rel="prev" title="IDE Tools" href="deployment.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-dark-codio navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../../student.html">
+  <img src="../../../../_static/logo-white.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../accessing-codio.html">
+  Accessing Codio
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../courses.html">
+  Your Courses
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../tools.html">
+  Tools
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../../../develop.html">
+  Developing Code
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        <div id="docsearch"></div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../projects/projects.html">
+   Developing Code
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project-permissions.html">
+     Project Permissions
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project-settings.html">
+     Project Settings
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/create-import-project.html">
+     Create or Import a Project
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/access-projects.html">
+     Access Projects
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/copy-project.html">
+     Copy a Project
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/export-project.html">
+     Export a Project
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../stacks/stacks.html">
+   Stacks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../stacks/using-stacks.html">
+     Using Stacks
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../stacks/stack-planning.html">
+     Stack planning
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../stacks/create-stack.html">
+     Create a Stack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../stacks/modify-stack.html">
+     Modify a Stack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../stacks/update-stack.html">
+     Update a Stack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../stacks/switch-stack.html">
+     Switch Project to New Stack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../packs/packs.html">
+   Starter Packs
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../packs/create-starter-pack.html">
+     Create Starter Pack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../packs/starter-pack-guidelines.html">
+     Starter Pack Guidelines
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../packs/update-starter-pack.html">
+     Update a Starter Pack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../workspace/workspace.html">
+   IDE Workspace
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../workspace/panels.html">
+     Panels, Tabs, and Layouts
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../workspace/open-file.html">
+     Open a File
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../workspace/upload-download-files.html">
+     Upload and Download Files
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../workspace/add-delete-folders.html">
+     Add and Delete Folders
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../workspace/add-delete-files.html">
+     Add and Delete Files
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../editing/code-editing.html">
+   Code Editing Features
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/abbreviations.html">
+     Abbreviations
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/autocomplete.html">
+     Autocomplete
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/av-chat.html">
+     Audio Video Chat
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/code-beautifier.html">
+     Code Beautifier
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/color-picker.html">
+     Color Picker and Preview
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/command-bar.html">
+     Command Bar
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/connect-github-codio.html">
+     Connecting a Codio Box to a GitHub Repo
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/cursor.html">
+     Cursor Features
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/git.html">
+     Git and GitHub
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/junit.html">
+     JUnit Testing Framework
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/keyboard-shortcuts.html">
+     Keyboard Shortcuts
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/force-language-highlighting.html">
+     Language Highlighting
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/preview.html">
+     Preview
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/quick-open.html">
+     Quick Open
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/real-time-collaboration.html">
+     Real-Time Code Collaboration
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/save-files.html">
+     Save Files
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/search-replace.html">
+     Search and Replace
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/share-project.html">
+     Share Project
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/vscode.html">
+     VSCode
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../tools/dyslexia.html">
+   Tools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../tools/lexikon.html">
+     Lexikon
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../tools/code-playback.html">
+     Code Playback
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../tools/code-commenting.html">
+     Code Commenting
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="deployment.html">
+   IDE Tools
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Git Hub API
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ssh.html">
+     Remote SSH Terminal Access
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="desktopapp.html">
+     Desktop App
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../boxes/overview.html">
+   IDE Box Overview
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/ide-access-permissions.html">
+     IDE Access Permissions
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/terminal.html">
+     Terminal Window
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/ext-access.html">
+     External Access to Boxes and Ports
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/always-on.html">
+     Always-On Boxes
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/restart-reset.html">
+     Restart or Reset Box
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/runmenu.html">
+     Customize Run Button
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/startup.html">
+     Autostart Services
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../boxes/installsw/install-software.html">
+   Installing Software Packages
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/installsw/file-locations.html">
+     File and Software Locations
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/installsw/default-installed.html">
+     Preinstalled Software Packages
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/installsw/parts-coding.html">
+     Add Your Own Software Packages
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/installsw/langserver.html">
+     Language Server Protocol
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/installsw/gui.html">
+     GUI Based Output
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../debugger/debugger.html">
+   Debugger
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../debugger/create-debug-target.html">
+     Create and Manage Debugger Targets
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../debugger/start-debug.html">
+     Start Debug Session
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+            
+            
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="deployment.html" title="previous page">
+      <i class="left-prev-icon icon fa fa-angle-left"></i>
+      <span class="left-prev-title">Previous</span>
+    </a>
+    <a class='right-next' id="next-link" href="ssh.html" title="next page">
+      <span class="right-next-title">Next</span>
+      <i class="right-next-icon icon fa fa-angle-right"></i>
+    </a>
+
+              </div>
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="git-hub-api">
+<span id="gh-api"></span><h1>Git Hub API<a class="headerlink" href="#git-hub-api" title="Permalink to this headline">¶</a></h1>
+<p>The Git Hub API can be used with <a class="reference external" href="https://github.com/features/actions">Git Hub Actions</a> to automate the publication of assignments.</p>
+<p>You are able to create your assignments in Codio, connect the box to your GH repo and when merging your branch to master will be able to automatically publish the Codio assignment.</p>
+<div class="section" id="set-up-github-api-integration">
+<h2>Set up GitHub API Integration<a class="headerlink" href="#set-up-github-api-integration" title="Permalink to this headline">¶</a></h2>
+<p>Create your API integration in the Organization-&gt;Integrations area. This is only available to users with
+<span class="xref std std-ref">Admin</span> rights.</p>
+<div class="figure align-default">
+<img alt="api integration" src="../../../../_images/gh_int.png" />
+</div>
+<p>The name of the integration is added to the <span class="xref std std-ref">version history</span> record. There is no limit to the number you can create so you can use the ID’s in your individual GH repo or use in your GH account to apply to all repos</p>
+</div>
+<div class="section" id="api-integration-information">
+<h2>API Integration information<a class="headerlink" href="#api-integration-information" title="Permalink to this headline">¶</a></h2>
+<p>Click on the created integration to view the Client and Secret ID’s where you can copy to clipboard to add into your GH account</p>
+<div class="figure align-default">
+<img alt="api integration" src="../../../../_images/gh_show.png" />
+</div>
+<p>The secret ID can be regenerated if required to manage/control access to publishing the codio assignment.</p>
+</div>
+<div class="section" id="adding-id-s-to-github-account">
+<h2>Adding ID’s to GitHub account<a class="headerlink" href="#adding-id-s-to-github-account" title="Permalink to this headline">¶</a></h2>
+<p>In your repo go to <strong>Settings -&gt; Secrets</strong> and create Client ID and Secret ID copying in from your Codio integration.</p>
+<div class="figure align-default">
+<img alt="GH secret" src="../../../../_images/gh_secrets.png" />
+</div>
+<p>To create secrets for your organization’s repo (these will apply to all repos in the account and be available for all collaborators), see <a class="reference external" href="https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-an-organization/">encrypted secrets for an organization</a>. To create these for an individual repo,, click on <strong>New repository secret</strong> and create your secret keys.</p>
+<p>We recommend you that you use the words Client or Secret when you name each key to identify which one it is and also use the name to indicate if the key is for an individual repository or for all repos in an organization.</p>
+</div>
+<div class="section" id="implementing-workflow-actions">
+<h2>Implementing workflow actions<a class="headerlink" href="#implementing-workflow-actions" title="Permalink to this headline">¶</a></h2>
+<p>From your repository on GitHub or within your project, create a new file in the .github/workflows directory with the extension <code class="docutils literal notranslate"><span class="pre">.yml</span></code> and configure
+for use.</p>
+<p>See <a class="reference external" href="https://docs.github.com/en/actions/quickstart">Quickstart for GitHub actions</a></p>
+<div class="section" id="example-yml-file-for-publishing-a-project-to-an-assignment">
+<h3>Example .yml file for publishing a project to an assignment<a class="headerlink" href="#example-yml-file-for-publishing-a-project-to-an-assignment" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">codio-publish</span>
+<span class="c1"># Run this workflow every time a new commit pushed to your repository branch noted below</span>
+<span class="nt">on</span><span class="p">:</span>
+  <span class="nt">push</span><span class="p">:</span>
+    <span class="nt">branches</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
+
+  <span class="nt">build</span><span class="p">:</span>
+  <span class="c1"># Set the type of machine to run on - do not change this. Any warnings you may see in workflow actions can be ignored</span>
+    <span class="nt">runs-on</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+    <span class="nt">steps</span><span class="p">:</span>
+    <span class="c1"># Checks out a copy of your repository on the ubuntu-latest machine</span>
+      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Checkout</span>
+        <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
+
+      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Cleanup</span>
+     <span class="c1"># removes the following files/folders when publishing</span>
+        <span class="nt">run</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">rm -rf README.md</span>
+
+      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Publish to Codio</span>
+        <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">codio/codio-assignment-publish-action@master</span>
+        <span class="nt">with</span><span class="p">:</span>
+          <span class="c1"># Use the ID&#39;s from the secrets below</span>
+          <span class="nt">client-id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">${{ secrets.CODIO_PRODUCTION_CLIENT_ID }}</span>
+          <span class="nt">secret-id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">${{ secrets.CODIO_PRODUCTION_SECRET_ID }}</span>
+          <span class="nt">dir</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./</span>
+          <span class="nt">course-id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">d5acfd16bb506756595cef3399e1d4</span>
+          <span class="nt">assignment-id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3b52656756565656cd19a4b869b8</span>
+          <span class="c1"># You can also use course-name or assignment-name to reference the course/assignment if you prefer</span>
+          <span class="c1"># course-name: your course name</span>
+          <span class="c1"># assignment-name: your assignment name</span>
+          <span class="nt">changelog</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">${{ github.event.head_commit.message }}</span>
+          <span class="c1"># Set the domain you are working on - codio.com or codio.co.uk</span>
+          <span class="nt">domain</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">codio.com</span>
+</pre></div>
+</div>
+<div class="section" id="get-the-course-and-assignment-id">
+<span id="get-course-assignment-id"></span><h4>Get the Course and Assignment ID<a class="headerlink" href="#get-the-course-and-assignment-id" title="Permalink to this headline">¶</a></h4>
+<p>The course/assignment id’s are found from the URL in your browser when opening the assignment when on the <strong>Overview</strong> tab.  The assignments need to be published to get this information whether using the course/assignment id’s or the course/assignment names.</p>
+<div class="figure align-default">
+<img alt="Course/assignment id" src="../../../../_images/course_assignment_id.png" />
+</div>
+</div>
+</div>
+<div class="section" id="publishing-projects-into-multiple-assignments">
+<span id="gh-multiple"></span><h3>Publishing projects into multiple assignments<a class="headerlink" href="#publishing-projects-into-multiple-assignments" title="Permalink to this headline">¶</a></h3>
+<p>If you have a large project, you can use the same methodology to publish the project into multiple assignments in as many different modules as you required.</p>
+<div class="section" id="mapping-your-project-structure-into-the-individual-assignments">
+<h4>Mapping your project structure into the individual assignments<a class="headerlink" href="#mapping-your-project-structure-into-the-individual-assignments" title="Permalink to this headline">¶</a></h4>
+<p>From your repository on GitHub or within your project, create a new folder in the .github/workflows directory and within that create individual <code class="docutils literal notranslate"><span class="pre">.yml</span></code> files for each of the assignments you wish to publish the project into, defining the ‘assignment’, ‘section’ and ‘paths’.  It is these files that define what Chapters/Sections/Files from the main project are published into individual assignments</p>
+</div>
+<div class="section" id="example-yml-file-mapping-section-from-project-into-individual-assignments">
+<h4>Example .yml file mapping section from project into individual assignments:<a class="headerlink" href="#example-yml-file-mapping-section-from-project-into-individual-assignments" title="Permalink to this headline">¶</a></h4>
+<div class="figure align-default">
+<img alt="Guides set up" src="../../../../_images/guidessetup.png" />
+</div>
+<p>Based on the above image, to split the project into 3 separate assignments requires 3 <code class="docutils literal notranslate"><span class="pre">.yml</span></code> files in the mapping folder set above</p>
+<p>To publish Chapter 1, Section 1.1 into an assignment:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># the id of assignment 1</span>
+<span class="p p-Indicator">-</span> <span class="nt">assignment</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">617c4f1cf9dcb8764hjk97100a980a09</span>
+<span class="c1"># or use the assignment name of assignment 1</span>
+<span class="c1"># - assignmentName: your assignment name</span>
+<span class="c1"># the section from guides, where both the Chapter and Section names are set in Guides</span>
+  <span class="nt">section</span><span class="p">:</span>  <span class="p p-Indicator">[</span><span class="s">&quot;Chapter</span><span class="nv"> </span><span class="s">1&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;Section</span><span class="nv"> </span><span class="s">1.1&quot;</span><span class="p p-Indicator">]</span>
+<span class="c1"># to include all files contained in the folder Section 1.1</span>
+  <span class="nt">paths</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&#39;Section</span><span class="nv"> </span><span class="s">1.1/**&#39;</span><span class="p p-Indicator">]</span>
+</pre></div>
+</div>
+<p>To publish Chapter 2, Section 2.1 and Chapter 2, Section 2.2 into an assignment:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># the id of assignment 2</span>
+<span class="p p-Indicator">-</span> <span class="nt">assignment</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">36f5f6d99f69a7dc65f5ce8d619e8494</span>
+<span class="c1"># or use the assignment name of assignment 2</span>
+<span class="c1"># - assignmentName: your assignment name</span>
+<span class=" -Error"> </span><span class="nt">section</span><span class="p">:</span>  <span class="p p-Indicator">[</span><span class="s">&quot;Chapter</span><span class="nv"> </span><span class="s">2&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;Section</span><span class="nv"> </span><span class="s">2.1&quot;</span><span class="p p-Indicator">]</span>
+  <span class="nt">paths</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&#39;Section</span><span class="nv"> </span><span class="s">2.1/**&#39;</span><span class="p p-Indicator">]</span>
+
+<span class="c1"># to include another section from guides in the assignment</span>
+<span class="p p-Indicator">-</span> <span class="nt">assignment</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">36f5f6d99f69a7dc65f5ce8d619e8494</span>
+<span class="c1"># or use the assignment name of assignment 2</span>
+<span class="c1"># - assignmentName: your assignment name</span>
+  <span class="nt">section</span><span class="p">:</span>  <span class="p p-Indicator">[</span><span class="s">&quot;Chapter</span><span class="nv"> </span><span class="s">2&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;Section</span><span class="nv"> </span><span class="s">2.2&quot;</span><span class="p p-Indicator">]</span>
+
+  <span class="nt">paths</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&#39;Section</span><span class="nv"> </span><span class="s">2.2/**&#39;</span><span class="p p-Indicator">]</span>
+</pre></div>
+</div>
+<p>To publish Chapter 3, Section 3.1 into an assignment:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">assignment</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">399098453265fb2c3eca360db6f5e462f</span>
+<span class="c1"># or use the assignment name of assignment 3</span>
+<span class="c1"># - assignmentName: your assignment name 3</span>
+  <span class="nt">section</span><span class="p">:</span>  <span class="p p-Indicator">[</span><span class="s">&quot;Chapter</span><span class="nv"> </span><span class="s">3&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;Section</span><span class="nv"> </span><span class="s">3.1&quot;</span><span class="p p-Indicator">]</span>
+  <span class="c1"># will show all files set to be visible whether within a folder shown for the student or in the workspace</span>
+  <span class="nt">paths</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&#39;**&#39;</span><span class="p p-Indicator">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-yml-workflow-actions-file-for-publishing-into-multiple-assignments">
+<h4>Example .yml workflow actions file for publishing into multiple assignments:<a class="headerlink" href="#example-yml-workflow-actions-file-for-publishing-into-multiple-assignments" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">codio-publish</span>
+<span class="c1"># Run this workflow every time a new commit pushed to your repository branch noted below</span>
+<span class="nt">on</span><span class="p">:</span>
+  <span class="nt">push</span><span class="p">:</span>
+    <span class="nt">branches</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
+
+  <span class="nt">build</span><span class="p">:</span>
+  <span class="c1"># Set the type of machine to run on - do not change this. Any warnings you may see in workflow actions can be ignored</span>
+    <span class="nt">runs-on</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+    <span class="nt">steps</span><span class="p">:</span>
+    <span class="c1"># Checks out a copy of your repository on the ubuntu-latest machine</span>
+      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Checkout</span>
+        <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
+
+      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Cleanup</span>
+     <span class="c1"># removes the following files/folders when publishing</span>
+        <span class="nt">run</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">rm -rf README.md</span>
+
+      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Publish to Codio</span>
+        <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">codio/codio-assignment-publish-action@master</span>
+        <span class="nt">with</span><span class="p">:</span>
+        <span class="c1"># Use the ID&#39;s from the secrets below</span>
+          <span class="nt">client-id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">${{ secrets.CODIO_PRODUCTION_CLIENT_ID }}</span>
+          <span class="nt">secret-id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">${{ secrets.CODIO_PRODUCTION_SECRET_ID }}</span>
+          <span class="nt">dir</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./</span>
+          <span class="nt">course-id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">d5acfd16bb506756595cef3399e1</span>
+        <span class="c1"># You can also use course-name or assignment-name to reference the course</span>
+          <span class="c1"># course-name: your course name</span>
+          <span class="nt">changelog</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">${{ github.event.head_commit.message }}</span>
+          <span class="c1"># the location of your yaml mapping files</span>
+          <span class="nt">yml</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./.github/yaml_map</span>
+          <span class="c1"># Set the domain you are working on - codio.com or codio.co.uk</span>
+          <span class="nt">domain</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">codio.com</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The ‘assignment-id’ or ‘assignmentName’ field is not required when publishing to multiple assignments. The mapping of the content from the project to the individual assignments is managed by the files in the ‘yml’ location</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="working-with-gh-api">
+<h2>Working with GH API<a class="headerlink" href="#working-with-gh-api" title="Permalink to this headline">¶</a></h2>
+<p>The basic premise is that when updating your Codio assignment, you connect to your GH repo and create a new branch. Make your required changes and push to your repo.
+When you then merge your branch to the master branch, the GH workflow runs and publishes your Codio assignment. Progress/errors can be reviewed from the <strong>Actions</strong> area in your repo
+It is recommended when you merge, that you select the option <strong>Squash and Merge</strong> as you can combine all your merge request’s commits into one and retain a clean history.</p>
+</div>
+<div class="section" id="working-with-gh-api-in-staging">
+<h2>Working with GH API in staging<a class="headerlink" href="#working-with-gh-api-in-staging" title="Permalink to this headline">¶</a></h2>
+<p>Your <code class="docutils literal notranslate"><span class="pre">.yml</span></code> file is commonly set up to execute against merges into the master branch but can be changed to execute when other branches merged and the codio assignment to be updated can be managed by reviewing/changing the course/assignment ids</p>
+</div>
+</div>
+
+
+              </div>
+              
+
+          </main>
+          
+
+      </div>
+    </div>
+    
+  <script src="../../../../_static/js/index.44f2d10023dc91dde182.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright Codio 2023. All Rights Reserved.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

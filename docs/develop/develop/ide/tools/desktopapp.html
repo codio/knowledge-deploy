@@ -1,0 +1,813 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="An overview of the Codio desktop app" name="description" />
+
+    <title>Desktop App &#8212;   documentation</title>
+    
+  <link href="../../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../../_static/css/index.a51115b1206b8cbfeff9cff2c3058b7d.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.15.3/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/codio.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/search.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+    
+  <link rel="preload" as="script" href="../../../../_static/js/index.44f2d10023dc91dde182.js">
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    <script defer="defer" src="../../../../_static/js/algolia.js"></script>
+    <link rel="canonical" href="https://docs.codio.com/develop/develop/ide/tools/desktopapp.html" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="IDE Box Overview" href="../boxes/overview.html" />
+    <link rel="prev" title="Remote SSH Terminal Access" href="ssh.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-dark-codio navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../../student.html">
+  <img src="../../../../_static/logo-white.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../accessing-codio.html">
+  Accessing Codio
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../courses.html">
+  Your Courses
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../tools.html">
+  Tools
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../../../develop.html">
+  Developing Code
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        <div id="docsearch"></div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../projects/projects.html">
+   Developing Code
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project-permissions.html">
+     Project Permissions
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project-settings.html">
+     Project Settings
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/create-import-project.html">
+     Create or Import a Project
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/access-projects.html">
+     Access Projects
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/copy-project.html">
+     Copy a Project
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/export-project.html">
+     Export a Project
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../stacks/stacks.html">
+   Stacks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../stacks/using-stacks.html">
+     Using Stacks
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../stacks/stack-planning.html">
+     Stack planning
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../stacks/create-stack.html">
+     Create a Stack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../stacks/modify-stack.html">
+     Modify a Stack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../stacks/update-stack.html">
+     Update a Stack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../stacks/switch-stack.html">
+     Switch Project to New Stack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../packs/packs.html">
+   Starter Packs
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../packs/create-starter-pack.html">
+     Create Starter Pack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../packs/starter-pack-guidelines.html">
+     Starter Pack Guidelines
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../packs/update-starter-pack.html">
+     Update a Starter Pack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../workspace/workspace.html">
+   IDE Workspace
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../workspace/panels.html">
+     Panels, Tabs, and Layouts
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../workspace/open-file.html">
+     Open a File
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../workspace/upload-download-files.html">
+     Upload and Download Files
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../workspace/add-delete-folders.html">
+     Add and Delete Folders
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../workspace/add-delete-files.html">
+     Add and Delete Files
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../editing/code-editing.html">
+   Code Editing Features
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/abbreviations.html">
+     Abbreviations
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/autocomplete.html">
+     Autocomplete
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/av-chat.html">
+     Audio Video Chat
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/code-beautifier.html">
+     Code Beautifier
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/color-picker.html">
+     Color Picker and Preview
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/command-bar.html">
+     Command Bar
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/connect-github-codio.html">
+     Connecting a Codio Box to a GitHub Repo
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/cursor.html">
+     Cursor Features
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/git.html">
+     Git and GitHub
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/junit.html">
+     JUnit Testing Framework
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/keyboard-shortcuts.html">
+     Keyboard Shortcuts
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/force-language-highlighting.html">
+     Language Highlighting
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/preview.html">
+     Preview
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/quick-open.html">
+     Quick Open
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/real-time-collaboration.html">
+     Real-Time Code Collaboration
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/save-files.html">
+     Save Files
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/search-replace.html">
+     Search and Replace
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/share-project.html">
+     Share Project
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../editing/vscode.html">
+     VSCode
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../tools/dyslexia.html">
+   Tools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../tools/lexikon.html">
+     Lexikon
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../tools/code-playback.html">
+     Code Playback
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../tools/code-commenting.html">
+     Code Commenting
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="deployment.html">
+   IDE Tools
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="ghapi.html">
+     Git Hub API
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ssh.html">
+     Remote SSH Terminal Access
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Desktop App
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../boxes/overview.html">
+   IDE Box Overview
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/ide-access-permissions.html">
+     IDE Access Permissions
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/terminal.html">
+     Terminal Window
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/ext-access.html">
+     External Access to Boxes and Ports
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/restart-reset.html">
+     Restart or Reset Box
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/runmenu.html">
+     Customize Run Button
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/startup.html">
+     Autostart Services
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../boxes/installsw/install-software.html">
+   Installing Software Packages
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/installsw/file-locations.html">
+     File and Software Locations
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/installsw/default-installed.html">
+     Preinstalled Software Packages
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/installsw/parts-coding.html">
+     Add Your Own Software Packages
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/installsw/langserver.html">
+     Language Server Protocol
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/installsw/gui.html">
+     GUI Based Output
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../debugger/debugger.html">
+   Debugger
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../debugger/create-debug-target.html">
+     Create and Manage Debugger Targets
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../debugger/start-debug.html">
+     Start Debug Session
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+            
+            
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="ssh.html" title="previous page">
+      <i class="left-prev-icon icon fa fa-angle-left"></i>
+      <span class="left-prev-title">Previous</span>
+    </a>
+    <a class='right-next' id="next-link" href="../boxes/overview.html" title="next page">
+      <span class="right-next-title">Next</span>
+      <i class="right-next-icon icon fa fa-angle-right"></i>
+    </a>
+
+              </div>
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="desktop-app">
+<span id="id1"></span><h1>Desktop App<a class="headerlink" href="#desktop-app" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://www.codio.com/download">Click here</a> to go to the download page and install to your local machine</p>
+<iframe src="https://player.vimeo.com/video/273506364" width="640" height="436" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe><p>The desktop app is to allow a local code workspace to synchronize with a Codio box.</p>
+<p>Assignments/Projects from the <a class="reference internal" href="../../../../students/courses/navigate-student-dashboard.html#navigate-student-dashboard"><span class="std std-ref">Courses dashboard</span></a> My Projects area can be connected.</p>
+<p>A Codio account is required</p>
+<div class="section" id="excluding-files">
+<h2>Excluding files<a class="headerlink" href="#excluding-files" title="Permalink to this headline">¶</a></h2>
+<p>Files/folders can be excluded from synchronisation by using <cite>.codioignore`</cite> file in the source project. Enter on a new line the file/folders to be excluded defining them relative to the location of he <code class="docutils literal notranslate"><span class="pre">.codioignore</span></code> file and defining folders with <code class="docutils literal notranslate"><span class="pre">/</span></code></p>
+<p>For example if the <code class="docutils literal notranslate"><span class="pre">.codioignore</span></code> file is located in the project workspace and you wish to exclude</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">bin</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">node_modules</span></code> folder</p></li>
+<li><p>the file <code class="docutils literal notranslate"><span class="pre">error.jade</span></code> in the <code class="docutils literal notranslate"><span class="pre">views</span></code> folder</p></li>
+<li><p>the files <code class="docutils literal notranslate"><span class="pre">app.js</span></code> and <code class="docutils literal notranslate"><span class="pre">README.md</span></code></p></li>
+</ul>
+<p>the <code class="docutils literal notranslate"><span class="pre">.codioignore</span></code> file will be</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="nb">bin</span>
+<span class="o">/</span><span class="n">node_modules</span>
+<span class="o">/</span><span class="n">views</span><span class="o">/</span><span class="n">error</span><span class="o">.</span><span class="n">jade</span>
+<span class="n">app</span><span class="o">.</span><span class="n">js</span>
+<span class="n">README</span><span class="o">.</span><span class="n">md</span>
+</pre></div>
+</div>
+<div class="figure align-default">
+<img alt="codioignore" src="../../../../_images/codioignore.png" />
+</div>
+<p>Please note that the <code class="docutils literal notranslate"><span class="pre">.codioignore</span></code> file is included in the desktop app files.</p>
+<p>If students wish to exclude files when pushing back to their Codio account they can do so, either by editing any existing <code class="docutils literal notranslate"><span class="pre">.codioignore``file</span> <span class="pre">or</span> <span class="pre">creating</span> <span class="pre">the</span> <span class="pre">file</span> <span class="pre">themselves.</span> <span class="pre">If</span> <span class="pre">the</span> <span class="pre">teacher</span> <span class="pre">creates</span> <span class="pre">the</span> <span class="pre">``.codioignore</span></code> file, adding a ‘comment’ line to the top of the file to make it clear to any students what they should not change could help avoid potential problems. A line starting with <code class="docutils literal notranslate"><span class="pre">#</span></code> serves as a comment</p>
+</div>
+<div class="section" id="starting-the-app">
+<h2>Starting the app<a class="headerlink" href="#starting-the-app" title="Permalink to this headline">¶</a></h2>
+<p>When first starting the app you need to choose the server to connect to. In most cases this will be <strong>https://codio.com</strong> but if you are in the United Kingdom/Europe, it maybe <strong>https://codio.co.uk</strong>.</p>
+<div class="figure align-default">
+<img alt="desktop server" src="../../../../_images/desktop_server.png" />
+</div>
+<p>You can check by logging into your Codio account in your browser and you will see the server domain noted there</p>
+<p>Having selected the server log in using your codio credentials.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>that if you usually access Codio through an <span class="xref std std-ref">LMS</span>, you may not have a Codio account password set. If that is the case, go to the online login screen where you can go through the <a class="reference internal" href="../../../settings/manage-password.html#password"><span class="std std-ref">lost password</span></a> process to define a Codio account password. We would then recommend you log into your account online and change this password to one you will remember in the future. Setting a Codio account password will not effect or change how you currently access Codio via your LMS</p>
+</div>
+</div>
+<div class="section" id="accessing-and-connecting-to-your-online-content">
+<h2>Accessing and connecting to your online content<a class="headerlink" href="#accessing-and-connecting-to-your-online-content" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default">
+<img alt="desktop options" src="../../../../_images/desktop_options.png" />
+</div>
+<p>When logged in you first see a list of all courses you are a member of and can access your content either from <strong>Courses</strong> or <strong>My Projects</strong> area.</p>
+<p>To pull the code, click on your course or My Projects</p>
+<div class="figure align-default">
+<img alt="desktop connect" src="../../../../_images/desktop_connect.png" />
+</div>
+<p>and then select either:</p>
+<ul class="simple">
+<li><p><strong>connect</strong> - to pull all the code from the selected assignment to a folder on your PC that you define.</p></li>
+</ul>
+<p><img alt="desktop workspace" src="../../../../_images/desktop_workspace.png" />.</p>
+<ul class="simple">
+<li><p><strong>Open in Codio</strong> - to open the assignment in your Codio account</p></li>
+</ul>
+<p>When connecting, browse to a folder on your PC where you would like to store the code and pull the content</p>
+</div>
+<div class="section" id="managing-your-offline-content">
+<h2>Managing your offline content<a class="headerlink" href="#managing-your-offline-content" title="Permalink to this headline">¶</a></h2>
+<p>When you have connected you can then push/pull/open the assignment in Codio and manage the local workspace folder settings.</p>
+<div class="figure align-default">
+<img alt="desktop connected" src="../../../../_images/desktop_connected.png" />
+</div>
+<p><strong>1.</strong> Click the <strong>pull</strong> button to pull content in from your Codio account. <strong>Note</strong> Any files you already have stored locally will be overwritten</p>
+<p><strong>2.</strong> Click the <strong>push</strong> button to push the content from your local workspace folder back to your Codio account. <strong>Note</strong> This will overwrite the project/assignment in your Codio account. And If you see ‘Cannot write to project’ message, this is due to the assignment/project being Read Only and it is not possible to push and write to the assignment/project.  In such a case, use the ‘Open in Codio’ button to access/view the assignment/project.</p>
+<p><strong>3.</strong> Click the <strong>Open in Codio</strong> button to open your assignment in a browser tab. This can be useful if you wish to compare what you have stored locally to what you last pulled from your Codio account</p>
+<p><strong>4.</strong> Click the <strong>folder</strong> icon to manage your local workspace folder settings</p>
+<p><strong>5.</strong>  Students can enable the <strong>Auto upload</strong> button to turn it on and the code/file changes in their local repository would be automatically pushed in the remote Codio box. If the users add files to their Codio account, they need to ‘pull’ to get them into their local folder even if auto upload is enabled that just ‘pushes’ their changes (automatically without manual intervention) made to the files/codes in their local machine.</p>
+<p>However, when it is  enabled for the first time in the app this would take a while to be fully functioning (establishing connection with the remote server).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Students can turn it on when they have the app running but it won’t remember it so if they close and restart the app again later they will need to turn it on again.</p>
+</div>
+</div>
+<div class="section" id="local-workspace-folder-settings">
+<h2>Local workspace folder settings<a class="headerlink" href="#local-workspace-folder-settings" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default">
+<img alt="desktop workspace settings" src="../../../../_images/desktop_worspacesettings.png" />
+</div>
+<p><strong>1.</strong> Click the <strong>Open the folder</strong> button to open the folder containing your local files</p>
+<p><strong>2.</strong> Click the <strong>Change folder</strong> button to change the folder storing your local files. <strong>Note</strong> the content of the previous folder will not be automatically copied or transferred to the newly selected folder. If you wish to do this, you should return to the previous screen and <strong>pull</strong> to that new folder</p>
+<p><strong>3.</strong> Click the <strong>Disconnect</strong> button to disconnect the assignment from your Codio account. You will be returned to the previous screen where you can then
+connect the assignment again if you wish</p>
+</div>
+</div>
+
+
+              </div>
+              
+
+          </main>
+          
+
+      </div>
+    </div>
+    
+  <script src="../../../../_static/js/index.44f2d10023dc91dde182.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright Codio 2023. All Rights Reserved.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,774 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Using a standard code test, student code is executed and the output is compared to an expected output." name="description" />
+
+    <title>Standard Code Test &#8212;   documentation</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.a51115b1206b8cbfeff9cff2c3058b7d.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.15.3/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code-tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/codio.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/search.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.44f2d10023dc91dde182.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/code-tabs.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    <script defer="defer" src="../../../_static/js/algolia.js"></script>
+    <link rel="canonical" href="https://docs.codio.com/instructors/authoring/assessments/standard-code-test.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Advanced Code Test" href="advanced-code-test.html" />
+    <link rel="prev" title="Edit Assessment Points" href="edit-assessment-points.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-dark-codio navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../index.html">
+  <img src="../../../_static/logo-white.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../getstarted.html">
+  Overview
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../../authoring.html">
+  Authoring
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../common.html">
+  Developing Code
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../setupcourses.html">
+  Courses Set up
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../teaching.html">
+  Teaching
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../admin.html">
+  Admin
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        <div id="docsearch"></div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../guides/intro.html">
+   Authoring
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/project_book.html">
+     Project or course assignment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/author_student.html">
+     Author and student views
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/toc.html">
+     Table of contents management
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/page_editing.html">
+     Page editing overview
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/authoring_guidelines.html">
+     Authoring Guidelines
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/markdown_content.html">
+     Markdown content editing
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/previewing_content.html">
+     Previewing content
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/html_content.html">
+     HTML content editing
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/teacher_only.html">
+     Teacher only content
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/solution_templating.html">
+     Solution File Templating
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/freeze_code.html">
+     Freezing Code
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/custom_button.html">
+     Custom Buttons in Guides
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/add_media.html">
+     Adding media
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/open_close_content.html">
+     Open/close tabs from content
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/hide_folders.html">
+     Hiding folders
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/excludingfiles.html">
+     Excluding Files/Folders
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/latex.html">
+     Latex for math expressions
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/cpumemdisk.html">
+     System Resources
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../guides/settings/page.html">
+   Guides Settings and Page actions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/settings/opentabs.html">
+     Open tabs
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/settings/assessments.html">
+     Assessment Settings
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/settings/media.html">
+     Media Settings for a Guide
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/settings/global.html">
+     Global Guide Settings
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="add-assessment.html">
+   Auto-graded assessments
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="assessments.html">
+     Assessments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="student-submission.html">
+     Student submission options
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assessment-security.html">
+     Assessment Security
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="auto-grade-scripts.html">
+     Assignment Level Scripts
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="parameterized.html">
+     Parameterized assessments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="delete-assessment.html">
+     Delete an Assessment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="edit-assessment.html">
+     Edit an Assessment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="duplicate-assessment.html">
+     Duplicate an Assessment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="edit-assessment-points.html">
+     Edit Assessment Points
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Standard Code Test
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="advanced-code-test.html">
+     Advanced Code Test
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="partial-points.html">
+     Partial Points
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="multiple-choice.html">
+     Multiple Choice
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fill-in-blanks.html">
+     Fill in the Blanks
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="free-text.html">
+     Free Text
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="autograde-free-text.html">
+     Free Text Autograde
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="grade-book.html">
+     Grade Book
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="parsons-puzzle.html">
+     Parsons Puzzle
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="random.html">
+     Random Assessment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="math-assessments.html">
+     Math Assessments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ungraded-assessments.html">
+     Ungraded Assessments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sense-network.html">
+     Sense Network
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../setupcourses/library/assessmentslibrary.html">
+   Assessments Libraries
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/library/global-library.html">
+     Codio Global Assessments Library
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/library/search-library.html">
+     Search Assessments Library
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/library/add-questions-from-library.html">
+     Add Questions from Assessments Library
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/library/add-questions-to-library.html">
+     Add Questions to an Assessments Library
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/library/unlink-assessment.html">
+     Unlink an Assessment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/library/update-assess-from-library.html">
+     Update an Existing Assessment in Library
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+            
+            
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="edit-assessment-points.html" title="previous page">
+      <i class="left-prev-icon icon fa fa-angle-left"></i>
+      <span class="left-prev-title">Previous</span>
+    </a>
+    <a class='right-next' id="next-link" href="advanced-code-test.html" title="next page">
+      <span class="right-next-title">Next</span>
+      <i class="right-next-icon icon fa fa-angle-right"></i>
+    </a>
+
+              </div>
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="standard-code-test">
+<span id="id1"></span><h1>Standard Code Test<a class="headerlink" href="#standard-code-test" title="Permalink to this headline">¶</a></h1>
+<p>Standard code tests are dialog driven, where you specify input data and the expected output. Codio then executes the student code, supplies the specified input data, and compares the expected output to the student code’s actual output.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>The output (including white space) of all the test cases in your Standard Code test cannot exceed 20,000 characters</strong>.
+If your output will exceed this limit, or you need finer control of the tests, you can create custom code tests. See <a class="reference internal" href="advanced-code-test.html#advanced-code-test"><span class="std std-ref">Advanced Code Tests</span></a> for more information.</p>
+</div>
+<p>Codio provides a Starter Pack project that contains examples for all assessment types and a guides authoring cheat sheet. Go to <strong>Starter Packs</strong> and search for <strong>Demo Guides and Assessments</strong> if not already loaded in your <strong>My Projects</strong> area. Click <strong>Use Pack</strong> and then <strong>Create</strong> to install it to your Codio account.</p>
+<p>For more information about adding a Standard Code Test, view this video</p>
+<script src="https://fast.wistia.com/embed/medias/dwts4k9ftt.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_dwts4k9ftt videoFoam=true" style="height:100%;position:relative;width:100%"><div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;"><img src="https://fast.wistia.com/embed/medias/dwts4k9ftt/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" /></div></div></div></div><p>Follow these steps to set up a standard code test:</p>
+<ol class="arabic">
+<li><p>On the <strong>General</strong> page, enter the following information:</p>
+<img alt="General" src="../../../_images/assessment_general.png" />
+<ul>
+<li><p><strong>Name</strong> - Enter a short name that describes the test. This name is displayed in the teacher dashboard so the name should reflect the challenge and thereby be clear when reviewing.</p>
+<p>Toggle the <strong>Show Name</strong> setting to hide the name in the challenge text the student sees.</p>
+</li>
+<li><p><strong>Instructions</strong> - Enter text that is shown to the student using optional Markdown formatting.</p></li>
+</ul>
+</li>
+<li><p>Click <strong>Execution</strong> in the navigation pane and complete the following information:</p>
+<img alt="Execution" src="../../../_images/assessment_sct_execution.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you store the assessment scripts in the <strong>.guides/secure</strong> folder, they run securely and students cannot see the script or the files in the folder.
+The files can be dragged and dropped from the File Tree into the field to automatically populate the necessary execution and run code.</p>
+</div>
+</li>
+</ol>
+<blockquote>
+<div><ul>
+<li><p><strong>Timeout</strong> - Where you can amend the timeout setting for the code to execute. Arrows will allow you to set max 300 (sec), if you require longer, you can manually enter the timeout period.</p></li>
+<li><p><strong>Command</strong> - Enter the command that executes the student code. This is usually a run command. If the <strong>Pre-exec command</strong> fails, the <strong>Command</strong> will not run.</p></li>
+<li><p><strong>Pre-exec command</strong> - Enter the command to execute before each test is run. This is usually a compile command.</p>
+<blockquote>
+<div><ul>
+<li><p><strong>Java</strong></p>
+<p>Compile: javac -cp path/to/file filename.java</p>
+<p>Run: java -cp path/to/file filename</p>
+</li>
+<li><p><strong>Python</strong></p>
+<p>Run: python path/to/file/filename.py</p>
+</li>
+<li><p><strong>C</strong></p>
+<p>Compile: gcc filename.c -o filename -lm</p>
+<p>Run: ./filename</p>
+</li>
+<li><p><strong>C++</strong></p>
+<p>Compile: g++ -o filename filename.cpp</p>
+<p>Run: ./filename</p>
+</li>
+<li><p><strong>Ruby</strong></p>
+<p>Run: ruby filename.rb</p>
+</li>
+<li><p><strong>Bash</strong></p>
+<p>Run: bash full_path.sh</p>
+</li>
+<li><p><strong>SQL</strong></p>
+<p>Codio provides three helper scripts to facilitate running queries on the database your students are modifying. These queries use ODBC to connect to and query the database and it is more strict about spacing than sqlcmd.</p>
+<p>Run: (depending on your version of SQL)</p>
+<p>python .guides/scripts/helper_mssql.py –db_host localhost –db_user  SA –db_pass YourPassword   –db_name DBNAME</p>
+<p>python .guides/scripts/helper_mysql.py –db_host localhost –db_user root –db_pass YourPassword –db_name DBNAME</p>
+<p>python .guides/scripts/helper_postgres.py –db_host localhost –db_port 5432 –db_user postgres –db_pass YourPassword –db_name DBNAME</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>First you must use <strong>Tools &gt; Install Software</strong> to install the appropriate helper script for your database (MSSQL,MySql,PostgreSQL). For example, if you are using MSSQL, you would download the Helper MSSql.</p>
+</div>
+<img alt="Install SQL Helper Script" src="../../../_images/sql-helpers.png" />
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<ol class="arabic" start="3">
+<li><p>Click <strong>Grading</strong> in the left navigation pane and complete the following fields:</p>
+<img alt="Grading" src="../../../_images/Grading-new-feature1.png" />
+</li>
+</ol>
+<blockquote>
+<div><ul>
+<li><p><strong>Points</strong> - The score given to the student if the code test passes. You can enter any positive numeric value. If this assessment should not be graded, enter 0 points.</p></li>
+<li><p><strong>Allow Partial Points</strong> - Toggle to enable partial points, the grade is then based on the percentage of test cases the code passes. See <a class="reference internal" href="partial-points.html#partial-points"><span class="std std-ref">Allow Partial Points</span></a> for more information.</p></li>
+<li><p><strong>Case Insensitive</strong> - Toggle to enable a case insensitive output comparison. By default, the comparison is case sensitive.</p></li>
+<li><p><strong>Ignore White Space</strong> - Toggle to enable stripping out any white space characters (carriage return, line feed, tabs, etc.) from both the expected output and the student output.</p></li>
+<li><p><strong>Substring Match</strong> - Toggle to enable substring match when comparing the expected output to the student output. The entire expected output needs to be contiguous in the student output.</p></li>
+<li><p><strong>Add Item to Check</strong> - Click to create another set of input/output fields.</p></li>
+<li><p><strong>Search</strong> - Search the test cases by the number/index assigned to it.</p></li>
+<li><p><strong>Expand All/Collapse All</strong> - Click to expand/collapse all test cases.</p></li>
+<li><p><strong>Input - Arguments</strong> - Enter the command line arguments that are read by the student code.</p></li>
+<li><p><strong>Use maximum score</strong> - Toggle to enable assessment final score to be the highest score attained of all runs.</p></li>
+<li><p><strong>Delete</strong> - Click to delete the test case.</p>
+<img alt="Input Arguments" src="../../../_images/std-assessment-args.png" />
+</li>
+<li><p><strong>Input - Stdin</strong> - Enter data that would be entered manually in the console. For example, Enter your Name:. If using this input method:</p>
+<ul>
+<li><p>The input data should have a new line if it would be expected in the actual program execution.</p></li>
+<li><p>In the <strong>Output</strong> field, the prompt text that is displayed to the user appears in <code class="docutils literal notranslate"><span class="pre">stdout</span></code> and should be reflected in your output field but without the data entered by the user. You do <strong>not</strong> need a new line in the output field between each input prompt as the new line character is part of the user input.</p></li>
+<li><p><strong>Ignore white space</strong> and <strong>Substring match</strong> are recommended options as they make the test more tolerant. The following image shows how to format input and output fields if you are <strong>not</strong> ignoring white space or doing a <strong>Substring match</strong>. Note how the input field only supplied the values to be input, not the prompt itself (which is actually a part of <cite>stdout</cite>). It is important to accurately account for all spaces and carriage returns.</p>
+<img alt="Input and Output Example" src="../../../_images/std-assessment-stdin.png" />
+</li>
+</ul>
+<blockquote>
+<div><p>The following image shows the more tolerant approach with the <strong>Ignore whitespace</strong> option set. In this case everything on its own line for readability. The whitespace characters will be stripped out of both the expected output and the student output at runtime.</p>
+<img alt="Ignore Whitespace" src="../../../_images/std-assessment-stdin-ignore.png" />
+</div></blockquote>
+</li>
+<li><p><strong>Generate</strong> - Click this button to generate the expected output based on the input you provided in the left half of the box. You need to have the solution code in the code file in order for the output to be generated. If there is already some content in the output box then you will get a pop up asking you if you want to overwrite the existing output.</p></li>
+<li><p><strong>Check</strong> - Use this to test whether running the solution code, using the optional input, will result in the value in the expected output box. If the test fails an output box will appear below showing the difference between the current output and the expected output.</p>
+<img alt="Check Test Case" src="../../../_images/assessment_sct_check.png" />
+</li>
+<li><p><strong>Check All</strong> - Press to check all test cases at once so you can see how many of them are passed or failed.</p></li>
+<li><p><strong>Show Error Feedback</strong> - Toggle to enable feedback to students about errors related to the specific test case.</p>
+<img alt="Show Error Feedback" src="../../../_images/std-assessment-error.png" />
+</li>
+<li><p><strong>Show Expected Answer</strong> - Toggle to show the students the expected output when they have submitted an answer for the question. To suppress expected output, disable the setting.</p></li>
+<li><p><strong>Define Number of Attempts</strong> - enable to allow and set the number of attempts students can make for this assessment. If disabled, the student can make unlimited attempts.</p></li>
+<li><p><strong>Show Rationale to Students</strong> - Toggle to display the answer, and the rationale for the answer, to the student. This guidance information will be shown to students after they have submitted their answer and any time they view the assignment after marking it as completed. You can set when to show this selecting from <strong>Never</strong>, <strong>After x attempts</strong>, <strong>If score is greater than or equal to a % of the total</strong> or <strong>Always</strong></p></li>
+<li><p><strong>Rationale</strong> - Enter guidance for the assessment. This is always visible to the teacher when the project is opened in the course or when opening the student’s project.</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic" start="4">
+<li><p>Click on the <strong>Parameters</strong> tab if you wish to set up <strong>Parameterized Assessments</strong>. See <a class="reference internal" href="parameterized.html#parameterized"><span class="std std-ref">Parameterized Assessments</span></a> for more information.</p></li>
+<li><p>Click <strong>Metadata</strong> in the left navigation pane and complete the following fields:</p>
+<img alt="Metadata" src="../../../_images/assessment_metadata.png" />
+</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Bloom’s Level</strong> - Click the drop-down and choose the level of Bloom’s Taxonomy: <a class="reference external" href="https://cft.vanderbilt.edu/guides-sub-pages/blooms-taxonomy/">https://cft.vanderbilt.edu/guides-sub-pages/blooms-taxonomy/</a> for the current assessment.</p></li>
+<li><p><strong>Learning Objectives</strong> The objectives are the specific educational goal of the current assessment. Typically, objectives begin with Students Will Be Able To (SWBAT). For example, if an assessment asks the student to predict the output of a recursive code segment, then the Learning Objectives could be <em>SWBAT follow the flow of recursive execution</em>.</p></li>
+<li><p><strong>Tags</strong> - The <strong>Content</strong> and <strong>Programming Language</strong> tags are provided and required. To add another tag, click <strong>Add Tag</strong> and enter the name and values.</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic" start="6">
+<li><p>Click <strong>Files</strong> in the left navigation pane and check the check boxes for additional external files to be included with the assessment when adding it to an assessment library. The files are then included in the <strong>Additional content</strong> list.</p>
+<img alt="Files" src="../../../_images/assessment_files.png" />
+</li>
+<li><p>Click <strong>Create</strong> to complete the process.</p></li>
+</ol>
+<div class="section" id="output-written-to-a-file">
+<h2>Output written to a file<a class="headerlink" href="#output-written-to-a-file" title="Permalink to this headline">¶</a></h2>
+<p>If the output of a program is written to a file rather than Standard Output (stdout) you can use the <strong>Command</strong> portion of the execution tab to run a bash command to list out the contents of the file.</p>
+<p>For example if the output is written to a file called <code class="docutils literal notranslate"><span class="pre">output.txt</span></code>, you would put the following into the <strong>Command</strong>.</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat output.txt
+</pre></div>
+</div>
+<p>In Linux, the command <code class="docutils literal notranslate"><span class="pre">cat</span></code> lists out the contents of the file. You can use the <strong>Pre-exec command</strong> to run the student code in this case.</p>
+</div>
+</div>
+
+
+              </div>
+              
+
+          </main>
+          
+
+      </div>
+    </div>
+    
+  <script src="../../../_static/js/index.44f2d10023dc91dde182.js"></script>
+
+
+    
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright Codio 2023. All Rights Reserved.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EL440DKDDY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EL440DKDDY');
+</script>
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/2227229.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+  </body>
+</html>

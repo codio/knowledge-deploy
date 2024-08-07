@@ -1,0 +1,875 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Exam Proctoring settings are used to enable options such as time limit, shuffle question order, navigation and login for exams." name="description" />
+
+    <title>Exam Proctoring &#8212;   documentation</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.a51115b1206b8cbfeff9cff2c3058b7d.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.15.3/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code-tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/codio.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/search.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.44f2d10023dc91dde182.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/code-tabs.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    <script defer="defer" src="../../../_static/js/algolia.js"></script>
+    <link rel="canonical" href="https://docs.codio.com/instructors/setupcourses/assignment-settings/exam-proctoring.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Assignment Surveys" href="assignment-surveys.html" />
+    <link rel="prev" title="Penalties" href="penalties.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-dark-codio navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../index.html">
+  <img src="../../../_static/logo-white.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../getstarted.html">
+  Overview
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../authoring.html">
+  Authoring
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../common.html">
+  Developing Code
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../../setupcourses.html">
+  Courses Set up
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../teaching.html">
+  Teaching
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../admin.html">
+  Admin
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        <div id="docsearch"></div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../courses.html">
+   Courses Set Up
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../create-course.html">
+     Create a New Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../clone-course.html">
+     Clone a Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../parent-child-courses.html">
+     Working with Parent/Child Courses
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../export-course-data.html">
+     Data Exports
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../archive-course.html">
+     Archive Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../delete-course.html">
+     Delete Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../rename-course.html">
+     Rename Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../share-course.html">
+     Share Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../search-course.html">
+     Search and Order Courses
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../add-remove-assignment.html">
+     Add and Remove Course Assignments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modify-assignments.html">
+     Modify Assignments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../rename-reorder-assignments.html">
+     Rename/Reorder Modules and Assignments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../preview-course.html">
+     Preview Courses and Assignments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../batch-assignment-update.html">
+     Batch Assignment Update
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../batch-groups-upload.html">
+     Batch Groups Upload
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../add-teachers.html">
+     Add or Remove Teachers in a Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../add-ta.html">
+     Add Teaching Assistant to a Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../add-remove-students.html">
+     Add, Remove or Archive Students in a Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../change-student-password.html">
+     Change Student Passwords
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course-contact.html">
+     Course contact URL
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course-revoke-sudo-access.html">
+     Revoke sudo access for all assignments in the course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../export-assignment-data.html">
+     Export Assignment Data
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../export-lti.html">
+     Export LTI Settings
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lmsconnect.html">
+     Connecting to your LMS
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mark-assignments-complete.html">
+     Mark Assignment as Complete/Uncomplete
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notification-email.html">
+     Automated Emails
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../view-student-username.html">
+     View Student Usernames
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course-module-progress.html">
+     Gamification
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../virtualmachine.html">
+     Virtual Machines
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../resources/codioresources.html">
+   Codio instructional resources
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../resources/editingresources.html">
+     Editing Resources
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../resources/resourcetools/crunch.html">
+   Additional resources
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../resources/resourcetools/flode.html">
+     Flode
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../resources/resourcetools/jeroo.html">
+     Jeroo
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../resources/resourcetools/scratch.html">
+     Scratch
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../resources/resourcetools/pencilcode.html">
+     Pencil Code
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../resources/resourcetools/draw-io.html">
+     Draw.io
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../resources/resourcetools/pyret.html">
+     Pyret
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../resources/resourcetools/tkinter.html">
+     Tkinter
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../resources/resourcetools/lexikon.html">
+     Lexikon
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../resources/resourcetools/turtle.html">
+     Turtle
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../resources/resourcetools/processing-and-p5.html">
+     Processing and p5
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../admin/integration/intro.html">
+   Integrating with your LMS system (Canvas etc.)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../admin/integration/lms-systems/system-specific-directions.html">
+     System specific instructions
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../admin/integration/lms-systems/canvas.html">
+       Canvas
+       <i class="fas icon fa-angle-right">
+       </i>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../admin/integration/lms-systems/blackboard.html">
+       Blackboard
+       <i class="fas icon fa-angle-right">
+       </i>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../admin/integration/lms-systems/d2l.html">
+       D2L
+       <i class="fas icon fa-angle-right">
+       </i>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../admin/integration/lms-systems/moodle.html">
+       Moodle
+       <i class="fas icon fa-angle-right">
+       </i>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../admin/integration/lms-systems/google-classroom.html">
+       Google Classroom
+       <i class="fas icon fa-angle-right">
+       </i>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../admin/integration/lms-systems/schoology.html">
+       Schoology
+       <i class="fas icon fa-angle-right">
+       </i>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../admin/integration/lms-students.html">
+     User account creation
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../admin/integration/grading.html">
+     Grading
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../admin/integration/lti-app.html">
+     LTI App
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../admin/integration/lti-keys-and-urls-information.html">
+     LTI Keys and URLs
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../admin/integration/lti-course-copy.html">
+     LTI Course copy
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../admin/integration/commoncartridge.html">
+     Common Cartridge
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../admin/integration/lti1-3.html">
+     LTI version 1.3
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../admin/integration/lti1-3BS-D2L.html">
+     LTI 1.3 for Brightspace/D2L
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../admin/integration/lti1-3Canvas.html">
+     LTI 1.3 for Canvas
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../admin/integration/lti1-3DynReg.html">
+     LTI 1.3 Dynamic Registration
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="assignment-settings.html">
+   Managing assignments
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="assignment-actions.html">
+     Assignment Action Buttons
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pin-assignment.html">
+     Pin and Unpin Assignment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="disable-assignment.html">
+     Disable Assignment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="visibility-completed.html">
+     Visibility on Completed
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="visibility-disabled.html">
+     Visibility on Disabled
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="allow-student-reset.html">
+     Reset Assignment by Student
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="allow-regrade-request.html">
+     Allow Regrade Request
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="prerequisite-assignments.html">
+     Prerequisite Assignments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="disable-mark-completed.html">
+     Disable Mark as Completed
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="disable-download.html">
+     Disable Download
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assignment-duration.html">
+     Assignment Duration
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="penalties.html">
+     Penalties
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Exam Proctoring
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assignment-surveys.html">
+     Assignment Surveys
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assignment-gigabox.html">
+     Gigabox Slot
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="prime-assignment-containers.html">
+     Prime Assignment Containers
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="groupwork.html">
+     Pair Programming
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="grade-weights.html">
+     Grade Weights
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assign-grade-template.html">
+     Assign Grading Template to an Assignment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mandatory.html">
+     Mandatory Progress
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="virtual-coach.html">
+     Virtual Coach
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+            
+            
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="penalties.html" title="previous page">
+      <i class="left-prev-icon icon fa fa-angle-left"></i>
+      <span class="left-prev-title">Previous</span>
+    </a>
+    <a class='right-next' id="next-link" href="assignment-surveys.html" title="next page">
+      <span class="right-next-title">Next</span>
+      <i class="right-next-icon icon fa fa-angle-right"></i>
+    </a>
+
+              </div>
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="exam-proctoring">
+<span id="id1"></span><h1>Exam Proctoring<a class="headerlink" href="#exam-proctoring" title="Permalink to this headline">¶</a></h1>
+<p>The Exam Proctoring settings are used to enable various options for assignment exams. After you have completed your selections, click <strong>Save Changes</strong>.</p>
+<img alt="Exam Proctoring Settings" src="../../../_images/examproctoring.png" />
+<ul class="simple">
+<li><p><strong>Time Limit</strong> - If enabled, assignments are marked as complete after the indicated amount of time has passed since the student started the assignment or the <strong>Closing Time</strong> of the assignment has been reached.</p>
+<ul>
+<li><p>Click <strong>Time Limit</strong> to enable it and then enter the value for <strong>Days</strong>, <strong>Hours</strong>, and <strong>Minutes</strong>.</p></li>
+<li><p>To disable, uncheck <strong>Time Limit</strong>.</p></li>
+<li><p>Students can be granted additional time if required. Select the 3 blue dot menu for the students assignment and <strong>Extend Time</strong></p></li>
+</ul>
+</li>
+</ul>
+<img alt="Extend Time" src="../../../_images/extendtime.png" />
+<ul>
+<li><p><strong>Shuffle Question Order</strong> - If enabled, each student receives the pages of the assignment in a random order to avoid students having exact duplicate assignments.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Click <strong>Shuffle Question Order</strong> to enable it.</p></li>
+<li><p>To disable, uncheck <strong>Shuffle Question Order</strong>.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Forward Only Navigation</strong> - If enabled, navigation buttons and menus that allow students to re-visit questions are hidden; students can only move forward through the pages. Students are advised of this restriction as they start the assignment.</p></li>
+<li><p><strong>Single Login</strong> - If enabled, once a student has started the assignment and until they mark it as complete, all other account login attempts are blocked. As students start the assignment, they are advised that it is restricted to single login and to ensure that they have:</p>
+<ul class="simple">
+<li><p>Closed other tabs or browsers where Codio is open.</p></li>
+<li><p>A stable internet connection.</p></li>
+<li><p>Enough power in their device.</p></li>
+<li><p>Sufficient time to complete the assignment.</p></li>
+</ul>
+<p>If students attempt to access the assignment from a different IP address or browser, they will be restricted and advised to contact their course instructor for assistance.</p>
+<p>If students try to log out of Codio before the assessment is fully completed, they will be advised that if they continue, they will not be able to access it again.</p>
+<p>Instructors can reset the single login restriction if they feel it is appropriate:</p>
+<p>On the <strong>Students</strong> tab in the course, click the menu icon (3 horizontal dots) and choose <strong>Reset Single Login</strong>.</p>
+</li>
+<li><p><strong>Authentication</strong> - If enabled, your students will need to authenticate through your SSO service provider before they can open the assignment. This option can only be used if you have configured <a class="reference internal" href="../../admin/organization/sso.html#sso-integration"><span class="std std-ref">SSO Integration</span></a> for the organization.</p></li>
+</ul>
+</div>
+
+
+              </div>
+              
+
+          </main>
+          
+
+      </div>
+    </div>
+    
+  <script src="../../../_static/js/index.44f2d10023dc91dde182.js"></script>
+
+
+    
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright Codio 2023. All Rights Reserved.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EL440DKDDY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EL440DKDDY');
+</script>
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/2227229.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+  </body>
+</html>

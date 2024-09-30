@@ -1,0 +1,505 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Auto-Grade Jupyter notebook assignments using nbgrader." name="description" />
+
+    <title>Auto-Grade with nbgrader &#8212;   documentation</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.a51115b1206b8cbfeff9cff2c3058b7d.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.15.3/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code-tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/codio.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/search.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.44f2d10023dc91dde182.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/code-tabs.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    <script defer="defer" src="../../../_static/js/algolia.js"></script>
+    <link rel="canonical" href="https://docs.codio.com/instructors/teaching/grading/nbgrader.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Release Grades" href="release-grades.html" />
+    <link rel="prev" title="Grading Free Text Questions" href="grade-freetext.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-dark-codio navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../index.html">
+  <img src="../../../_static/logo-white.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../getstarted.html">
+  Overview
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../authoring.html">
+  Authoring
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../common.html">
+  Developing Code
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../setupcourses.html">
+  Courses Set up
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../../teaching.html">
+  Teaching
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../admin.html">
+  Admin
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        <div id="docsearch"></div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../viewstudentwork.html">
+   Viewing student work
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="grading.html">
+   Grading
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="grade-freetext.html">
+     Grading Free Text Questions
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Auto-Grade with nbgrader
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="release-grades.html">
+     Release Grades
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../behaviorinsights.html">
+   Behavior Insights
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../insights.html">
+   Learning Insights
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../playback.html">
+   Code Playback
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../commenting.html">
+   Code Commenting
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../cursor.html">
+   Cursor Presence
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../resetpassword.html">
+   Resetting student passwords
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../remove.html">
+   Removing Students
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plagiarism.html">
+   Plagiarism Checker
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../addstudents.html">
+   Inviting students to your course
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+            
+            
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="grade-freetext.html" title="previous page">
+      <i class="left-prev-icon icon fa fa-angle-left"></i>
+      <span class="left-prev-title">Previous</span>
+    </a>
+    <a class='right-next' id="next-link" href="release-grades.html" title="next page">
+      <span class="right-next-title">Next</span>
+      <i class="right-next-icon icon fa fa-angle-right"></i>
+    </a>
+
+              </div>
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="auto-grade-with-nbgrader">
+<span id="notebooks"></span><h1>Auto-Grade with nbgrader<a class="headerlink" href="#auto-grade-with-nbgrader" title="Permalink to this headline">¶</a></h1>
+<p>Codio supports <a class="reference external" href="https://jupyter.org/">Jupyter notebook</a> auto-grading functionality through <a class="reference external" href="http://nbgrader.readthedocs.io/en/stable/index.html">nbgrader</a>. Assignments are created with <a class="reference external" href="https://jupyter.org/">Jupyter notebook</a> and when the assignment is published to a course, the release version is created for the student. If the assignment is updated and republished, it overwrites all tests and read-only cells with the new version and the release version for the students is updated. If you change the jupyter version or nbgrader version or any other nbgrader metadata in the assignment, it will not reflect automatically for students who have already started the assignment, instructor need to reset their assignment to reflect those changes. Students who haven’t started the assignment will receive the updated version of assignment.</p>
+<p>When a student submits the assignment by marking the assignment as complete, the assignment is automatically graded. However, manual grading is also possible if desired.</p>
+<p>User configurations for nbgrader can be stored in a <strong>nbgrader_config.py</strong> or in <strong>.codio-jupyter</strong> file. A .codio-jupyter file must be present in a project to let Codio know that nbgrader should be used to grade Jupyter assessments.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If using <strong>nbgrader_config.py</strong> for your configurations, the <strong>.codio-jupyter</strong> is still required but can be empty/blank</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If both files are used the settings in the <strong>nbgrader_config.py</strong> take precedence. This file is not visible to students in their assignments</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Notebook files are only supported if in the root (<cite>/home/codio/workspace</cite> or <cite>~/workspace</cite>) folder</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><a class="reference internal" href="../../setupcourses/assignment-settings/groupwork.html#group-work"><span class="std std-ref">Pair Programming</span></a> should not be used for Jupyter Notebook</p>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>Use the following configuration information when setting up nbgrader in a <strong>.codio-jupyter</strong> file. If using <strong>nbgrader_config.py</strong>, see <a class="reference internal" href="#nb-conf-example"><span class="std std-ref">example</span></a> below.</p>
+<ul class="simple">
+<li><p><strong>Extend Timeout period</strong> - To extend the time required for completion (to 90 seconds in this example), you can add the following to the <strong>.codio-jupyter</strong> file:</p></li>
+</ul>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">nbgrader</span><span class="p">:</span>
+   <span class="nt">ExecutePreprocessor.timeout</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">90</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Lock all cells</strong> - To lock all cells (Default: False), add the following to the <strong>.codio-jupyter</strong> file:</p></li>
+</ul>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">nbgrader</span><span class="p">:</span>
+   <span class="nt">LockCells.lock_all_cells</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Lock all grade cells</strong> - To lock all grade cells (Default: True) where grade cells are locked (non-deletable), add the following to the <strong>.codio-jupyter</strong> file:</p></li>
+</ul>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">nbgrader</span><span class="p">:</span>
+   <span class="nt">LockCells.lock_grade_cells</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Lock all read-only cells</strong> - To lock all grade cells (Default: True) where read only cells are locked (non-deletable and non-editable), add the following to the <strong>.codio-jupyter</strong> file:</p></li>
+</ul>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">nbgrader</span><span class="p">:</span>
+   <span class="nt">LockCells.lock_readonly_cells</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Lock all solution cells</strong> - To lock all solution cells (Default: True) where solution cells are locked (non-deletable and non-editable), add the following to the <strong>.codio-jupyter</strong> file:</p></li>
+</ul>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">nbgrader</span><span class="p">:</span>
+   <span class="nt">LockCells.lock_solution_cells</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Execute preprocessor on timeout</strong> - If execution of a cell times out, interrupt the kernel and continue executing other cells rather than throwing an error and stopping by adding the following to the <strong>.codio-jupyter</strong> file:</p></li>
+</ul>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">nbgrader</span><span class="p">:</span>
+   <span class="nt">ExecutePreprocessor.interrupt_on_timeout</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Run custom grading with Jupyter</strong> - To avoid execution of autograder with nbgrader and allow Codio script autograder to be executed, add the following to the <strong>.codio-jupyter</strong> file. When this is set, Jupyter files do not display as assessments in Codio and are not submitted through nbrader after the assignment is marked as completed (no assessments and points are set in the assignment).</p></li>
+</ul>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">codio</span><span class="p">:</span>
+  <span class="nt">grader</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>ClearSolutions.code_stub</strong> - Add the following to the <strong>.codio-jupyter</strong> file:</p></li>
+</ul>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">nbgrader</span><span class="p">:</span>
+    <span class="nt">ClearSolutions.code_stub</span><span class="p">:</span>
+        <span class="nt">R</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+            <span class="no"># BEGIN YOUR CODE</span>
+            <span class="no"># END YOUR CODE</span>
+        <span class="nt">python</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+            <span class="no"># YOUR CODE HERE</span>
+            <span class="no">raise NotImplementedError()</span>
+        <span class="nt">ruby</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+            <span class="no"># BEGIN YOUR CODE</span>
+            <span class="no">raise NotImplementedError.new()</span>
+            <span class="no">#END YOUR CODE</span>
+</pre></div>
+</div>
+<ul class="simple" id="postgrading">
+<li><p><strong>Postgrader</strong></p></li>
+</ul>
+<p>You can add a post-grading hook to Jupyter to alter the result html for the student. You can do this to remove and/or replace text from the notebook file that the students will see in their feedback.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">codio</span><span class="p">:</span>
+  <span class="nt">postGrader</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.guides/secure/postgrader.py</span>
+</pre></div>
+</div>
+<p>To enable this, create a file <strong>postgrader.py</strong> in .guides/secure folder. This file needs to be executable.
+Running <code class="docutils literal notranslate"><span class="pre">`chmod</span> <span class="pre">+x</span> <span class="pre">.guides/secure/postgrader.py`</span></code> will make this file executable.</p>
+<div class="section" id="example-postgrader-py-file">
+<h3>Example postgrader.py file<a class="headerlink" href="#example-postgrader-py-file" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="n">START_HIDDEN_TEST_TEXT</span> <span class="o">=</span> <span class="s1">&#39;### BEGIN HIDDEN TESTS&#39;</span>
+<span class="n">END_HIDDEN_TEST_TEXT</span> <span class="o">=</span> <span class="s1">&#39;### END HIDDEN TESTS&#39;</span>
+
+<span class="n">html_path</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">content_file</span><span class="p">:</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">content_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">search_surrounding_html</span><span class="p">(</span><span class="n">original_text</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">left</span><span class="p">):</span>
+    <span class="n">index_to</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">original_text</span><span class="p">)</span>
+    <span class="n">text_position</span> <span class="o">=</span> <span class="n">position</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">left</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">index_to</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">original_text</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;&gt;&#39;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">left</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">original_text</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">original_text</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;&lt;&#39;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">i</span>
+
+    <span class="k">return</span> <span class="n">text_position</span>
+
+
+<span class="k">def</span> <span class="nf">replace_text_between</span><span class="p">(</span><span class="n">original_text</span><span class="p">,</span> <span class="n">delimeter_a</span><span class="p">,</span> <span class="n">delimter_b</span><span class="p">,</span> <span class="n">replacement_text</span><span class="p">):</span>
+    <span class="n">index_from</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">index_to</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">original_text</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">delimeter_a</span> <span class="ow">in</span> <span class="n">original_text</span><span class="p">:</span>
+        <span class="n">index_from</span> <span class="o">=</span> <span class="n">original_text</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">delimeter_a</span><span class="p">)</span>
+        <span class="n">index_from</span> <span class="o">=</span> <span class="n">search_surrounding_html</span><span class="p">(</span><span class="n">original_text</span><span class="p">,</span> <span class="n">index_from</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">delimter_b</span> <span class="ow">in</span> <span class="n">original_text</span><span class="p">:</span>
+        <span class="n">index_to</span> <span class="o">=</span> <span class="n">original_text</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">delimter_b</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">delimter_b</span><span class="p">)</span>
+        <span class="n">index_to</span> <span class="o">=</span> <span class="n">search_surrounding_html</span><span class="p">(</span><span class="n">original_text</span><span class="p">,</span> <span class="n">index_to</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">original_text</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">index_from</span><span class="p">]</span> <span class="o">+</span> <span class="n">replacement_text</span> <span class="o">+</span> <span class="n">original_text</span><span class="p">[</span><span class="n">index_to</span><span class="p">:]</span>
+
+
+<span class="k">while</span> <span class="n">START_HIDDEN_TEST_TEXT</span> <span class="ow">in</span> <span class="n">content</span><span class="p">:</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">replace_text_between</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">START_HIDDEN_TEST_TEXT</span><span class="p">,</span> <span class="n">END_HIDDEN_TEST_TEXT</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_path</span><span class="p">,</span> <span class="s1">&#39;w+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">stream</span><span class="p">:</span>
+    <span class="n">stream</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this example anything between the ### BEGIN HIDDEN TESTS and ### END HIDDEN TESTS in the <strong>.ipynb</strong> file will not be shown to the students</p>
+<p>If using the <strong>nbgrader_config.py</strong>, see example below</p>
+</div>
+</div>
+<div class="section" id="example-nbgrader-config-py">
+<span id="nb-conf-example"></span><h2>Example nbgrader_config.py<a class="headerlink" href="#example-nbgrader-config-py" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
+<span class="n">c</span><span class="o">.</span><span class="n">ClearHiddenTests</span><span class="o">.</span><span class="n">begin_test_delimeter</span> <span class="o">=</span> <span class="s2">&quot;BEGIN HIDDEN TESTS&quot;</span>
+<span class="n">c</span><span class="o">.</span><span class="n">ClearHiddenTests</span><span class="o">.</span><span class="n">end_test_delimeter</span> <span class="o">=</span> <span class="s2">&quot;END HIDDEN TESTS&quot;</span>
+<span class="n">c</span><span class="o">.</span><span class="n">LockCells</span><span class="o">.</span><span class="n">lock_all_cells</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">c</span><span class="o">.</span><span class="n">LockCells</span><span class="o">.</span><span class="n">lock_grade_cells</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">c</span><span class="o">.</span><span class="n">LockCells</span><span class="o">.</span><span class="n">lock_readonly_cells</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">c</span><span class="o">.</span><span class="n">LockCells</span><span class="o">.</span><span class="n">lock_solution_cells</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">c</span><span class="o">.</span><span class="n">ExecutePreprocessor</span><span class="o">.</span><span class="n">interrupt_on_timeout</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">c</span><span class="o">.</span><span class="n">ExecutePreprocessor</span><span class="o">.</span><span class="n">timeout</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">c</span><span class="o">.</span><span class="n">ClearSolutions</span><span class="o">.</span><span class="n">code_stub</span> <span class="o">=</span> <span class="p">{</span>
+<span class="s2">&quot;R&quot;</span><span class="p">:</span> <span class="s2">&quot;# your R code here</span><span class="se">\n</span><span class="s2"># end of R code</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+<span class="s2">&quot;python&quot;</span><span class="p">:</span> <span class="s2">&quot;# your python code here</span><span class="se">\n</span><span class="s2"># end of python code</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+<span class="s2">&quot;ruby&quot;</span><span class="p">:</span> <span class="s2">&quot;# your ruby code here            </span><span class="se">\n</span><span class="s2"># end of ruby code&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+
+          </main>
+          
+
+      </div>
+    </div>
+    
+  <script src="../../../_static/js/index.44f2d10023dc91dde182.js"></script>
+
+
+    
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright Codio 2023. All Rights Reserved.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EL440DKDDY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EL440DKDDY');
+</script>
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/2227229.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+  </body>
+</html>

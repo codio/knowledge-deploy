@@ -1,0 +1,444 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Grading features available for assignments." name="description" />
+
+    <title>Grading &#8212;   documentation</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.a51115b1206b8cbfeff9cff2c3058b7d.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.15.3/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code-tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/codio.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/search.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.44f2d10023dc91dde182.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/code-tabs.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    <script defer="defer" src="../../../_static/js/algolia.js"></script>
+    <link rel="canonical" href="https://docs.codio.com/instructors/teaching/grading/grading.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Grading Free Text Questions" href="grade-freetext.html" />
+    <link rel="prev" title="Viewing student work" href="../viewstudentwork.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-dark-codio navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../index.html">
+  <img src="../../../_static/logo-white.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../getstarted.html">
+  Overview
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../authoring.html">
+  Authoring
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../common.html">
+  Developing Code
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../setupcourses.html">
+  Courses Set up
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../../teaching.html">
+  Teaching
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../admin.html">
+  Admin
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        <div id="docsearch"></div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../viewstudentwork.html">
+   Viewing student work
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   Grading
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="grade-freetext.html">
+     Grading Free Text Questions
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nbgrader.html">
+     Auto-Grade with nbgrader
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="release-grades.html">
+     Release Grades
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../behaviorinsights.html">
+   Behavior Insights
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../insights.html">
+   Learning Insights
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../playback.html">
+   Code Playback
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../commenting.html">
+   Code Commenting
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../cursor.html">
+   Cursor Presence
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../resetpassword.html">
+   Resetting student passwords
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../remove.html">
+   Removing Students
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../plagiarism.html">
+   Plagiarism Checker
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../addstudents.html">
+   Inviting students to your course
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+            
+            
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="../viewstudentwork.html" title="previous page">
+      <i class="left-prev-icon icon fa fa-angle-left"></i>
+      <span class="left-prev-title">Previous</span>
+    </a>
+    <a class='right-next' id="next-link" href="grade-freetext.html" title="next page">
+      <span class="right-next-title">Next</span>
+      <i class="right-next-icon icon fa fa-angle-right"></i>
+    </a>
+
+              </div>
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="grading">
+<span id="id1"></span><h1>Grading<a class="headerlink" href="#grading" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Codio offers the following grading features:</p>
+<ul class="simple">
+<li><p><strong>Assign Grade</strong> - Manually review student projects and assign a grade.</p></li>
+<li><p><strong>Grading Moderation</strong> - Other instructors review grades already assigned to monitor grading consistency.</p></li>
+<li><p><strong>Grading Rubric</strong> - A two-dimensional grid that provides grading guidance for manually assessing a coding project.</p></li>
+<li><p><strong>LMS Gradebook Synchronization</strong> - Ensures that when grades are released, the data is automatically passed to any LTI enabled LMS platform such as Moodle, Blackboard and Canvas.</p></li>
+</ul>
+<div class="section" id="grading-process">
+<h2>Grading process<a class="headerlink" href="#grading-process" title="Permalink to this headline">¶</a></h2>
+<p>Once students have completed their assignments, they notify the teacher by using the <strong>Education &gt; Mark as Completed</strong> menu in the IDE. Instructors can also mark the assignment as complete or change the status to incomplete. Follow these steps to view and grade the assignments:</p>
+<ol class="arabic simple">
+<li><p>Open the assignment and view the students that have a green check mark to the left of their name. This indicates that they have marked as complete.</p></li>
+</ol>
+<blockquote>
+<div><img alt="Grading Access" src="../../../_images/grading-unit.png" />
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Optionally, click the <strong>Filter</strong> drop-down and choose one of the following options to filter the list of students based on the status of the assignments:</p></li>
+</ol>
+<blockquote>
+<div><img alt="Filtering" src="../../../_images/filter.png" />
+<ul class="simple">
+<li><p>Any Status</p></li>
+<li><p>Started</p></li>
+<li><p>Not Started</p></li>
+<li><p>Has Final Grade</p></li>
+<li><p>No Final Grade</p></li>
+<li><p>Completed</p></li>
+<li><p>Uncompleted</p></li>
+<li><p>Needs Grading</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>Click the <strong>Options</strong> menu and choose <strong>Open the Project</strong> to start grading the student’s assignment.</p></li>
+<li><p>Use one of the following methods to assign the grade:</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>In the IDE, click the <strong>Education</strong> menu. You must have a student project open in the IDE.</p></li>
+<li><p>On the Course dashboard, click the <strong>Grade</strong> icon &gt; <strong>Add Grade</strong> and complete the fields. You can also add comments.</p></li>
+</ul>
+<img alt="Assign Grade" src="../../../_images/grading-assign.png" />
+</div></blockquote>
+<p>In the IDE, you can jump to next/previous student’s assignment using <strong>Next</strong> or <strong>Previous</strong> button at the top.</p>
+<p>If there is another assessment that is ungraded in the assingment, the <strong>Next Ungraded</strong> and <strong>Previous Ungraded</strong> button will appear in the top menu. When clicked, you will be brought to the respective guide page where the ungraded assessment is present.</p>
+<blockquote>
+<div><img alt="Speed Grading buttons" src="../../../_images/speedgrading.png" />
+</div></blockquote>
+</div>
+<div class="section" id="grading-queue">
+<span id="id2"></span><h2>Grading Queue<a class="headerlink" href="#grading-queue" title="Permalink to this headline">¶</a></h2>
+<p>Information on all students that require grading for all assignments in the course can be seen from the course <strong>Queue</strong> area in the <strong>Grading</strong> section.</p>
+<p>By default, the list is sorted by submission time, with the oldest submission at the top but other filters can be set as required.</p>
+<blockquote>
+<div><img alt="Grading Queue" src="../../../_images/gradingqueue.png" />
+</div></blockquote>
+<ul class="simple">
+<li><p>Assignment Name</p></li>
+<li><p>Student Name</p></li>
+<li><p>Grade</p></li>
+<li><p>Points</p></li>
+<li><p>Graded</p></li>
+<li><p>Answered</p></li>
+<li><p>Time</p></li>
+</ul>
+</div>
+<div class="section" id="override-grade">
+<h2>Override Grade<a class="headerlink" href="#override-grade" title="Permalink to this headline">¶</a></h2>
+<p>If the students assignment has already been graded, another teacher in the course can click <strong>Override Grade</strong> to manually change the grade with additional comments.</p>
+<p>The <strong>Override Grade</strong> feature can also be used to provide comments at the assignment level. If you do not wish to alter the numeric grade when adding assignment level comments, re-enter it under <strong>Grade</strong>, add your comment and then select <strong>Done.</strong></p>
+<blockquote>
+<div><img alt="Assignment Comments" src="../../../_images/assignment-comments.png" />
+</div></blockquote>
+</div>
+<div class="section" id="grading-rubric-is-no-longer-visible-to-student-if-teacher-overrides-grade">
+<h2>Grading rubric is no longer visible to student if teacher overrides grade<a class="headerlink" href="#grading-rubric-is-no-longer-visible-to-student-if-teacher-overrides-grade" title="Permalink to this headline">¶</a></h2>
+<p>When a teacher manually grades an assignment using the rubric and then overrides the grades, Grading rubric is no longer visible to students.</p>
+<p>This one has the grade overridden and this is what the student dashboard looks like</p>
+<img alt="Overriden-grade" src="../../../_images/Overridengarde.png" />
+<p>This is the student’s dashboard view if the grade has not been overridden</p>
+<img alt="No-Overriden-grade" src="../../../_images/No-overrindengrade.png" />
+</div>
+<div class="section" id="removing-penalties">
+<h2>Removing Penalties<a class="headerlink" href="#removing-penalties" title="Permalink to this headline">¶</a></h2>
+<p>If required you can remove penalties currently applied to the students grade.</p>
+<blockquote>
+<div><img alt="Remove Penalties" src="../../../_images/latepenalty.png" />
+</div></blockquote>
+</div>
+<div class="section" id="anonymous-grading">
+<h2>Anonymous grading<a class="headerlink" href="#anonymous-grading" title="Permalink to this headline">¶</a></h2>
+<p>If required, anonymous grading can be set for the course so students cannot see the names of the teachers who graded their work. The teacher names are hidden in the shared feedback, project, and dashboard.</p>
+<p>To enable anonymous grading, follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Open the course and click the <strong>Grading/Basic Settings</strong> tab.</p></li>
+<li><p>Toggle <strong>Anonymous Grading</strong> to enable it and then click <strong>Save Changes</strong>.</p></li>
+</ol>
+</div>
+<div class="section" id="code-commenting">
+<h2>Code Commenting<a class="headerlink" href="#code-commenting" title="Permalink to this headline">¶</a></h2>
+<p>You can add comments to the code so that students can see them when they open the file. To comment on the code, follow these steps:</p>
+<ol class="arabic">
+<li><p>Open the project and then open the file.</p></li>
+<li><p>Hover over the left-hand side of the gutter bar and click + to open the comment window.</p></li>
+<li><p>Enter your comments. You can select multiple lines of code, edit, and delete lines of code.</p>
+<img alt="Commenting" src="../../../_images/commentcode.png" />
+</li>
+</ol>
+<p>Students can then view the comments from the <strong>Education &gt; Code Comments</strong> menu. They can also open the file from the comments.</p>
+<img alt="Code Comments" src="../../../_images/codecommentguides.png" />
+</div>
+</div>
+
+
+              </div>
+              
+
+          </main>
+          
+
+      </div>
+    </div>
+    
+  <script src="../../../_static/js/index.44f2d10023dc91dde182.js"></script>
+
+
+    
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright Codio 2023. All Rights Reserved.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EL440DKDDY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EL440DKDDY');
+</script>
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/2227229.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+  </body>
+</html>

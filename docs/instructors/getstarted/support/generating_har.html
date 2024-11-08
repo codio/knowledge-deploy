@@ -1,0 +1,362 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Generating a HAR file for troubleshooting" name="description" />
+
+    <title>Generating a HAR file for troubleshooting &#8212;   documentation</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.a51115b1206b8cbfeff9cff2c3058b7d.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.15.3/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code-tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/codio.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/search.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.44f2d10023dc91dde182.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/code-tabs.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    <script defer="defer" src="../../../_static/js/algolia.js"></script>
+    <link rel="canonical" href="https://docs.codio.com/instructors/getstarted/support/generating_har.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Authoring" href="../../../authoring.html" />
+    <link rel="prev" title="Changelog" href="changelog.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-dark-codio navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../index.html">
+  <img src="../../../_static/logo-white.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../../getstarted.html">
+  Overview
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../authoring.html">
+  Authoring
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../common.html">
+  Developing Code
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../setupcourses.html">
+  Courses Set up
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../teaching.html">
+  Teaching
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../admin.html">
+  Admin
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        <div id="docsearch"></div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../startlist.html">
+   Getting Started
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../onboard.html">
+   Onboarding Guide
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../howto.html">
+   How to Videos
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="support.html">
+   Codio Support
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="changelog.html">
+   Changelog
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Generating a HAR file for troubleshooting
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+            
+            
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="changelog.html" title="previous page">
+      <i class="left-prev-icon icon fa fa-angle-left"></i>
+      <span class="left-prev-title">Previous</span>
+    </a>
+    <a class='right-next' id="next-link" href="../../../authoring.html" title="next page">
+      <span class="right-next-title">Next</span>
+      <i class="right-next-icon icon fa fa-angle-right"></i>
+    </a>
+
+              </div>
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="generating-a-har-file-for-troubleshooting">
+<span id="generating-har"></span><h1>Generating a HAR file for troubleshooting<a class="headerlink" href="#generating-a-har-file-for-troubleshooting" title="Permalink to this headline">¶</a></h1>
+<p>Codio Team may occasionally need additional information about the network requests that are generated in your browser. A member of the team may ask you to record a HAR file, or a log of network requests, while that issue occurs. It’s helpful to include any browser console logs in addition to a HAR file. Similarly, you may also collect Windows log files in addition to HAR files.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A HAR file includes data such as the content of your cookies and the pages you downloaded while making the recording. Anyone with access to the HAR file can view the data submitted while recording, which may include personal data or other sensitive data. Make sure that you secure your HAR files accordingly. Cloudflare has released a <a class="reference external" href="https://blog.cloudflare.com/introducing-har-sanitizer-secure-har-sharing/">HAR sanitizer</a> that can be used to strip any sensitive information.</p>
+</div>
+<div class="section" id="instructions-for-generating-har-files">
+<h2>Instructions for generating HAR files<a class="headerlink" href="#instructions-for-generating-har-files" title="Permalink to this headline">¶</a></h2>
+<p>Read the below instructions to generate a HAR file and console logs in the browser that you use.</p>
+<div class="section" id="generate-a-har-file-in-chrome">
+<h3>Generate a HAR file in Chrome<a class="headerlink" href="#generate-a-har-file-in-chrome" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Open Chrome and go to the page where the issue is occurring.</p></li>
+<li><p>Look for the ⋮ button and select <strong>More Tools &gt; Developer Tools</strong>.</p></li>
+<li><p>From the panel that appears, select the <strong>Network</strong> tab. You must keep the menu open while you reproduce the issue.</p>
+<blockquote>
+<div><p>Optional: If Codio Team requests a HAR file with WebSockets, select the WS option in the Network tab. Reload your browser to start seeing the traffic over the WebSocket.</p>
+</div></blockquote>
+</li>
+<li><p>Look for a round record button in the upper left corner of the tab, and make sure it is red. If it is grey, click the button once to start recording.</p></li>
+<li><p>If it isn’t, check the <strong>Preserve log</strong> box.</p></li>
+<li><p>Click the grey crossed circle button to clear any existing logs from the network tab.</p></li>
+<li><p>Reproduce the issue while the network requests are recorded.</p></li>
+<li><p>Click the download button, <strong>Export HAR</strong>, to download, and save the file to your computer: <strong>Save as HAR with Content</strong>.</p></li>
+<li><p>Send the HAR file to Codio for further investigation, see <a class="reference internal" href="#sending-har"><span class="std std-ref">Instructions for sending HAR files</span></a>.</p></li>
+</ol>
+<p>To retrieve console logs in Chrome:</p>
+<ol class="arabic simple">
+<li><p>Open <strong>Main Menu</strong> for Chrome.</p></li>
+<li><p>Navigate to <strong>More Tools &gt; Developer Tools</strong>.</p></li>
+<li><p>Open the <strong>Console tab</strong> and screenshot any errors that appear.</p></li>
+</ol>
+</div>
+<div class="section" id="generate-a-har-file-in-firefox">
+<h3>Generate a HAR file in Firefox<a class="headerlink" href="#generate-a-har-file-in-firefox" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Open Firefox and go to the page where the issue is occurring.</p></li>
+<li><p>Open the <a class="reference external" href="https://firefox-source-docs.mozilla.org/devtools-user/network_monitor/#opening-the-network-monitor">Network Monitor</a>.</p></li>
+<li><p>Reproduce the issue while the network requests are recorded.</p></li>
+<li><p>Right-click anywhere under the <strong>File</strong> column and click <strong>Save All As HAR</strong>.</p></li>
+<li><p>Save the HAR file somewhere convenient.</p></li>
+<li><p>Send the HAR file to Codio for further investigation, see <a class="reference internal" href="#sending-har"><span class="std std-ref">Instructions for sending HAR files</span></a>.</p></li>
+</ol>
+<p>To retrieve console logs in Firefox:</p>
+<ol class="arabic simple">
+<li><p>In the <strong>Tools</strong> menu, select <strong>Web Developer</strong>.</p></li>
+<li><p>Console logs will appear in a separate window.</p></li>
+<li><p>Screenshot any errors that appear.</p></li>
+</ol>
+</div>
+<div class="section" id="generate-a-har-file-in-safari">
+<h3>Generate a HAR file in Safari<a class="headerlink" href="#generate-a-har-file-in-safari" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Open Safari and go to the Develop menu. If you don’t see theDevelop menu, follow the instructions in this article from the Safari User Guide: Use the developer tools in the Develop menu in Safari on Mac.</p></li>
+<li><p>Select Show Web Inspector.</p></li>
+<li><p>Click the Network tab. You must keep it open while you reproduce the issue.</p></li>
+<li><p>Reproduce the issue while the network requests are recorded.</p></li>
+<li><p>Click the Export icon and save the HAR file.</p></li>
+<li><p>Send the HAR file to Codio for further investigation, see <a class="reference internal" href="#sending-har"><span class="std std-ref">Instructions for sending HAR files</span></a>.</p></li>
+</ol>
+<p>To retrieve console logs in Safari:</p>
+<ol class="arabic simple">
+<li><p>Open <strong>Preferences</strong> and navigate to the <strong>Advanced</strong> tab.</p></li>
+<li><p>Select <strong>Show Developer menu</strong> in the menu bar.</p></li>
+<li><p>Close Preferences.</p></li>
+<li><p>In the menu bar, select <strong>Developer &gt; Show error console</strong>.</p></li>
+<li><p>Screenshot any errors that appear.</p></li>
+</ol>
+</div>
+<div class="section" id="to-generate-a-har-file-in-edge">
+<h3>To generate a HAR file in Edge<a class="headerlink" href="#to-generate-a-har-file-in-edge" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Open Edge and go to the <a class="reference external" href="https://learn.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/network/#open-the-network-tool">Network tool</a> .</p></li>
+<li><p>Reproduce the issue while the network requests are recorded.</p></li>
+<li><p>Export captured traffic as a HAR file.</p></li>
+<li><p>Send the HAR file to Codio for further investigation, see <a class="reference internal" href="#sending-har"><span class="std std-ref">Instructions for sending HAR files</span></a>.</p></li>
+</ol>
+<p>To retrieve console logs in Edge:</p>
+<ol class="arabic simple">
+<li><p>Select the three dots in the upper-right corner of your browser window.</p></li>
+<li><p>Click <strong>More tools &gt; Developer Tools</strong>.</p></li>
+<li><p>In the <strong>DevTools</strong> panel, click the <strong>Console</strong> tab.</p></li>
+<li><p>Right-click the console and select <strong>Clear Console</strong> of any pre-existing logs.</p></li>
+<li><p>Check the <strong>Preserve Log</strong> checkbox.</p></li>
+<li><p>Replicate the issue that you experienced in the Edge browser.</p></li>
+<li><p>Screenshot any errors that appear.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="instructions-for-sending-har-files">
+<span id="sending-har"></span><h2>Instructions for sending HAR files<a class="headerlink" href="#instructions-for-sending-har-files" title="Permalink to this headline">¶</a></h2>
+<p>Before you send a HAR file to Codio Team, you should both rename AND zip or compress your HAR files. Uncompressed HAR files are often over standard attachment limits. Also, by default, HAR files use the page URL as the name of the file. Files with .com extensions look suspicious to spam and phishing filters. Give the HAR file a descriptive name that doesn’t include the full URL.</p>
+</div>
+</div>
+
+
+              </div>
+              
+
+          </main>
+          
+
+      </div>
+    </div>
+    
+  <script src="../../../_static/js/index.44f2d10023dc91dde182.js"></script>
+
+
+    
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright Codio 2023. All Rights Reserved.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EL440DKDDY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EL440DKDDY');
+</script>
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/2227229.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+  </body>
+</html>

@@ -1,0 +1,862 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Using Markdown to format your Guides content" name="description" />
+
+    <title>Content editing &#8212;   documentation</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.a51115b1206b8cbfeff9cff2c3058b7d.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.15.3/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code-tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/codio.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/search.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.44f2d10023dc91dde182.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/code-tabs.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    <script defer="defer" src="../../../_static/js/algolia.js"></script>
+    <link rel="canonical" href="https://docs.codio.com/instructors/authoring/guides/markdown_content.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Previewing content" href="previewing_content.html" />
+    <link rel="prev" title="Authoring Guidelines" href="authoring_guidelines.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-dark-codio navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../index.html">
+  <img src="../../../_static/logo-white.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../getstarted.html">
+  Overview
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../../authoring.html">
+  Authoring
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../common.html">
+  Developing Code
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../setupcourses.html">
+  Courses Set up
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../teaching.html">
+  Teaching
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../admin.html">
+  Admin
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        <div id="docsearch"></div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro.html">
+   Authoring
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="project_book.html">
+     Project or course assignment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="author_student.html">
+     Author and student views
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="toc.html">
+     Table of contents management
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="page_editing.html">
+     Page editing overview
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="authoring_guidelines.html">
+     Authoring Guidelines
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Content editing
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="previewing_content.html">
+     Previewing content
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="teacher_only.html">
+     Teacher only content
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="solution_templating.html">
+     Solution File Templating
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="freeze_code.html">
+     Freezing Code
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="custom_button.html">
+     Custom Buttons in Guides
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="add_media.html">
+     Adding media
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="generating_content.html">
+     Generating Content Drafts with AI
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="open_close_content.html">
+     Open/close tabs from content
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hide_folders.html">
+     Hiding folders
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="excludingfiles.html">
+     Excluding Files/Folders
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="latex.html">
+     Latex for math expressions
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="cpumemdisk.html">
+     System Resources
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="settings/page.html">
+   Guides Settings and Page actions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="settings/opentabs.html">
+     Open tabs
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="settings/assessments.html">
+     Assessment Settings
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="settings/media.html">
+     Media Settings for a Guide
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="settings/global.html">
+     Global Guide Settings
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../assessments/add-assessment.html">
+   Auto-graded assessments
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/assessments.html">
+     Assessments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/ai-assessment-generation.html">
+     Generating Assessments With AI
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/student-submission.html">
+     Student submission options
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/assessment-security.html">
+     Assessment Security
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/auto-grade-scripts.html">
+     Assignment Level Scripts
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/parameterized.html">
+     Parameterized assessments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/delete-assessment.html">
+     Delete an Assessment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/edit-assessment.html">
+     Edit an Assessment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/duplicate-assessment.html">
+     Duplicate an Assessment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/edit-assessment-points.html">
+     Edit Assessment Points
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/standard-code-test.html">
+     Standard Code Test
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/advanced-code-test.html">
+     Advanced Code Test
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/partial-points.html">
+     Partial Points
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/multiple-choice.html">
+     Multiple Choice
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/fill-in-blanks.html">
+     Fill in the Blanks
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/free-text.html">
+     Free Text
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/autograde-free-text.html">
+     Free Text Autograde
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/grade-book.html">
+     Grade Book
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/parsons-puzzle.html">
+     Parsons Puzzle
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/random.html">
+     Random Assessment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/math-assessments.html">
+     Math Assessments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/ungraded-assessments.html">
+     Ungraded Assessments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../setupcourses/library/assessmentslibrary.html">
+   Assessments Libraries
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/library/global-library.html">
+     Codio Global Assessments Library
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/library/search-library.html">
+     Search Assessments Library
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/library/add-questions-from-library.html">
+     Add Questions from Assessments Library
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/library/add-questions-to-library.html">
+     Add Questions to an Assessments Library
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/library/unlink-assessment.html">
+     Unlink an Assessment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/library/update-assess-from-library.html">
+     Update an Existing Assessment in Library
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+            
+            
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="authoring_guidelines.html" title="previous page">
+      <i class="left-prev-icon icon fa fa-angle-left"></i>
+      <span class="left-prev-title">Previous</span>
+    </a>
+    <a class='right-next' id="next-link" href="previewing_content.html" title="next page">
+      <span class="right-next-title">Next</span>
+      <i class="right-next-icon icon fa fa-angle-right"></i>
+    </a>
+
+              </div>
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="content-editing">
+<span id="markdown-content-editing"></span><h1>Content editing<a class="headerlink" href="#content-editing" title="Permalink to this headline">¶</a></h1>
+<p>Content can be written in</p>
+<ul class="simple">
+<li><p><strong>Markdown</strong> - Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents. More information below.</p></li>
+</ul>
+<p>When you are in edit mode, you can select a section by</p>
+<ul>
+<li><p>using the navigation buttons in the header area</p></li>
+<li><p>selecting a section from the index list</p>
+<img alt="editnav" src="../../../_images/editnav.png" />
+</li>
+</ul>
+<div class="section" id="renaming-the-section">
+<h2>Renaming the Section<a class="headerlink" href="#renaming-the-section" title="Permalink to this headline">¶</a></h2>
+<p>Rename your section by clicking on the section title in the header area.</p>
+</div>
+<div class="section" id="writing-content">
+<h2>Writing content<a class="headerlink" href="#writing-content" title="Permalink to this headline">¶</a></h2>
+<p>Write content in the main content area.</p>
+<p>You can also set hotkeys for a range of commonly used editing functions.</p>
+<ul class="simple">
+<li><p>Bold selected text</p></li>
+<li><p>Enumerate selected text</p></li>
+<li><p>Order selected text</p></li>
+<li><p>Make selected text as a code block</p></li>
+<li><p>Command button</p></li>
+</ul>
+<p>See the <strong>[guides]</strong> area in the <a class="reference internal" href="../../../common/settings/user-prefs.html#user-prefs"><span class="std std-ref">User Preferences</span></a></p>
+</div>
+<div class="section" id="custom-css">
+<h2>Custom CSS<a class="headerlink" href="#custom-css" title="Permalink to this headline">¶</a></h2>
+<p>In Play Mode or as you preview, your content is rendered as students will see it. You can override the default CSS styling by accessing <strong>Tools-&gt;Guide-&gt;Add Custom CSS</strong></p>
+<blockquote>
+<div><img alt="Guide CSS" src="../../../_images/guidecss.png" />
+</div></blockquote>
+<p>‘Reset Custom CSS’ will restore the default CSS styling</p>
+<p>Click here for details on how to insert <a class="reference internal" href="add_media.html#add-media"><span class="std std-ref">images, videos and hyperlinks</span></a>.</p>
+</div>
+<div class="section" id="markdown">
+<h2>Markdown<a class="headerlink" href="#markdown" title="Permalink to this headline">¶</a></h2>
+<p>To assist with your creation of markdown content, an editor ribbon is available, including Codio specific buttons to <a class="reference internal" href="open_close_content.html#open-close"><span class="std std-ref">open/close content</span></a> within Guides.</p>
+<blockquote>
+<div><img alt="Markdown Editor Ribbon" src="../../../_images/editor-ribbon.png" />
+</div></blockquote>
+<p>If you prefer to write markdown yourself, a summary of formatting codes:</p>
+</div>
+<div class="section" id="headers-titles">
+<h2>Headers/Titles<a class="headerlink" href="#headers-titles" title="Permalink to this headline">¶</a></h2>
+<p>To display a header or title, you can use the <cite>#</cite> character at the start of the line. The more <cite>#</cite> characters you add, the smaller the font.</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span># Big title
+## Smaller title
+### Even smaller title
+#### etc.
+</pre></div>
+</div>
+</div>
+<div class="section" id="bold-and-italic">
+<h2>Bold and Italic<a class="headerlink" href="#bold-and-italic" title="Permalink to this headline">¶</a></h2>
+<p>To create bold or italic text, you use <cite>**</cite> and <cite>*</cite> either side of the respective words.</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>I want to say that **this is really important**, you know
+I *really* like chocolate
+</pre></div>
+</div>
+</div>
+<div class="section" id="bullet-lists">
+<h2>Bullet Lists<a class="headerlink" href="#bullet-lists" title="Permalink to this headline">¶</a></h2>
+<p>To create a list of bullet points, you start the line with a <cite>-</cite></p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>- Bullet 1
+- Bullet 2
+- Bullet 3
+- etc
+</pre></div>
+</div>
+</div>
+<div class="section" id="numbered-lists">
+<h2>Numbered Lists<a class="headerlink" href="#numbered-lists" title="Permalink to this headline">¶</a></h2>
+<p>To create a numbered list, you start the line with a <cite>1.</cite> The numbers are automatically calculated for you.</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>1. Item 1
+1. Item 2
+1. Item 3
+1. etc
+</pre></div>
+</div>
+</div>
+<div class="section" id="code-blocks">
+<h2>Code Blocks<a class="headerlink" href="#code-blocks" title="Permalink to this headline">¶</a></h2>
+<p>If you want to show some code, styled with the courier font, in a box and with syntax highlighting applied you surround your code block with three backticks. For example, the following javascript snippet</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">i</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>is written with the first line as</p>
+<p>`` <code class="docutils literal notranslate"><span class="pre">`js</span></code></p>
+<p>then your code, and the last line as three backticks</p>
+<p>Note that you can specify a language type after the top 3 back ticks. Entering <cite>python</cite> after the backticks would apply syntax highlighting for python. Many languages are supported. See a full list of supported languages <a class="reference external" href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml">here</a>. You should search for your language and then use the <cite>alias</cite> shown.</p>
+<p>The Code block also includes a ‘copy to clipboard’ button to allow students to easily copy the code to their clipboard where you may want them to run this code in the assignment</p>
+<blockquote>
+<div><img alt="copy to clipboard" src="../../../_images/copyclipboard.png" />
+</div></blockquote>
+<p>If you wish to suppress the ‘copy to clipboard’ button in the code block, append <code class="docutils literal notranslate"><span class="pre">`-hide-clipboard`</span></code> to the first line</p>
+<p>Example</p>
+<blockquote>
+<div><img alt="hide copy to clipboard" src="../../../_images/hideclipboard.png" />
+</div></blockquote>
+</div>
+<div class="section" id="code-segments">
+<h2>Code Segments<a class="headerlink" href="#code-segments" title="Permalink to this headline">¶</a></h2>
+<p>If you want to insert a piece of code inline with the rest of your text, then you use a single ` (backtick) character either side of the text. For example,</p>
+<p>We can define a variable <cite>var x;</cite> if we like</p>
+<p>… is written in markdown as</p>
+<p>We can define a variable `var x;` if we like</p>
+</div>
+<div class="section" id="indented-lists">
+<h2>Indented Lists<a class="headerlink" href="#indented-lists" title="Permalink to this headline">¶</a></h2>
+<p>If you want to indent a list, then indent just 2 spaces and it will indent.</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>- Bullet 1
+- Bullet 2
+- Bullet 3
+- etc
+</pre></div>
+</div>
+</div>
+<div class="section" id="callout-blocks">
+<h2>Callout Blocks<a class="headerlink" href="#callout-blocks" title="Permalink to this headline">¶</a></h2>
+<p>If you want to show a callout block a number of options are available and others can be easily added if required</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>important</p></li>
+<li><p>info</p></li>
+<li><p>warning</p></li>
+<li><p>topic</p></li>
+<li><p>definition</p></li>
+<li><p>challenge</p></li>
+<li><p>guidance</p></li>
+<li><p>meetup</p></li>
+<li><p>hackathon</p></li>
+<li><p>create</p></li>
+<li><p>calendar</p></li>
+<li><p>growthhack</p></li>
+<li><p>xdiscipline</p></li>
+<li><p>debugging</p></li>
+</ul>
+</div></blockquote>
+<p>e.g.</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>  |||info
+  # My Title
+
+  Some text
+
+  |||
+
+.. image:: /img/guides/callout_info.png
+   :alt: calloutinfo
+</pre></div>
+</div>
+<p>The <strong>Guidance</strong> callout block is only visible in play mode to designated teachers within a course. It is not visible for students.</p>
+</div>
+<div class="section" id="hyperlinks-images-videos-iframes">
+<h2>Hyperlinks, Images, Videos &amp; iframes<a class="headerlink" href="#hyperlinks-images-videos-iframes" title="Permalink to this headline">¶</a></h2>
+<p>We describe these in <a class="reference internal" href="add_media.html#add-media"><span class="std std-ref">this section</span></a>.</p>
+</div>
+<div class="section" id="html">
+<h2>HTML<a class="headerlink" href="#html" title="Permalink to this headline">¶</a></h2>
+<p>You can include HTML tags</p>
+</div>
+<div class="section" id="latex-mathjax">
+<h2>Latex / MathJax<a class="headerlink" href="#latex-mathjax" title="Permalink to this headline">¶</a></h2>
+<p>Latex is supported using <a class="reference external" href="http://www.mathjax.org/">MathJax</a>. For example</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>When $a \ne 0$ there are two solutions to $(ax^2 + bx + c = 0)$ and they are $x = {-b \pm \sqrt{b^2-4ac} \over 2a}$
+
+and for multiple lines we do the following
+
+$$
+y=x^2
+y=\frac{x^2}{x+1}
+$$
+</pre></div>
+</div>
+<p><a class="reference internal" href="latex.html#latex"><span class="std std-ref">Click here</span></a> for more details on Latex and Mathjax.</p>
+<blockquote>
+<div><img alt="MathJax" src="../../../_images/mathjax.png" />
+</div></blockquote>
+<p>Inline math equations are encapsulated in a single <cite>$</cite> like this: $omega = dphi / dt$.</p>
+</div>
+<div class="section" id="collapsible-content">
+<h2>Collapsible Content<a class="headerlink" href="#collapsible-content" title="Permalink to this headline">¶</a></h2>
+<p>In writing content, it is sometimes useful to provide information for the student, but to keep it hidden until they are ready.</p>
+<p>This can be achieved with collapsible content and the <cite>&lt;details&gt; &lt;summary&gt;</cite> elements. The content is treated as HTML and as such a mix of HTML and Markdown can be required.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>If you have code blocks you must have an empty line after the closing <code class="docutils literal notranslate"><span class="pre">&lt;/summary&gt;</span></code> tag.</p></li>
+<li><p>All code block starter lines, e.g. ```js must be preceded by a blank line.</p></li>
+<li><p>The closing block ``` tag must be followed by a newline.</p></li>
+<li><p>If you have multiple collapsible sections you must have an empty line after the closing <code class="docutils literal notranslate"><span class="pre">&lt;/details&gt;</span></code> tag.</p></li>
+<li><p>If you want the content to show by default, use <cite>&lt;details  open&gt;</cite>.</p></li>
+</ul>
+</div>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><img alt="CollapsibleContent" src="../../../_images/collapsible.png" />
+</div></blockquote>
+<p>The following is the code used to create the image above. Three code blocks are required for this display.</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>###Example Collapsible Content
+
+&lt;details&gt;&lt;summary&gt;
+    There are some &lt;b&gt;Special Numeric Values&lt;/b&gt; which are part of the number data type. For each of the variables &lt;code&gt;a&lt;/code&gt; &lt;code&gt;b&lt;/code&gt;and &lt;code&gt;c&lt;/code&gt; print out their data types and values.
+&lt;/summary&gt;&lt;hr&gt;
+
+The result of any mathematical operation will produce a value of type `number`.
+
+1. Variable `a` contains a value of `infinity` which represents mathematical infinity.
+2. Variable `b` is assigned a value where the left-hand operator looks like a `string` however JavaScript tries to convert it into a number which is successful.
+3. In the case of variable `c`, the string can&#39;t be converted and the operation returns the value of `NaN` which means _not a number_. If this is then used in subsequent operations the value cascades and the result will also be `NaN`.
+</pre></div>
+</div>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>&lt;h6&gt;Code Block&lt;/h6&gt;
+
+```js `
+const name = {
+        first: &#39;John&#39;,
+        &#39;last name&#39;: &#39;Doe&#39;,
+        dob: {
+            year: 1970,
+            month: &#39;January&#39;
+    }
+}
+</pre></div>
+</div>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>&lt;/details&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+
+          </main>
+          
+
+      </div>
+    </div>
+    
+  <script src="../../../_static/js/index.44f2d10023dc91dde182.js"></script>
+
+
+    
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright Codio 2023. All Rights Reserved.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EL440DKDDY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EL440DKDDY');
+</script>
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/2227229.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+  </body>
+</html>

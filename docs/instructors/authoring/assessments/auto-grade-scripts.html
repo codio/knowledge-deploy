@@ -1,0 +1,974 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Assignment level scripts have access to data about all the assessments in an assignment." name="description" />
+
+    <title>Assignment Level Scripts &#8212;   documentation</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.a51115b1206b8cbfeff9cff2c3058b7d.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.15.3/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code-tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/codio.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/search.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.44f2d10023dc91dde182.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/code-tabs.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    <script defer="defer" src="../../../_static/js/algolia.js"></script>
+    <link rel="canonical" href="https://docs.codio.com/instructors/authoring/assessments/auto-grade-scripts.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Parameterized assessments" href="parameterized.html" />
+    <link rel="prev" title="Assessment Security" href="assessment-security.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-dark-codio navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../index.html">
+  <img src="../../../_static/logo-white.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../getstarted.html">
+  Overview
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../../authoring.html">
+  Authoring
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../common.html">
+  Developing Code
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../setupcourses.html">
+  Courses Set up
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../teaching.html">
+  Teaching
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../admin.html">
+  Admin
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        <div id="docsearch"></div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../guides/intro.html">
+   Authoring
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/project_book.html">
+     Project or course assignment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/author_student.html">
+     Author and student views
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/toc.html">
+     Table of contents management
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/page_editing.html">
+     Page editing overview
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/authoring_guidelines.html">
+     Authoring Guidelines
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/markdown_content.html">
+     Content editing
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/previewing_content.html">
+     Previewing content
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/teacher_only.html">
+     Teacher only content
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/solution_templating.html">
+     Solution File Templating
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/freeze_code.html">
+     Freezing Code
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/custom_button.html">
+     Custom Buttons in Guides
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/add_media.html">
+     Adding media
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/generating_content.html">
+     Generating Content Drafts with AI
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/open_close_content.html">
+     Open/close tabs from content
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/hide_folders.html">
+     Hiding folders
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/excludingfiles.html">
+     Excluding Files/Folders
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/latex.html">
+     Latex for math expressions
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/cpumemdisk.html">
+     System Resources
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../guides/settings/page.html">
+   Guides Settings and Page actions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/settings/opentabs.html">
+     Open tabs
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/settings/assessments.html">
+     Assessment Settings
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/settings/media.html">
+     Media Settings for a Guide
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/settings/global.html">
+     Global Guide Settings
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="add-assessment.html">
+   Auto-graded assessments
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="assessments.html">
+     Assessments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ai-assessment-generation.html">
+     Generating Assessments With AI
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="student-submission.html">
+     Student submission options
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assessment-security.html">
+     Assessment Security
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Assignment Level Scripts
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="parameterized.html">
+     Parameterized assessments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="delete-assessment.html">
+     Delete an Assessment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="edit-assessment.html">
+     Edit an Assessment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="duplicate-assessment.html">
+     Duplicate an Assessment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="edit-assessment-points.html">
+     Edit Assessment Points
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="standard-code-test.html">
+     Standard Code Test
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="advanced-code-test.html">
+     Advanced Code Test
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="partial-points.html">
+     Partial Points
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="multiple-choice.html">
+     Multiple Choice
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fill-in-blanks.html">
+     Fill in the Blanks
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="free-text.html">
+     Free Text
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="autograde-free-text.html">
+     Free Text Autograde
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="grade-book.html">
+     Grade Book
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="parsons-puzzle.html">
+     Parsons Puzzle
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="random.html">
+     Random Assessment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="math-assessments.html">
+     Math Assessments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ungraded-assessments.html">
+     Ungraded Assessments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../setupcourses/library/assessmentslibrary.html">
+   Assessments Libraries
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/library/global-library.html">
+     Codio Global Assessments Library
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/library/search-library.html">
+     Search Assessments Library
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/library/add-questions-from-library.html">
+     Add Questions from Assessments Library
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/library/add-questions-to-library.html">
+     Add Questions to an Assessments Library
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/library/unlink-assessment.html">
+     Unlink an Assessment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/library/update-assess-from-library.html">
+     Update an Existing Assessment in Library
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+            
+            
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="assessment-security.html" title="previous page">
+      <i class="left-prev-icon icon fa fa-angle-left"></i>
+      <span class="left-prev-title">Previous</span>
+    </a>
+    <a class='right-next' id="next-link" href="parameterized.html" title="next page">
+      <span class="right-next-title">Next</span>
+      <i class="right-next-icon icon fa fa-angle-right"></i>
+    </a>
+
+              </div>
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="assignment-level-scripts">
+<span id="auto-grade-scripts"></span><h1>Assignment Level Scripts<a class="headerlink" href="#assignment-level-scripts" title="Permalink to this headline">¶</a></h1>
+<p>You can use assignment level scripts to evaluate student code, normalize points, and mark for participation grading. Assignment level scripts are added in the <strong>Script Grading</strong> field on the <a class="reference internal" href="../../setupcourses/assignment-settings/grade-weights.html#grade-weights"><span class="std std-ref">Script Grading</span></a> settings page. These scripts can then transfer the grading value into the grading field. Assignment level scripts are run when an assignment is <strong>Marked as Complete</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The script must execute within 3 minutes or a timeout error occurs. There is a maximum size for the feedback that can be returned of 1Mb. If this limit is exceeded, the message <strong>Payload content length greater than maximum allowed: 1048576</strong> will be returned.</p>
+</div>
+<p>If you are using an LMS platform with Codio, be sure to enter a percentage value in the <strong>Grade Weight</strong> field to maintain compatibility with LMS gradebooks. This value is then transferred into your LMS gradebook once you <a class="reference internal" href="../../teaching/grading/release-grades.html#release-grades"><span class="std std-ref">release the grades</span></a>.</p>
+<div class="section" id="secure-scripts">
+<h2>Secure scripts<a class="headerlink" href="#secure-scripts" title="Permalink to this headline">¶</a></h2>
+<p>If you store grading scripts in the <strong>.guides/secure</strong> folder, they run securely and students cannot see the script or the files in the folder. Only instructors can access this folder.
+You can find more information about assessment security <a class="reference internal" href="assessment-security.html#assessment-security"><span class="std std-ref">here</span></a>.</p>
+</div>
+<div class="section" id="access-assessment-results">
+<h2>Access assessment results<a class="headerlink" href="#access-assessment-results" title="Permalink to this headline">¶</a></h2>
+<p>You can access student scores for the auto-graded assessments in an assignment. You can get both summary data and data for each assessment. This data is in JSON format and can be accessed in the <code class="docutils literal notranslate"><span class="pre">CODIO_AUTOGRADE_ENV</span></code> environment variable. The following is an example of the format of this data:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">{</span>
+  <span class="na">&quot;assessments&quot;: {</span>
+    <span class="na">&quot;stats&quot;: {</span>
+      <span class="na">&quot;total&quot;: 2,</span>
+      <span class="na">&quot;answered&quot;: 2,</span>
+      <span class="na">&quot;correct&quot;: 2,</span>
+      <span class="na">&quot;totalPoints&quot;: 12,</span>
+      <span class="na">&quot;points&quot;: 8</span>
+    <span class="na">},</span>
+    <span class="na">&quot;info&quot;: [{</span>
+      <span class="na">&quot;name&quot;: &quot;Test 1&quot;,</span>
+      <span class="na">&quot;points&quot;: 5,</span>
+      <span class="na">&quot;answer&quot;: {</span>
+        <span class="na">&quot;correct&quot;: true,</span>
+        <span class="na">&quot;points&quot;: 5</span>
+      <span class="na">}</span>
+    <span class="na">}, {</span>
+      <span class="na">&quot;name&quot;: &quot;Test 2&quot;,</span>
+      <span class="na">&quot;points&quot;: 7,</span>
+      <span class="na">&quot;answer&quot;: {</span>
+        <span class="na">&quot;correct&quot;: true,</span>
+        <span class="na">&quot;points&quot;: 3</span>
+      <span class="na">}</span>
+    <span class="na">}]</span>
+  <span class="na">},</span>
+  <span class="na">&quot;completedDate&quot;: &quot;2017-02-07T09:47:54.471Z&quot;,</span>
+  <span class="na">&quot;student&quot;: {</span>
+    <span class="na">&quot;id&quot;: &quot;codio_GUID&quot;,</span>
+    <span class="na">&quot;username&quot;: &quot;astudent&quot;,</span>
+    <span class="na">&quot;fullName&quot;: &quot;A Student&quot;,</span>
+    <span class="na">&quot;email&quot;: &quot;email@example.com&quot;</span>
+  <span class="na">},</span>
+  <span class="na">&quot;course&quot;: {</span>
+    <span class="na">&quot;id&quot;: &quot;codio_course_id&quot;,</span>
+    <span class="na">&quot;projectId&quot;: &quot;codio_project_id&quot;,</span>
+    <span class="na">&quot;lti&quot;: true,</span>
+    <span class="na">&quot;assignment&quot;: {</span>
+      <span class="na">&quot;id&quot;: &quot;codio_assignment_id&quot;,</span>
+      <span class="na">&quot;start&quot;: null,</span>
+      <span class="na">&quot;end&quot;: null</span>
+    <span class="na">}</span>
+  <span class="na">}</span>
+<span class="na">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="participation-grading">
+<span id="id1"></span><h2>Participation Grading<a class="headerlink" href="#participation-grading" title="Permalink to this headline">¶</a></h2>
+<p>You can implement participation grading using assignment level scripts. In the examples below the Codio environment variable is checked to see how many questions were answered in the assignment.
+The student grade is calculated based on whether they answered the question, not on correctness.</p>
+<ul class="simple">
+<li><p>Depending on your language of choice select either the .sh or .py file and add it to your <cite>.guides/secure</cite> folder.</p></li>
+<li><p>If you are using the Bash version you will first need to install the utility “jq” to your stack (see <a class="reference internal" href="../../../common/develop/stacks/create-stack.html#create-stack"><span class="std std-ref">create a new stack</span></a>).</p></li>
+</ul>
+<div class="tabs docutils container" data-tabgroup="">
+<ul class="tabbar">
+<li class="tabbutton" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+bash</li><li class="tabbutton selected" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+python</li></ul><div class="tab codetab" data-id="0">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1"># save json based passed environment</span>
+<span class="nb">echo</span> <span class="nv">$CODIO_AUTOGRADE_ENV</span> &gt; save.json
+
+<span class="nv">ANSWERED</span><span class="o">=</span><span class="k">$(</span>jq -r <span class="s1">&#39;.assessments.stats.answered&#39;</span> save.json<span class="k">)</span>
+<span class="nv">TOTAL</span><span class="o">=</span><span class="k">$(</span>jq -r <span class="s1">&#39;.assessments.stats.total&#39;</span> save.json<span class="k">)</span>
+
+<span class="nv">GRADE</span><span class="o">=</span><span class="k">$((</span><span class="nv">$ANSWERED</span> <span class="o">*</span> <span class="m">100</span> <span class="o">/</span> <span class="nv">$TOTAL</span><span class="k">))</span>
+
+<span class="nv">FEEDBACK</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$TOTAL</span> -eq <span class="nv">$ANSWERED</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="nv">FEEDBACK</span><span class="o">=</span><span class="s2">&quot;✅ You answered all the questions and got full points on this assignment&quot;</span>
+<span class="k">else</span>
+  <span class="nv">FEEDBACK</span><span class="o">=</span><span class="s2">&quot;❌ You did not answer all the questions and therefore only received points for the questions you answered&quot;</span>
+<span class="k">fi</span>
+
+curl --retry <span class="m">3</span> -s <span class="s2">&quot;</span><span class="nv">$CODIO_AUTOGRADE_V2_URL</span><span class="s2">&quot;</span> -d <span class="nv">grade</span><span class="o">=</span><span class="nv">$GRADE</span> -d <span class="nv">format</span><span class="o">=</span>md -d <span class="nv">feedback</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$FEEDBACK</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div><div class="tab codetab selected" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="c1"># import grade submit function</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;/usr/share/codio/assessments&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">lib.grade</span> <span class="kn">import</span> <span class="n">send_grade_v2</span><span class="p">,</span> <span class="n">FORMAT_V2_MD</span><span class="p">,</span> <span class="n">FORMAT_V2_HTML</span><span class="p">,</span> <span class="n">FORMAT_V2_TXT</span>
+
+<span class="n">feedback</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;CODIO_AUTOGRADE_ENV&#39;</span><span class="p">)</span>
+<span class="n">parsed</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+<span class="n">answered</span> <span class="o">=</span> <span class="n">parsed</span><span class="p">[</span><span class="s1">&#39;assessments&#39;</span><span class="p">][</span><span class="s1">&#39;stats&#39;</span><span class="p">][</span><span class="s1">&#39;answered&#39;</span><span class="p">]</span>
+<span class="n">total</span><span class="o">=</span><span class="n">parsed</span><span class="p">[</span><span class="s1">&#39;assessments&#39;</span><span class="p">][</span><span class="s1">&#39;stats&#39;</span><span class="p">][</span><span class="s1">&#39;total&#39;</span><span class="p">]</span>
+
+<span class="n">grade</span><span class="o">=</span><span class="n">answered</span><span class="o">*</span><span class="mi">100</span><span class="o">/</span><span class="n">total</span>
+
+<span class="k">if</span> <span class="n">total</span><span class="o">==</span><span class="n">answered</span><span class="p">:</span>
+  <span class="n">feedback</span><span class="o">+=</span><span class="s2">&quot;✅ You answered all the questions and got full points on this assignment&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="n">feedback</span><span class="o">+=</span><span class="s2">&quot;❌ You did not answer all the questions and therefore only received points for the questions you answered&quot;</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">send_grade_v2</span><span class="p">(</span><span class="n">grade</span><span class="p">,</span> <span class="n">feedback</span><span class="p">,</span> <span class="n">FORMAT_V2_MD</span><span class="p">)</span>
+
+<span class="nb">exit</span><span class="p">(</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">res</span> <span class="k">else</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></div><ul class="simple">
+<li><p>Add the file to <strong>Education&gt;Test Autograde Script</strong>. If your file is not a bash script or other type of file that runs independently, you will need to specify the program that will run it, for example “python3 autograde.py”.</p></li>
+<li><p>Note: The JSON is not updated until the assignment is marked as complete. If you are testing values from inside the assignment - you will not see the updated values.</p></li>
+<li><p>Make sure to <strong>Publish</strong> the assignment.</p></li>
+<li><p>In the course assignment settings <a class="reference internal" href="../../setupcourses/assignment-settings/grade-weights.html#grade-weights"><span class="std std-ref">Grade Weights</span></a> section, enable <strong>Script Grading</strong> set <strong>Set custom script path</strong> to that file and disable <strong>Assessments Grading</strong>.</p></li>
+</ul>
+</div>
+<div class="section" id="regrade-an-individual-student-s-assignment">
+<h2>Regrade an individual student’s assignment<a class="headerlink" href="#regrade-an-individual-student-s-assignment" title="Permalink to this headline">¶</a></h2>
+<p>If students have clicked <strong>Mark as Complete</strong> and the custom script is triggered, you can regrade their work by resetting the <cite>complete</cite> switch, and then set it to <em>complete</em> again, which triggers the custom script to run again.</p>
+</div>
+<div class="section" id="regrade-all-student-s-assignments">
+<h2>Regrade all student’s assignments<a class="headerlink" href="#regrade-all-student-s-assignments" title="Permalink to this headline">¶</a></h2>
+<p>You can regrade all student’s assignments that have already been auto-graded from the <strong>Actions</strong> button on the assignment page.</p>
+<ol class="arabic simple">
+<li><p>Navigate to the assignment and open it.</p></li>
+<li><p>Click the <strong>Actions</strong> button and then click <strong>Regrade Completed</strong>. This is useful if you have found a bug in your assignment level grading script. <strong>Regrade Completed</strong> does not run individual code test assessments.</p></li>
+</ol>
+</div>
+<div class="section" id="test-and-debug-your-grading-scripts">
+<h2>Test and debug your grading scripts<a class="headerlink" href="#test-and-debug-your-grading-scripts" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Codio provides the ability to test your auto-grading scripts when creating your project, this should be done before publishing your project to a course. Once an assignment has been published to the course, any changes made to files in the student workspace (/home/codio/workspace) are not reflected in the published assignment. Grading scripts should be stored in the <strong>.guides/secure</strong> folder. Files in the .guides and guides/secure folders can be published even if students have already started.</p>
+</div>
+<div class="section" id="test-your-script-in-the-ide">
+<h3>Test your script in the IDE<a class="headerlink" href="#test-your-script-in-the-ide" title="Permalink to this headline">¶</a></h3>
+<p>You can test your auto-grading script in the Codio IDE from the <strong>Education &gt; Test Autograde Script</strong> on the menu bar. This option allows you to specify the location of your auto-grading script and run it against the current project content. It also allows you simulate scores attained by any auto-graded assessments located in the Codio Guide and select which autograded assessments to test.</p>
+<img alt="Autograde Test" src="../../../_images/autograde-test.png" />
+<p>Be sure to take the following into account when using this feature:</p>
+<ul class="simple">
+<li><p>When you click <strong>Test Script</strong>:</p>
+<ul>
+<li><p>All output to <code class="docutils literal notranslate"><span class="pre">stdout</span></code> and <code class="docutils literal notranslate"><span class="pre">stderr</span></code> are displayed in the dialog.</p></li>
+<li><p>The grade returned by your test script is at the bottom of the output section.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stdout</span></code> and <code class="docutils literal notranslate"><span class="pre">stderr</span></code> output is not available when running the actual auto-grading script (not in test mode) because it runs invisibly when the assignment is marked as complete. Because of this, you should only generate output for testing and debugging.</p></li>
+<li><p>If you want your script to provide feedback to the student, you should output it to a file that can be accessed by the student when opening the project at a later date. In this case, you should allow read-only access to the project from the assignment settings after being marked as complete.</p></li>
+</ul>
+</div>
+<div class="section" id="test-your-script-using-bootstrap-launcher">
+<h3>Test your script using bootstrap launcher<a class="headerlink" href="#test-your-script-using-bootstrap-launcher" title="Permalink to this headline">¶</a></h3>
+<p>You can also use a simple bootstrap launcher that loads and executes the script from a remote location so that you can edit and debug independently of the Codio box. The following example bash script shows a Python script that is located as a Gist on GitHub. This script might be called <strong>.guides/secure/launcher.sh</strong>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nv">URL</span><span class="o">=</span><span class="s2">&quot;https://gist.githubusercontent.com/ksimuk/11cd4e43b0c43f79d9478efbe21ba1b9/raw/validate.py&quot;</span>
+curl -fsSL <span class="nv">$URL</span> <span class="p">|</span> python - <span class="nv">$@</span>
+</pre></div>
+</div>
+<p>It is important that this file is stored in the <strong>.guides/secure</strong> folder. You then specify the full filepath <strong>.guides/secure/launcher.sh</strong> in the <strong>Set custom script path</strong> field in the assignment settings.</p>
+<p>It is now possible to debug the Python script and fix any bugs that you may have noticed once students have started work on the assignment.</p>
+</div>
+</div>
+<div class="section" id="sending-points-to-codio">
+<h2>Sending Points to Codio<a class="headerlink" href="#sending-points-to-codio" title="Permalink to this headline">¶</a></h2>
+<p>Codio provides a Python library to facilitate reporting points from your custom scripts. There are four functions in this library: <cite>send_grade</cite>, <cite>send_grade_v2</cite>, <cite>send_partial</cite> and <cite>send_partial_v2</cite>.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Partial points are not used in assignment level scripts, see <a class="reference internal" href="partial-points.html#partial-points"><span class="std std-ref">Allow Partial Points</span></a> for more information about setting up partial points.</p>
+</div>
+</div></blockquote>
+<p>In order to use this library you need to add the following code to the top of your grading script:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># import grade submit function</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;/usr/share/codio/assessments&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">lib.grade</span> <span class="kn">import</span> <span class="n">send_grade</span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># import grade submit function</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;/usr/share/codio/assessments&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">lib.grade</span> <span class="kn">import</span> <span class="n">send_grade_v2</span><span class="p">,</span> <span class="n">FORMAT_V2_MD</span><span class="p">,</span> <span class="n">FORMAT_V2_HTML</span><span class="p">,</span> <span class="n">FORMAT_V2_TXT</span>
+</pre></div>
+</div>
+<p>The calls to use these functions are as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">send_grade</span><span class="p">(</span><span class="n">grade</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><cite>grade</cite> - Should be the percent correct for the assessment.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">send_grade_v2</span><span class="p">(</span><span class="n">grade</span><span class="p">,</span> <span class="n">feedback</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="n">FORMAT_V2_TXT</span><span class="p">,</span> <span class="n">extra_credit</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><cite>grade</cite> - Should be the percent correct for the assessment.</p>
+<p><cite>feedback</cite> - The buffer containing the feedback for your student - maximum size is 1 Mb.</p>
+<p><cite>format</cite> - The format can be Markdown, HTML or text and the default is text.</p>
+<p><cite>extra_credit</cite> - Extra points beyond the value for doing this correctly. These do not get passed to an LMS system automatically, just the percentage correct.</p>
+</div>
+<div class="section" id="auto-grading-enhancements">
+<span id="autograde-enhance"></span><h2>Auto-grading enhancements<a class="headerlink" href="#auto-grading-enhancements" title="Permalink to this headline">¶</a></h2>
+<p>The V2 versions of the grading functions allow you to:</p>
+<ul class="simple">
+<li><p>Send feedback in different formats such as HTML and Markdown/plaintext.</p></li>
+<li><p>Provide separate debug logs.</p></li>
+<li><p>Notify (instructors and students) and reopen assignments for a student on grade script failure.</p></li>
+</ul>
+<p>If you don’t use the send_grade_v2 functions, this URL (passed as an environment variable) can be used:<code class="docutils literal notranslate"><span class="pre">`CODIO_AUTOGRADE_V2_URL`</span></code></p>
+<p>These variables allow POST and GET requests with the following parameters:</p>
+<ul class="simple">
+<li><p><strong>Grade</strong> (<code class="docutils literal notranslate"><span class="pre">`CODIO_AUTOGRADE_V2_URL`</span></code>) - return 0-100 percent. This is the percent correct out of total possible points.</p></li>
+<li><p><strong>Feedback</strong> - text</p></li>
+<li><p><strong>Format</strong> - html, md, txt - txt is default</p></li>
+<li><p><strong>CompletedDate</strong> - can be set to determine relevant penalties from student completed date. State in UTC format (see example below)</p></li>
+<li><p><strong>Penalty</strong> - Penalty is number between 0-100,</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Grade</strong> would be set after any penalties applied. <strong>Grade + Penalty</strong> should be &lt;= 100. The Penalty is available only for assignment grading. Set penalty to -1 to remove any penalty override.</p>
+</div>
+<p>With the V2 versions of grading, the script output is saved as a debug log. This means that all information you want to pass to students must use the <strong>Feedback</strong> mechanism.</p>
+<p>If the script fails:</p>
+<ul class="simple">
+<li><p>The attempt is recorded.</p></li>
+<li><p>The assignment is not locked (if due date is not passed).</p></li>
+<li><p>An email notification with information about the problem is sent to the course instructor(s) containing the debug output from the script.</p></li>
+</ul>
+<p>These Python and Bash files that can be loaded by a bootstrap script or as explained above in the participation grading section.</p>
+<div class="tabs docutils container" data-tabgroup="">
+<ul class="tabbar">
+<li class="tabbutton" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+bash</li><li class="tabbutton selected" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+python</li></ul><div class="tab codetab" data-id="0">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="nv">POINTS</span><span class="o">=</span><span class="k">$((</span> <span class="o">(</span> RANDOM <span class="o">%</span> <span class="m">100</span> <span class="o">)</span>  <span class="o">+</span> <span class="m">1</span> <span class="k">))</span>
+<span class="nv">EXTRA_CREDIT</span><span class="o">=</span><span class="k">$((</span> <span class="o">(</span> RANDOM <span class="o">%</span> <span class="m">100</span> <span class="o">)</span>  <span class="o">+</span> <span class="m">1</span> <span class="k">))</span>
+<span class="nv">PENALTY</span><span class="o">=</span><span class="k">$((</span> <span class="o">(</span> RANDOM <span class="o">%</span> <span class="m">100</span> <span class="o">)</span>  <span class="o">+</span> <span class="m">1</span> <span class="k">))</span>
+curl --retry <span class="m">3</span> -s <span class="s2">&quot;</span><span class="nv">$CODIO_AUTOGRADE_V2_URL</span><span class="s2">&quot;</span> -d <span class="nv">grade</span><span class="o">=</span><span class="nv">$POINTS</span> -d <span class="nv">format</span><span class="o">=</span>md -d <span class="nv">feedback</span><span class="o">=</span><span class="s1">&#39;### Markdown text here&#39;</span>  -d <span class="nv">extra_credit</span><span class="o">=</span><span class="nv">$EXTRA_CREDIT</span> -d <span class="nv">penalty</span><span class="o">=</span><span class="nv">$PENALTY</span>
+</pre></div>
+</div>
+</div><div class="tab codetab selected" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>  <span class="c1">#!/usr/bin/env python</span>
+  <span class="kn">import</span> <span class="nn">os</span>
+  <span class="kn">import</span> <span class="nn">random</span>
+  <span class="kn">import</span> <span class="nn">json</span>
+  <span class="c1"># import grade submit function</span>
+  <span class="kn">import</span> <span class="nn">sys</span>
+  <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;/usr/share/codio/assessments&#39;</span><span class="p">)</span>
+  <span class="kn">from</span> <span class="nn">lib.grade</span> <span class="kn">import</span> <span class="n">send_grade_v2</span><span class="p">,</span> <span class="n">FORMAT_V2_MD</span><span class="p">,</span> <span class="n">FORMAT_V2_HTML</span><span class="p">,</span> <span class="n">FORMAT_V2_TXT</span>
+  <span class="n">CODIO_UNIT_DATA</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;CODIO_AUTOGRADE_ENV&quot;</span><span class="p">]</span>
+  <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+  <span class="c1"># Execute the test on the student&#39;s code</span>
+  <span class="n">grade</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+  <span class="n">feedback</span> <span class="o">=</span> <span class="s1">&#39;## markdown text&#39;</span>
+  <span class="n">completedDate</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">CODIO_UNIT_DATA</span><span class="p">)[</span><span class="s1">&#39;completedDate&#39;</span><span class="p">]</span>
+  <span class="k">if</span> <span class="n">completedDate</span> <span class="o">&gt;</span> <span class="s2">&quot;2023-05-20T00:00:00.00Z&quot;</span><span class="p">:</span>
+      <span class="n">penalty</span> <span class="o">=</span> <span class="mi">20</span>
+  <span class="k">elif</span> <span class="n">completedDate</span> <span class="o">&gt;</span> <span class="s2">&quot;2023-05-10T00:00:00.00Z&quot;</span><span class="p">:</span>
+      <span class="n">penalty</span> <span class="o">=</span> <span class="mi">10</span>
+  <span class="k">else</span><span class="p">:</span>
+      <span class="n">penalty</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+  <span class="n">extra_credit</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+  <span class="c1"># Send the grade back to Codio with the penalty factor applied</span>
+  <span class="n">res</span> <span class="o">=</span> <span class="n">send_grade_v2</span><span class="p">(</span><span class="n">grade</span><span class="p">,</span> <span class="n">feedback</span><span class="p">,</span> <span class="n">FORMAT_V2_MD</span><span class="p">,</span> <span class="n">extra_credit</span><span class="p">,</span> <span class="n">penalty</span><span class="p">)</span>
+  <span class="c1"># res = send_grade_v2(grade, feedback, penalty=penalty) # if &#39;format&#39; or/and &#39;extra credit&#39; params are not in request then use penalty=penalty_value</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">CODIO_UNIT_DATA</span><span class="p">)</span>
+  <span class="nb">exit</span><span class="p">(</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">res</span> <span class="k">else</span> <span class="mi">1</span><span class="p">)</span>
+
+  <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></div></div>
+<div class="section" id="example-grading-scripts">
+<h2>Example grading scripts<a class="headerlink" href="#example-grading-scripts" title="Permalink to this headline">¶</a></h2>
+<p>This section provides example assignment level scripts using the older methods to send grades.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Both of these examples use random numbers to generate the grade - you can substitute whatever test you would like.</p>
+</div>
+<div class="tabs docutils container" data-tabgroup="">
+<ul class="tabbar">
+<li class="tabbutton" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+bash</li><li class="tabbutton selected" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+python</li></ul><div class="tab codetab" data-id="0">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nb">set</span> -e
+<span class="c1"># Your actual test logic</span>
+<span class="c1"># Our demo function is just generating some random score</span>
+<span class="nv">POINTS</span><span class="o">=</span><span class="k">$((</span> <span class="o">(</span> RANDOM <span class="o">%</span> <span class="m">100</span> <span class="o">)</span>  <span class="o">+</span> <span class="m">1</span> <span class="k">))</span>
+<span class="c1"># Show json based passed environment</span>
+<span class="nb">echo</span> <span class="nv">$CODIO_AUTOGRADE_ENV</span>
+<span class="c1"># Show json based project information</span>
+<span class="nb">echo</span> <span class="k">$(</span>codio-vm get-project-info --format json<span class="k">)</span>
+<span class="c1"># Send the grade back to Codio</span>
+curl --retry <span class="m">3</span> -s <span class="s2">&quot;</span><span class="nv">$CODIO_AUTOGRADE_URL</span><span class="s2">&amp;grade=</span><span class="nv">$POINTS</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div><div class="tab codetab selected" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="c1"># import grade submit function</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;/usr/share/codio/assessments&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">lib.grade</span> <span class="kn">import</span> <span class="n">send_grade</span>
+
+<span class="c1">##################</span>
+<span class="c1"># Helper functions #</span>
+<span class="c1">##################</span>
+
+
+<span class="c1"># Get the url to send the results to</span>
+<span class="n">CODIO_AUTOGRADE_URL</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;CODIO_AUTOGRADE_URL&quot;</span><span class="p">]</span>
+<span class="n">CODIO_UNIT_DATA</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;CODIO_AUTOGRADE_ENV&quot;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+  <span class="c1"># Execute the test on the student&#39;s code</span>
+  <span class="n">grade</span> <span class="o">=</span> <span class="n">validate_code</span><span class="p">()</span>
+  <span class="c1"># Send the grade back to Codio with the penalty factor applied</span>
+  <span class="n">res</span> <span class="o">=</span> <span class="n">send_grade</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">grade</span><span class="p">)))</span>
+  <span class="nb">exit</span><span class="p">(</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">res</span> <span class="k">else</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">########################################</span>
+<span class="c1"># You only need to modify the code below #</span>
+<span class="c1">########################################</span>
+
+<span class="c1"># Your actual test logic</span>
+<span class="c1"># Our demo function is just generating some random score</span>
+<span class="k">def</span> <span class="nf">validate_code</span><span class="p">():</span>
+  <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></div></div>
+</div>
+
+
+              </div>
+              
+
+          </main>
+          
+
+      </div>
+    </div>
+    
+  <script src="../../../_static/js/index.44f2d10023dc91dde182.js"></script>
+
+
+    
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright Codio 2023. All Rights Reserved.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EL440DKDDY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EL440DKDDY');
+</script>
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/2227229.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+  </body>
+</html>

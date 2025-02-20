@@ -1,0 +1,868 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Create a Stack to save your software configuration as a template." name="description" />
+
+    <title>Create a Stack &#8212;   documentation</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.a51115b1206b8cbfeff9cff2c3058b7d.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.15.3/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/codio.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/search.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.44f2d10023dc91dde182.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    <script defer="defer" src="../../../_static/js/algolia.js"></script>
+    <link rel="canonical" href="https://docs.codio.com/develop/develop/stacks/create-stack.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Modify a Stack" href="modify-stack.html" />
+    <link rel="prev" title="Stack planning" href="stack-planning.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-dark-codio navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../student.html">
+  <img src="../../../_static/logo-white.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../accessing-codio.html">
+  Accessing Codio
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../courses.html">
+  Your Courses
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../tools.html">
+  Tools
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../../develop.html">
+  Developing Code
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        <div id="docsearch"></div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../projects/projects.html">
+   Developing Code
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/project-settings.html">
+     Project Settings
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/create-import-project.html">
+     Create or Import a Project
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/access-projects.html">
+     Access Projects
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/copy-project.html">
+     Copy a Project
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../projects/export-project.html">
+     Export a Project
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="stacks.html">
+   Stacks
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="using-stacks.html">
+     Using Stacks
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="stack-planning.html">
+     Stack planning
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Create a Stack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="modify-stack.html">
+     Modify a Stack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="update-stack.html">
+     Update a Stack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="switch-stack.html">
+     Switch Project to New Stack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../packs/packs.html">
+   Starter Packs
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../packs/create-starter-pack.html">
+     Create Starter Pack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../packs/starter-pack-guidelines.html">
+     Starter Pack Guidelines
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../packs/update-starter-pack.html">
+     Update a Starter Pack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ide/workspace/workspace.html">
+   IDE Workspace
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/workspace/panels.html">
+     Panels, Tabs, and Layouts
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/workspace/open-file.html">
+     Open a File
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/workspace/upload-download-files.html">
+     Upload and Download Files
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/workspace/add-delete-folders.html">
+     Add and Delete Folders
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/workspace/add-delete-files.html">
+     Add and Delete Files
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ide/editing/code-editing.html">
+   Code Editing Features
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/editing/abbreviations.html">
+     Abbreviations
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/editing/autocomplete.html">
+     Autocomplete
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/editing/av-chat.html">
+     Audio Video Chat
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/editing/code-beautifier.html">
+     Code Beautifier
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/editing/color-picker.html">
+     Color Picker and Preview
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/editing/command-bar.html">
+     Command Bar
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/editing/connect-github-codio.html">
+     Connecting a Codio Box to a GitHub Repo
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/editing/cursor.html">
+     Cursor Features
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/editing/git.html">
+     Git and GitHub
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/editing/jupyter.html">
+     Jupyter
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/editing/junit.html">
+     JUnit Testing Framework
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/editing/keyboard-shortcuts.html">
+     Keyboard Shortcuts
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/editing/force-language-highlighting.html">
+     Language Highlighting
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/editing/preview.html">
+     Preview
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/editing/quick-open.html">
+     Quick Open
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/editing/save-files.html">
+     Save Files
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/editing/search-replace.html">
+     Search and Replace
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/editing/share-project.html">
+     Share Project
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/editing/vscode.html">
+     VSCode
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tools/dyslexia.html">
+   Tools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tools/lexikon.html">
+     Lexikon
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tools/code-playback.html">
+     Code Playback
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tools/code-commenting.html">
+     Code Commenting
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ide/tools/deployment.html">
+   IDE Tools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/tools/ghapi.html">
+     Git Hub API
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/tools/ssh.html">
+     Remote SSH Terminal Access
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/tools/desktopapp.html">
+     Desktop App
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ide/boxes/overview.html">
+   IDE Box Overview
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/boxes/terminal.html">
+     Terminal Window
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/boxes/ext-access.html">
+     External Access to Boxes and Ports
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/boxes/restart-reset.html">
+     Restart or Reset Box
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/boxes/runmenu.html">
+     Customize Run Button
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/boxes/startup.html">
+     Autostart Services
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ide/boxes/installsw/install-software.html">
+   Installing Software Packages
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/boxes/installsw/file-locations.html">
+     File and Software Locations
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/boxes/installsw/default-installed.html">
+     Preinstalled Software Packages
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/boxes/installsw/parts-coding.html">
+     Add Your Own Software Packages
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/boxes/installsw/langserver.html">
+     Language Server Protocol
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/boxes/installsw/gui.html">
+     GUI Based Output
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ide/debugger/debugger.html">
+   Debugger
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/debugger/create-debug-target.html">
+     Create and Manage Debugger Targets
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ide/debugger/start-debug.html">
+     Start Debug Session
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+            
+            
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="stack-planning.html" title="previous page">
+      <i class="left-prev-icon icon fa fa-angle-left"></i>
+      <span class="left-prev-title">Previous</span>
+    </a>
+    <a class='right-next' id="next-link" href="modify-stack.html" title="next page">
+      <span class="right-next-title">Next</span>
+      <i class="right-next-icon icon fa fa-angle-right"></i>
+    </a>
+
+              </div>
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="create-a-stack">
+<span id="create-stack"></span><h1>Create a Stack<a class="headerlink" href="#create-a-stack" title="Permalink to this headline">¶</a></h1>
+<p>You can create a new stack or stack version from a project or assignment in the IDE, or from the <strong>Stacks</strong> page in the Codio dashboard.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Prior to creating a stack, read the information about <a class="reference internal" href="stacks.html#stacks"><span class="std std-ref">Stacks</span></a> so you are familiar with how stacks work in Codio.</p>
+</div>
+<div class="section" id="stack-guidelines">
+<h2>Stack guidelines<a class="headerlink" href="#stack-guidelines" title="Permalink to this headline">¶</a></h2>
+<p>Before you create a stack, review the following strategies and considerations to improve their usefulness:</p>
+<ul class="simple">
+<li><p>Create a new project from a stack that most closely matches your requirements. You can also use the Base Stack and then <a class="reference internal" href="../ide/boxes/installsw/install-software.html#box-parts"><span class="std std-ref">install your own components</span></a>.</p></li>
+<li><p>Include a full description of the stack; this is the description that is displayed in the <strong>Stacks</strong> listing and the stack info (<strong>Projects &gt; Stack &gt; Info</strong>) in a project. For a reference, review some of the Codio Certified Pack long descriptions.</p></li>
+</ul>
+</div>
+<div class="section" id="create-a-new-stack-from-the-ide">
+<h2>Create a new stack from the IDE<a class="headerlink" href="#create-a-new-stack-from-the-ide" title="Permalink to this headline">¶</a></h2>
+<p>To create a new stack or new version of a stack from a project or assignment in the IDE, follow these steps:</p>
+<ol class="arabic">
+<li><p>Open the project in the IDE.</p></li>
+<li><p>Click the <strong>Project</strong> tab on the menu bar and choose <strong>Stack &gt; Create New</strong>.</p>
+<img alt="Stacks Create New" src="../../../_images/stacks_createnew.png" />
+</li>
+</ol>
+<p>By default, the stack is Private. To make it available to others, refer to <a class="reference internal" href="stacks.html#stacks"><span class="std std-ref">Visibility and Ownership</span></a>. We recommend that you set the owner to your organization.</p>
+</div>
+<div class="section" id="create-a-new-stack-from-the-dashboard">
+<h2>Create a new stack from the dashboard<a class="headerlink" href="#create-a-new-stack-from-the-dashboard" title="Permalink to this headline">¶</a></h2>
+<p>To create a new stack or new version of a stack from the Codio dashboard, follow these steps:</p>
+<ol class="arabic">
+<li><p>In the left navigation pane, <strong>Stacks</strong>.</p></li>
+<li><p>On the <strong>Stacks</strong> page, click <strong>New Stack</strong> and point to your project.</p>
+<img alt="Create New Stack" src="../../../_images/stacks_create.png" />
+</li>
+<li><p>Complete the required fields:</p>
+<ul class="simple">
+<li><p><strong>Stack Blueprint</strong> - Choose the Codio project to be used for the stack blueprint. Enter any part of the project name to view the blueprints in a drop-down list.</p></li>
+<li><p><strong>Name and Description</strong> - Enter a short name and a longer description for the stack. To add a more detailed overview of the stack, click the <strong>add a long description</strong> link. You can write the description using markdown.</p></li>
+<li><p><strong>Image</strong> - You can add an image to make your stack more instantly recognizable in the listing. The image should be square; the size will be reduced and appear in a circle.</p></li>
+<li><p><strong>Tags</strong> - You can add tags to the stack help ensure maximum search capabilities. Ideally, the tags should be component names. The autocomplete feature helps you find already defined tags to avoid duplication.</p></li>
+</ul>
+</li>
+<li><p>Click <strong>Create</strong> to generate the stack image (this may take a few minutes depending on the size of the image).</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You do not need to remain on the page while the stack image is being created; you may continue to other areas of Codio. However, the source project is not accessible until the stack has been created.</p>
+</div>
+<div class="section" id="sample-template">
+<h3>Sample template<a class="headerlink" href="#sample-template" title="Permalink to this headline">¶</a></h3>
+<p>Below is a sample template that can be modified for your stack.</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="c1"># Title</span>
+<span class="na">Put the name of your Stack here.</span>
+
+<span class="c1">## Using the Stack</span>
+<span class="na">Describe how the user should get started.</span>
+
+<span class="c1">## Starter Pack</span>
+<span class="na">If there are related Starter Packs you have created from this Stack that include code files, detail them here.</span>
+
+<span class="c1">## Components Installed</span>
+<span class="na">It can be helpful to others or even to you later on to describe the installed Components and versions.</span>
+
+<span class="c1">## Configuration Files</span>
+<span class="na">Detail where any component configuration files can be found. As you install components from `Tools&gt;Install Software` a log file of all this information will be opened.</span>
+
+<span class="c1">## General Information</span>
+<span class="na">Include any general information on the use and operation of any installed components.</span>
+
+<span class="c1">## Codio Documentation</span>
+<span class="na">We recommend you include useful links to the Codio Documentation.</span>
+
+<span class="c1">##Stack Specific Links</span>
+<span class="na">Provide useful links on the Stack components.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sample-template-from-codio-certified-lamp-stack">
+<h3>Sample template from Codio Certified LAMP stack<a class="headerlink" href="#sample-template-from-codio-certified-lamp-stack" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="c1"># LAMP</span>
+
+<span class="c1">## Using this Stack</span>
+<span class="na">This Codio Stack gives you a complete **LAMP** stack ready to use and with all services up and running.</span>
+
+<span class="c1">## Related Stacks &amp; Starter Packs</span>
+<span class="na">There are various other Stacks and Starter Packs that may be of interest. Please search the listing for</span>
+
+<span class="na">- Stack : **LEMP**</span>
+<span class="na">- Stack : **LAPP**</span>
+<span class="na">- Stack : **LAMP** + Composer</span>
+<span class="na">- Starter Pack : **Laravel** (LAMP + Composer + Laravel)</span>
+
+<span class="c1">## Components Installed</span>
+<span class="na">This Stack contains the following major component versions</span>
+
+<span class="na">- **PHP** 5.5.9</span>
+<span class="na">- **Apache** 2.4.7</span>
+<span class="na">- **MySQL** 14.14 Distrib 5.5.46</span>
+
+<span class="c1">## Configuration Files</span>
+<span class="na">You can find configuration files in the following locations</span>
+
+<span class="na">- **PHP config file** : `/etc/php5/apache2/php.ini`</span>
+<span class="na">- **Apache config** : `/etc/apache2/apache2.conf`</span>
+<span class="na">- **MySQL default config file** :  `/etc/mysql/my.cnf`</span>
+
+<span class="c1">## General Information</span>
+
+<span class="c1"># Apache Server</span>
+<span class="na">Apache should be started by default. You can manually start, stop and restart it using the following terminal commands:</span>
+
+<span class="na">$ sudo service apache2 start</span>
+<span class="na">$ sudo service  apache2 stop</span>
+<span class="na">$ sudo service  apache2 restart</span>
+
+
+<span class="c1"># MySQL</span>
+
+<span class="c1">## Start, Stop, Restart the MySQL server</span>
+<span class="na">MySQL should be started by default. You can manually start, stop and restart the MySQL server using the following terminal commands:</span>
+
+<span class="na">$ sudo service mysql start</span>
+<span class="na">$ sudo service mysql stop</span>
+<span class="na">$ sudo service mysql restart</span>
+
+
+<span class="c1">## Connecting to the MySQL monitor</span>
+<span class="na">Assuming the MySQL server is started, you can connect to it using `mysql` from the terminal. Exit using `ctrl+c`.</span>
+
+<span class="c1">## Root Password</span>
+<span class="na">If you want to set the root password, use the following command from the terminal</span>
+
+<span class="na">mysqladmin -u root password NEWPASSWORD`</span>
+
+
+<span class="c1">## Codio Documentation</span>
+<span class="na">Please be aware of the following useful links</span>
+
+<span class="na">- [How to Access your Box](https://docs.codio.com/develop/develop/ide/boxes/overview.html)</span>
+<span class="na">- [If your firewall only allows access to port 80](https://docs.codio.com/develop/develop/ide/boxes/ext-access.html)</span>
+<span class="na">- [Creating Codio menu items to avoid repetitive terminal commands](https://docs.codio.com/develop/develop/ide/boxes/runmenu.html#customizable-run-menu)</span>
+<span class="na">- [Using Git in Codio](https://docs.codio.com/common/develop/ide/editing/git.html#git)</span>
+<span class="na">- [Customizing the IDE settings](https://docs.codio.com/develop/settings/user-prefs.html#user-prefs)</span>
+<span class="na">- [Restarting your Box](https://docs.codio.com/common/develop/ide/boxes/restart-reset.html#restart-and-reset)</span>
+<span class="na">- [Creating multiple code editing panels in the IDE](https://docs.codio.com/common/develop/ide/workspace/panels.html#id1)</span>
+
+<span class="c1">## Stack Specific Links</span>
+
+<span class="na">- [PHP](http://php.net)</span>
+<span class="na">- [Apache](http://httpd.apache.org)</span>
+<span class="na">- [MySQL](http://dev.mysql.com)</span>
+
+<span class="c1">## Updating Components</span>
+<span class="na">If this Stack is not using any of the latest components, please email support@codio.com and we will update it.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+
+          </main>
+          
+
+      </div>
+    </div>
+    
+  <script src="../../../_static/js/index.44f2d10023dc91dde182.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright Codio 2025. All Rights Reserved.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

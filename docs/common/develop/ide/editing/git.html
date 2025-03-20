@@ -1,0 +1,983 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Using Git and GitHub in Codio." name="description" />
+
+    <title>Git and GitHub &#8212;   documentation</title>
+    
+  <link href="../../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../../_static/css/index.a51115b1206b8cbfeff9cff2c3058b7d.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.15.3/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/code-tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/codio.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/search.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+    
+  <link rel="preload" as="script" href="../../../../_static/js/index.44f2d10023dc91dde182.js">
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/code-tabs.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    <script defer="defer" src="../../../../_static/js/algolia.js"></script>
+    <link rel="canonical" href="https://docs.codio.com/common/develop/ide/editing/git.html" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Jupyter" href="jupyter.html" />
+    <link rel="prev" title="Cursor Features" href="cursor.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-dark-codio navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../../index.html">
+  <img src="../../../../_static/logo-white.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../getstarted.html">
+  Overview
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../authoring.html">
+  Authoring
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../../../common.html">
+  Developing Code
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../setupcourses.html">
+  Courses Set up
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../teaching.html">
+  Teaching
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../admin.html">
+  Admin
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        <div id="docsearch"></div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../projects/projects.html">
+   Developing Code
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project-settings.html">
+     Project Settings
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/create-import-project.html">
+     Create or Import a Project
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/access-projects.html">
+     Access Projects
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/copy-project.html">
+     Copy a Project
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/export-project.html">
+     Export a Project
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../stacks/stacks.html">
+   Stacks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../stacks/using-stacks.html">
+     Using Stacks
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../stacks/stack-planning.html">
+     Stack planning
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../stacks/create-stack.html">
+     Create a Stack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../stacks/modify-stack.html">
+     Modify a Stack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../stacks/update-stack.html">
+     Update a Stack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../stacks/switch-stack.html">
+     Switch Project to New Stack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../packs/packs.html">
+   Starter Packs
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../packs/create-starter-pack.html">
+     Create Starter Pack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../packs/starter-pack-guidelines.html">
+     Starter Pack Guidelines
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../packs/update-starter-pack.html">
+     Update a Starter Pack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../workspace/workspace.html">
+   IDE Workspace
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../workspace/panels.html">
+     Panels, Tabs, and Layouts
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../workspace/open-file.html">
+     Open a File
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../workspace/upload-download-files.html">
+     Upload and Download Files
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../workspace/add-delete-folders.html">
+     Add and Delete Folders
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../workspace/add-delete-files.html">
+     Add and Delete Files
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="code-editing.html">
+   Code Editing Features
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="abbreviations.html">
+     Abbreviations
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="autocomplete.html">
+     Autocomplete
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="av-chat.html">
+     Audio Video Chat
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="code-beautifier.html">
+     Code Beautifier
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="color-picker.html">
+     Color Picker and Preview
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="command-bar.html">
+     Command Bar
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="connect-github-codio.html">
+     Connecting a Codio Box to a GitHub Repo
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="cursor.html">
+     Cursor Features
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Git and GitHub
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jupyter.html">
+     Jupyter
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="junit.html">
+     JUnit Testing Framework
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="keyboard-shortcuts.html">
+     Keyboard Shortcuts
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="force-language-highlighting.html">
+     Language Highlighting
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="preview.html">
+     Preview
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="quick-open.html">
+     Quick Open
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="save-files.html">
+     Save Files
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="search-replace.html">
+     Search and Replace
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="share-project.html">
+     Share Project
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="vscode.html">
+     VSCode
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../tools/dyslexia.html">
+   Tools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../tools/lexikon.html">
+     Lexikon
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../tools/code-playback.html">
+     Code Playback
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../tools/code-commenting.html">
+     Code Commenting
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../tools/deployment.html">
+   IDE Tools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tools/ghapi.html">
+     Git Hub API
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tools/ssh.html">
+     Remote SSH Terminal Access
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tools/desktopapp.html">
+     Desktop App
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../boxes/overview.html">
+   IDE Box Overview
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/terminal.html">
+     Terminal Window
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/ext-access.html">
+     External Access to Boxes and Ports
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/restart-reset.html">
+     Restart or Reset Box
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/runmenu.html">
+     Customize Run Button
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/startup.html">
+     Autostart Services
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../boxes/installsw/install-software.html">
+   Installing Software Packages
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/installsw/file-locations.html">
+     File and Software Locations
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/installsw/default-installed.html">
+     Preinstalled Software Packages
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/installsw/parts-coding.html">
+     Add Your Own Software Packages
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/installsw/langserver.html">
+     Language Server Protocol
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boxes/installsw/gui.html">
+     GUI Based Output
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../debugger/debugger.html">
+   Debugger
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../debugger/create-debug-target.html">
+     Create and Manage Debugger Targets
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../debugger/start-debug.html">
+     Start Debug Session
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../general.html">
+   Cookies, Firewalls, Browser support
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+            
+            
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="cursor.html" title="previous page">
+      <i class="left-prev-icon icon fa fa-angle-left"></i>
+      <span class="left-prev-title">Previous</span>
+    </a>
+    <a class='right-next' id="next-link" href="jupyter.html" title="next page">
+      <span class="right-next-title">Next</span>
+      <i class="right-next-icon icon fa fa-angle-right"></i>
+    </a>
+
+              </div>
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="git-and-github">
+<span id="git"></span><h1>Git and GitHub<a class="headerlink" href="#git-and-github" title="Permalink to this headline">¶</a></h1>
+<p>Git and GitHub are preinstalled, as well as Mercurial and SVN. You can open a <a class="reference internal" href="../boxes/terminal.html#terminal"><span class="std std-ref">Terminal window</span></a> to access them from the command line. The <strong>Tools &gt; Git</strong> menu includes options for using Git.</p>
+<p>You can also configure your <strong>.codio</strong> file to create a <strong>Run</strong> menu from which you can access common commands in the Codio IDE. See <a class="reference internal" href="../boxes/runmenu.html#customizable-run-menu"><span class="std std-ref">Customize Run Button</span></a> for more information.</p>
+<p>If you are new to Git, refer to the following to get started:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://nfarina.com/post/9868516270/git-is-simpler">Git is simpler than you think</a> (explains how Git works rather than teaching you usage).</p></li>
+<li><p><a class="reference external" href="http://git-scm.com/docs">Git reference</a></p></li>
+<li><p><a class="reference external" href="http://sixrevisions.com/resources/git-Tutorials-beginners/">10 Git Tutorials for beginners</a></p></li>
+</ul>
+<div class="section" id="use-git-without-remote-repos">
+<h2>Use Git without remote repos<a class="headerlink" href="#use-git-without-remote-repos" title="Permalink to this headline">¶</a></h2>
+<p>You can use Git commands in your Codio project without using a remote repo, providing more collaborative capabilities and comprehensive version control. However, you can add a remote repository, such as GitHub (recommended), if you want to save your code in more than one location as a back up.</p>
+<p>To add a repo, click <strong>Tools &gt; Git &gt; Remotes</strong>.</p>
+</div>
+<div class="section" id="view-github-repos">
+<h2>View GitHub repos<a class="headerlink" href="#view-github-repos" title="Permalink to this headline">¶</a></h2>
+<p>GitHub let’s you browse around a repo but it’s not the same as using an IDE. Codio gives you a great way of viewing any GitHub (or Git) repo. For web apps, you can even run and <a class="reference internal" href="preview.html#preview"><span class="std std-ref">preview</span></a> in Codio.</p>
+</div>
+<div class="section" id="provide-link-to-project-in-readme-md-file">
+<h2>Provide link to project in readme.md file<a class="headerlink" href="#provide-link-to-project-in-readme-md-file" title="Permalink to this headline">¶</a></h2>
+<p>You can include a link to your project in the project readme.md file that initiates the creation of a project and imports it from the repo into the users Codio account. When you make changes to your repo, the changes are automatically shown in Codio since a brand new Codio project is created whenever the link is clicked. If a project with the same name already exists, users can change the name on the project creation page.</p>
+<div class="figure align-default">
+<img alt="create from GitHub" src="../../../../_images/github-readme.png" />
+</div>
+<p>To create the link in your GitHub README.md file (or anywhere else for that matter), enter the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://codio.com/home/projects/new?importType=git&amp;activeTab=3&amp;name=your_codio_project_name&amp;importGitUrl=git@github.com:your_github_name/your_repo_name&amp;stackVersion=stack_version_id
+</pre></div>
+</div>
+<p>To specify a specific branch (for example, you have a demo or GitHub Pages site that you want to load into Codio), enter the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://codio.com/home/projects/new?importType=git&amp;activeTab=3&amp;name=your_codio_project_name&amp;importGitUrl=git@github.com:your_github_name/your_repo_name&amp;branch=other_branch&amp;stackVersion=stack_version_id
+</pre></div>
+</div>
+<div class="section" id="find-stack-version-id">
+<h3>Find stack version ID<a class="headerlink" href="#find-stack-version-id" title="Permalink to this headline">¶</a></h3>
+<p>To find the appropriate stack to use with your repo, go to <strong>Stacks</strong> in the Dashboard, choose the stack to be used, and click <strong>Use Stack</strong>. In the address bar, you can view the stack version ID to add to your link in the readme.md file.</p>
+<p>Example showing the <strong>Empty Stack</strong> stack version ID:</p>
+<div class="figure align-default">
+<img alt="Empty Stack Version ID" src="../../../../_images/stackversionid.png" />
+</div>
+<p>You can use any method for linking to Codio but we recommend using the following images:</p>
+<div class="figure align-default">
+<img alt="Open in IDE" src="../../../../_images/open-in-ide.png" />
+</div>
+<div class="figure align-default">
+<img alt="Demo in IDE" src="../../../../_images/demo-in-ide.png" />
+</div>
+</div>
+</div>
+<div class="section" id="manually-import-a-git-repo-into-codio">
+<h2>Manually import a Git repo into Codio<a class="headerlink" href="#manually-import-a-git-repo-into-codio" title="Permalink to this headline">¶</a></h2>
+<p>To manually import a Git repo into Codio, follow these steps:</p>
+<ol class="arabic">
+<li><p>In GitHub, click the <strong>Clone URL</strong> link in the right pane and copy to the clipboard.</p>
+<div class="figure align-default">
+<img alt="create from GitHub" src="../../../../_images/github-clone-url.png" />
+</div>
+</li>
+</ol>
+<blockquote>
+<div><p>If you are cloning using SSH, you must have already added the Codio SSH public key as described in <a class="reference internal" href="../../../settings/upload-ssh-key-remote-server.html#upload-ssh-key-remote-server"><span class="std std-ref">Upload SSH Key to Remote Server</span></a>.</p>
+</div></blockquote>
+<ol class="arabic" start="2">
+<li><p>Log in to Codio and click <strong>New Project</strong>.</p></li>
+<li><p>Click the <strong>Click here</strong> link for more options.</p>
+<div class="figure align-default">
+<img alt="create from GitHub" src="../../../../_images/github-create.png" />
+</div>
+</li>
+<li><p>In the <strong>Select your Starting Point</strong> area, click <strong>Import</strong>.</p></li>
+<li><p>From the <strong>Source</strong> drop-down list, choose <strong>Git</strong>.</p></li>
+<li><p>Paste the Git URL into the <strong>URL</strong> field and add details about the project.</p></li>
+<li><p>Click <strong>Create</strong>. Codio loads the repo and displays it.</p></li>
+</ol>
+</div>
+<div class="section" id="create-new-github-repo-from-codio">
+<h2>Create new GitHub repo from Codio<a class="headerlink" href="#create-new-github-repo-from-codio" title="Permalink to this headline">¶</a></h2>
+<p>If you have code in Codio and want to create a new GitHub (or other remote) repo, follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Create a new project in Codio or open up an existing project.</p></li>
+<li><p>Open the terminal (<strong>Tools &gt; Terminal</strong>), type <strong>git init</strong> and press <strong>Enter</strong> to initialize Git.</p></li>
+<li><p>Create a new, empty repo on GitHub or other remote repo.</p></li>
+<li><p>Copy the repo url to the clipboard.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you’re using GitHub, use the <strong>SSH url</strong> rather than <strong>https</strong>. Also make sure that your Codio public key is uploaded to your GitHub account or repo settings as described in <a class="reference internal" href="../../../settings/upload-ssh-key-remote-server.html#upload-ssh-key-remote-server"><span class="std std-ref">Upload SSH Key to Remote Server</span></a>.</p>
+<div class="figure align-default">
+<img alt="github repo" src="../../../../_images/github-new-repo.png" />
+</div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>In the Codio IDE, click <strong>Tools &gt; Git &gt; Remotes</strong> on the menu.</p></li>
+<li><p>Click the <strong>Edit</strong> icon and enter the <strong>Name</strong> and paste the <strong>URL</strong> into the field. It is recommended you use <strong>origin</strong> as the name to confirm the normal standards. You do not need to specify a username or password if you are using SSH.</p></li>
+<li><p>Click <strong>Save</strong>.</p></li>
+</ol>
+</div>
+<div class="section" id="check-project-status">
+<h2>Check project status<a class="headerlink" href="#check-project-status" title="Permalink to this headline">¶</a></h2>
+<p>Whenever you want to see the Git status of your project, enter <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>. Initially, nothing will be returned until changes are committed.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git status
+<span class="c1"># On branch master nothing to commit, working directory clean</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="track-files">
+<h2>Track files<a class="headerlink" href="#track-files" title="Permalink to this headline">¶</a></h2>
+<p>Codio uses Git by default and if you import a project from a Git repo, all the existing files are ready to be tracked. Tracking means that Git knows about them. If you add a new file, Git does not know about it and needs to be explicitly told:</p>
+<ol class="arabic simple">
+<li><p>Add a new file (<strong>test.txt</strong>) and then add a few random characters to it.</p></li>
+<li><p>Open any other existing file and make a small change to it.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> and you should see results similar to the following, which shows the modified and the new (untracked) files:</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># On branch master `</span>
+<span class="c1"># Changes not staged for commit:`</span>
+<span class="c1"># (use &quot;git add ...&quot; to update what will be committed)</span>
+<span class="c1"># (use &quot;git checkout -- ...&quot; to discard changes in working directory)</span>
+<span class="c1">#</span>
+<span class="c1">#   modified: humans.txt</span>
+<span class="c1">#</span>
+<span class="c1"># Untracked files:</span>
+<span class="c1"># (use &quot;git add ...&quot; to include in what will be committed)</span>
+<span class="c1">#</span>
+<span class="c1">#   test.txt no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>To tell GitHub to track the file, enter one of the following commands:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code> - tells Git to track all files in the project that are not yet tracked. This is the quickest and simplest way to track any new files.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">FILENAME</span></code> - explicitly tracks a single file.</p></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="stage-files">
+<h2>Stage files<a class="headerlink" href="#stage-files" title="Permalink to this headline">¶</a></h2>
+<p>A staged file is one that is tracked and is ready to commit to the repository. Once you run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>, the file is being tracked and staged. However, if you modify a tracked file, the modifications are not staged. To stage the file, rerun <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>.</p>
+</div>
+<div class="section" id="commit-your-changes">
+<h2>Commit your changes<a class="headerlink" href="#commit-your-changes" title="Permalink to this headline">¶</a></h2>
+<p>Committing means that you want to add your staged files into the repository. You can commit using one of the following commands:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">'commit</span> <span class="pre">message'</span></code> - commits all staged files to the repo.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-a</span> <span class="pre">-m</span> <span class="pre">'commit</span> <span class="pre">message'</span></code> commits all staged files to the repo and also automatically stages any tracked files before committing them. If you use this command, you do not need to run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> unless you want to add new, untracked files.</p></li>
+</ul>
+<p>The commit message is important as it allows you to see what general changes are included in the commit. For example:</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-a</span> <span class="pre">-m</span> <span class="pre">&quot;added</span> <span class="pre">test.txt</span> <span class="pre">and</span> <span class="pre">modified</span> <span class="pre">some</span> <span class="pre">stuff&quot;</span></code> and get</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>master d3e6bb1<span class="o">]</span> added test.txt and modified some stuff
+<span class="m">2</span> files changed, <span class="m">2</span> insertions<span class="o">(</span>+<span class="o">)</span>
+create mode <span class="m">100644</span> test.txt<span class="sb">`</span>
+</pre></div>
+</div>
+<p>If you run a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>, you can see that everything is clean and up-to-date.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># On branch master nothing to commit, working directory clean</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="revert-code">
+<h2>Revert code<a class="headerlink" href="#revert-code" title="Permalink to this headline">¶</a></h2>
+<p>You can revert your code back to an earlier commit to roll back your changes. Use one of the following commands to revert:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">revert</span> <span class="pre">'commit</span> <span class="pre">id'</span></code> - reverts back to the SHA (uid); you can see when you type <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">revert</span> <span class="pre">HEAD</span></code> - reverts back to the last commit, deleting any uncommitted changes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">revert</span> <span class="pre">HEAD~n</span></code> - reverts to the last n commit; for example, HEAD~3 reverts to the 4th last commit.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">revert</span> <span class="pre">HEAD^^^</span></code> - (count of ^ is like ~n) - reverts to the last n commit; for example, HEAD^^^4 reverts to the 4th last commit.</p></li>
+</ul>
+<p>For more information about reverting code, see <a class="reference external" href="http://git-scm.com/docs/git-revert.html">http://git-scm.com/docs/git-revert.html</a>.</p>
+</div>
+<div class="section" id="push-to-a-remote-repository">
+<h2>Push to a remote repository<a class="headerlink" href="#push-to-a-remote-repository" title="Permalink to this headline">¶</a></h2>
+<p>If you have a remote repository configure, commit your changes using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">master</span></code> command, where:
+-  <code class="docutils literal notranslate"><span class="pre">origin</span></code> - is the name of the remote repo.
+-  <code class="docutils literal notranslate"><span class="pre">master</span></code> - is the name of the branch. When you create a new Codio  project, a <code class="docutils literal notranslate"><span class="pre">master</span></code> branch is automatically created and appears in brackets at the top of the file tree next to the project name.</p>
+<p>You can view your pushed commits in the GitHub repo.</p>
+</div>
+<div class="section" id="pull-from-a-remote-repository">
+<h2>Pull from a remote repository<a class="headerlink" href="#pull-from-a-remote-repository" title="Permalink to this headline">¶</a></h2>
+<p>If others are working remotely on the same code (not in Codio), they are also pushing their code to the GitHub repo. Run the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">origin</span> <span class="pre">master</span></code> command to pull in changes from the remote repo and automatically merge the code.</p>
+</div>
+<div class="section" id="resolve-conflicts">
+<h2>Resolve conflicts<a class="headerlink" href="#resolve-conflicts" title="Permalink to this headline">¶</a></h2>
+<p>When you pull in from the remote, you may get a conflict warning. This occurs if someone else has modified code in a way that Git cannot automatically resolve it, usually because you have been editing the same code.</p>
+<p>You can minimize conflicts by committing small changes and pulling from master often.</p>
+<p>To resolve the conflict, follow these steps:</p>
+<ol class="arabic">
+<li><p>Open the file. Something similar to the following is displayed:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;&lt;&lt;&lt;&lt;&lt;</span>&lt; HEAD:index.html
+&lt;div <span class="nv">id</span><span class="o">=</span><span class="s2">&quot;footer&quot;</span>&gt;contact : email.support@github.com&lt;/div&gt;
+<span class="o">=======</span>
+&lt;div <span class="nv">id</span><span class="o">=</span><span class="s2">&quot;footer&quot;</span>&gt;
+please contact us at support@github.com
+&lt;/div&gt;
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; iss53:index.html
+</pre></div>
+</div>
+</li>
+<li><p>Remove the code block that you do not want to keep. The top block is your code and the bottom comes from the code that is being merged. If you want to keep your code, modify as follows:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;footer&quot;</span><span class="p">&gt;</span>contact : email.support@github.com<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>If you want to keep the merged code, modify as follows:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;footer&quot;</span><span class="p">&gt;</span>
+    please contact us at support@github.com
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="branches">
+<h2>Branches<a class="headerlink" href="#branches" title="Permalink to this headline">¶</a></h2>
+<p>When you create a branch, you are creating a new area to code. You then merge another branch (usually the master branch), into your new branch. From this point on, you can do whatever you want (add, commit, push etc) without impacting the master branch on any other branch. For more information about branching, see <a class="reference external" href="http://git-scm.com/book/en/Git-Branching-What-a-Branch-Is">http://git-scm.com/book/en/Git-Branching-What-a-Branch-Is</a>.</p>
+<p>Use the following commands for branching:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code> - creates a new branch.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> - switches to that branch (be sure to commit your current branch before switching to another branch so you don’t lose any unstaged files).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">from-branch</span></code> - merges code from <code class="docutils literal notranslate"><span class="pre">from-branch</span></code> into your current branch.</p></li>
+</ul>
+<p>It is recommended that you switch to your master branch and pull in changes from the remote, and then switch back to your working branch and merge changes. This practice will minimize conflicts.</p>
+<p>You can switch branches using the command line interface or from the <strong>Tools &gt; Git &gt; Switch Branch</strong> menu.</p>
+<div class="section" id="active-branch">
+<h3>Active branch<a class="headerlink" href="#active-branch" title="Permalink to this headline">¶</a></h3>
+<p>You can see which branch is active by looking in the file tree. The top level item is the project name and the current branch is in brackets.</p>
+</div>
+<div class="section" id="basic-commands">
+<h3>Basic commands<a class="headerlink" href="#basic-commands" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> - shows the status of your current branch.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code> - adds all files, tracked or not, to the staged files.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-a</span> <span class="pre">-m</span></code> - stages and commits all files to the snapshot.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">--set-upstream</span> <span class="pre">origin</span> <span class="pre">master</span></code> - Run this command the first time you push to track the new remote.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> - used for subsequent pushes; this command pushes all committed changes of the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch to the tracked remote (origin).</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+
+          </main>
+          
+
+      </div>
+    </div>
+    
+  <script src="../../../../_static/js/index.44f2d10023dc91dde182.js"></script>
+
+
+    
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright Codio 2025. All Rights Reserved.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EL440DKDDY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EL440DKDDY');
+</script>
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/2227229.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+  </body>
+</html>

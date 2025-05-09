@@ -1,0 +1,1158 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Instructions for using Computed VMs." name="description" />
+
+    <title>Virtual Machines &#8212;   documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.a51115b1206b8cbfeff9cff2c3058b7d.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.15.3/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.15.3/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.15.3/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/code-tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/codio.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/search.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.44f2d10023dc91dde182.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/code-tabs.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    <script defer="defer" src="../../_static/js/algolia.js"></script>
+    <link rel="canonical" href="https://docs.codio.com/instructors/setupcourses/virtualmachine.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Large Language Model" href="course-llm.html" />
+    <link rel="prev" title="Gamification" href="course-module-progress.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-dark-codio navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/logo-white.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../getstarted.html">
+  Overview
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../authoring.html">
+  Authoring
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../common.html">
+  Developing Code
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../setupcourses.html">
+  Courses Set up
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../teaching.html">
+  Teaching
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../admin.html">
+  Admin
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        <div id="docsearch"></div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="courses.html">
+   Courses Set Up
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="create-course.html">
+     Create a New Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="clone-course.html">
+     Clone a Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="parent-child-courses.html">
+     Working with Parent/Child Courses
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="export-course-data.html">
+     Data Exports
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="archive-course.html">
+     Archive Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="delete-course.html">
+     Delete Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="rename-course.html">
+     Rename Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="share-course.html">
+     Share Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="search-course.html">
+     Search and Order Courses
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="add-remove-assignment.html">
+     Add and Remove Course Assignments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="modify-assignments.html">
+     Modify Assignments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="rename-reorder-assignments.html">
+     Rename/Reorder Modules and Assignments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="preview-course.html">
+     Preview Courses and Assignments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bulk-assignment-update.html">
+     Bulk Assignment Update
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="batch-groups-upload.html">
+     Batch Groups Upload
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="batch-student-tagging.html">
+     Batch Student Tagging
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="add-teachers.html">
+     Add or Remove Teachers in a Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="add-ta.html">
+     Add Teaching Assistant to a Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="add-remove-students.html">
+     Add, Remove or Archive Students in a Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="change-student-password.html">
+     Change Student Passwords
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="course-contact.html">
+     Course contact URL
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="course-revoke-sudo-access.html">
+     Revoke sudo access for all assignments in the course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="course-remove-inactive-students.html">
+     Remove Inactive Students
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="export-assignment-data.html">
+     Export Assignment Data
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="custom-css-url.html">
+     Setting course level custom CSS
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="export-lti.html">
+     Export LTI Settings
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lmsconnect.html">
+     Connecting to your LMS
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mark-assignments-complete.html">
+     Mark Assignment as Complete/Uncomplete
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notification-email.html">
+     Automated Emails
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="view-student-username.html">
+     View Student Usernames
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="course-module-progress.html">
+     Gamification
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Virtual Machines
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="course-llm.html">
+     Large Language Model
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="resources/codioresources.html">
+   Codio instructional resources
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="resources/editingresources.html">
+     Editing Resources
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="resources/resourcetools/crunch.html">
+   Additional resources
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="resources/resourcetools/flode.html">
+     Flode
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="resources/resourcetools/jeroo.html">
+     Jeroo
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="resources/resourcetools/scratch.html">
+     Scratch
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="resources/resourcetools/pencilcode.html">
+     Pencil Code
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="resources/resourcetools/draw-io.html">
+     Draw.io
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="resources/resourcetools/pyret.html">
+     Pyret
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="resources/resourcetools/tkinter.html">
+     Tkinter
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="resources/resourcetools/lexikon.html">
+     Lexikon
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="resources/resourcetools/turtle.html">
+     Turtle
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="resources/resourcetools/processing-and-p5.html">
+     Processing and p5
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../admin/integration/intro.html">
+   Integrating with your LMS system (Canvas etc.)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../admin/integration/lms-systems/system-specific-directions.html">
+     System specific instructions
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../admin/integration/lms-systems/canvas.html">
+       Canvas
+       <i class="fas icon fa-angle-right">
+       </i>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../admin/integration/lms-systems/blackboard.html">
+       Blackboard LTI 1.x
+       <i class="fas icon fa-angle-right">
+       </i>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../admin/integration/lms-systems/d2l.html">
+       D2L
+       <i class="fas icon fa-angle-right">
+       </i>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../admin/integration/lms-systems/moodle.html">
+       Moodle
+       <i class="fas icon fa-angle-right">
+       </i>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../admin/integration/lms-systems/google-classroom.html">
+       Google Classroom
+       <i class="fas icon fa-angle-right">
+       </i>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../admin/integration/lms-systems/schoology.html">
+       Schoology
+       <i class="fas icon fa-angle-right">
+       </i>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../admin/integration/lms-students.html">
+     User account creation
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../admin/integration/lti-enrol.html">
+     LTI Enroll to Course Only
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../admin/integration/grading.html">
+     Grading
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../admin/integration/lti-app.html">
+     LTI App
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../admin/integration/lti-keys-and-urls-information.html">
+     LTI Keys and URLs
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../admin/integration/lti-course-copy.html">
+     LTI Course copy
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../admin/integration/commoncartridge.html">
+     Common Cartridge
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../admin/integration/lti1-3.html">
+     LTI version 1.3
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../admin/integration/lti1-3Blackboard.html">
+     LTI 1.3 for Blackboard
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../admin/integration/lti1-3BS-D2L.html">
+     LTI 1.3 for Brightspace/D2L
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../admin/integration/lti1-3Canvas.html">
+     LTI 1.3 for Canvas
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../admin/integration/lti1-3DynReg.html">
+     LTI 1.3 Dynamic Registration
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="assignment-settings/assignment-settings.html">
+   Managing assignments
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assignment-settings/assignment-actions.html">
+     Assignment Action Buttons
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assignment-settings/pin-assignment.html">
+     Pin and Unpin Assignment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assignment-settings/disable-assignment.html">
+     Disable Assignment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assignment-settings/visibility-completed.html">
+     Visibility on Completed
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assignment-settings/visibility-disabled.html">
+     Visibility on Disabled
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assignment-settings/allow-student-reset.html">
+     Reset Assignment by Student
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assignment-settings/allow-regrade-request.html">
+     Allow Regrade Request
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assignment-settings/prerequisite-assignments.html">
+     Prerequisite Assignments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assignment-settings/disable-mark-completed.html">
+     Disable Mark as Completed
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assignment-settings/disable-download.html">
+     Disable Download
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assignment-settings/assignment-duration.html">
+     Assignment Duration
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assignment-settings/penalties.html">
+     Penalties
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assignment-settings/exam-proctoring.html">
+     Exam Proctoring
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assignment-settings/assignment-surveys.html">
+     Assignment Surveys
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assignment-settings/assignment-gigabox.html">
+     Gigabox Slot
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assignment-settings/prime-assignment-containers.html">
+     Prime Assignment Containers
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assignment-settings/groupwork.html">
+     Pair Programming
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assignment-settings/grade-weights.html">
+     Grade Weights
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assignment-settings/assign-grade-template.html">
+     Assign Grading Template to an Assignment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assignment-settings/mandatory.html">
+     Mandatory Progress
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assignment-settings/virtual-coach.html">
+     Virtual Coach
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+            
+            
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="course-module-progress.html" title="previous page">
+      <i class="left-prev-icon icon fa fa-angle-left"></i>
+      <span class="left-prev-title">Previous</span>
+    </a>
+    <a class='right-next' id="next-link" href="course-llm.html" title="next page">
+      <span class="right-next-title">Next</span>
+      <i class="right-next-icon icon fa fa-angle-right"></i>
+    </a>
+
+              </div>
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="virtual-machines">
+<span id="virtualmachine"></span><h1>Virtual Machines<a class="headerlink" href="#virtual-machines" title="Permalink to this headline">¶</a></h1>
+<p>Codio supports Windows and Ubuntu OS in <strong>Virtual Machine</strong> boxes.If You are interested in running Virtual machines, you can upgrade your subscription to get access to 1-GB, 4-GB, 8-GB, 16-GB machines.</p>
+<p>You purchase a specific number of Virtual Machines that can be used by anyone in your enabled courses. Codio tracks usage based on active projects rather than total projects. In other words, you can have 100 projects in a course that use a Virtual Machine but as long as only one is active at a time, this requires only a single unit to be purchased.</p>
+<p>To enable this for your organization, send an email to <a class="reference external" href="mailto:help&#37;&#52;&#48;codio&#46;com">help<span>&#64;</span>codio<span>&#46;</span>com</a> with approximate details of the number of students who will require access to computed VMs.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Codio is not responsible for licensing issues in regard to any software you install to use.</p>
+</div>
+<p>The virtual machines can support 1, 4, 8 or 16Gb memory. VM’s are enabled for the organization and then set up at the <strong>Course</strong> level. All assignments in the course can utilize the virtual machines boxes, so we would recommend setting up a new course for those assignments that require them.  All assignments in the course would use the same <strong>VM Stack</strong>.</p>
+<p>Virtual machines are not available for individual projects (ie when created in <strong>My Projects</strong> area).</p>
+<blockquote>
+<div><p><strong>Please note:</strong> we have plans to develop this feature in the future but if you have ideas/suggestions please raise in our <a class="reference external" href="https://feedback.codio.com/">Feedback area</a></p>
+</div></blockquote>
+<p>When virtual machines have been enabled for your organization, follow these steps:</p>
+<div class="section" id="enabling-vm-for-the-course">
+<h2>Enabling VM for the Course<a class="headerlink" href="#enabling-vm-for-the-course" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>On the <strong>Courses</strong> page, select the course and then click the <strong>Course Details</strong> tab.</p></li>
+<li><p>In the <strong>Virtual Machine</strong> section, toggle the <strong>Enable Virtual Machine</strong> button to <strong>On</strong>.</p></li>
+<li><p>Select <strong>Operating System</strong> (currently supported: Windows &amp; Ubuntu).</p></li>
+<li><p>Select <strong>Stack</strong> - select either <strong>Windows Codio Ami</strong> or <strong>Ubuntu Codio Ami</strong> depending on the OS type selected above but once you have published your own VM Stack (see below), you will be able to select those as required.</p></li>
+<li><p>Select <strong>Performance</strong> to allocate the memory required.</p></li>
+<li><p>Save the changes.</p></li>
+</ul>
+</div>
+<div class="section" id="setting-up-the-assignment-s">
+<h2>Setting up the assignment(s)<a class="headerlink" href="#setting-up-the-assignment-s" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Create an assignment and open the working copy in the usual manner.</p></li>
+<li><p>Go to <strong>Tools&gt;Virtual Machine</strong> to open the VM.  If using <strong>Ubuntu</strong> OS you can use <strong>open ssh</strong> to open the same instance of the main ubuntu vm if you’d prefer to install/set up your VM that way. You can have both options active at the same time.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It takes some time for the VM to activate and start.</p>
+</div>
+<ul class="simple">
+<li><p>Once the VM has started you can setup or install any items you need. If using <strong>Ubuntu</strong> OS you can also use <strong>Tools&gt;Virtual Machine&gt;open ssh</strong> to be able to open the same instance of the main ubuntu vm if you’d prefer to install/set up your VM that way.   You can have both options active at the same time</p></li>
+<li><p>Once you have completed setting up your environment and tested everything select <strong>Tools&gt;Virtual Machine&gt;Publish</strong> from the menu to publish the changes as an updated VM stack assignment providing your own name for the VM Stack.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It can take around 10 minutes for the new stack to be created and available for use.</p>
+</div>
+<ul class="simple">
+<li><p>When the stack has been fully published go to <strong>Courses&gt;Virtual Machine&gt;Stack</strong> and select the newly published stack to make it available to students for their assignment(s).</p></li>
+<li><p>Save the changes.</p></li>
+<li><p>Return to the assignment in <strong>Edit Assignments</strong> and publish the assignment either from the publish button in the upper right corner or from <strong>Education&gt;Publish Assignment</strong> to make the assignment accessible to your students.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Publishing the assignment should be done as the last step to avoid students starting the assignments before the required VM Stack is saved to the course.</p>
+</div>
+</div>
+<div class="section" id="updating-the-vm-stack-after-students-have-started-the-assignment-s">
+<h2>Updating the VM Stack after students have started the assignment(s)<a class="headerlink" href="#updating-the-vm-stack-after-students-have-started-the-assignment-s" title="Permalink to this headline">¶</a></h2>
+<p>Students that have already started working before a new/updated VM stack has been published will need to reset the Virtual Machine in their assignment(s) to use the updated VM stack, restart the VM if it does not restart itself. There are buttons available for this purpose in the VM tab.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Reset and restart for students can take a substantial period of time (around 20mins on average) so we recommend that you fully test the VM stack you create before making it available to students.</p>
+</div>
+</div>
+<div class="section" id="reset-virtual-machine-for-individual-student">
+<h2>Reset Virtual Machine for individual student<a class="headerlink" href="#reset-virtual-machine-for-individual-student" title="Permalink to this headline">¶</a></h2>
+<p>You can reset the Virtual Machine for individual student so the student will see the updates but any work they have done so far in the Virtual Machine, will be lost. Follow these steps to reset the VM for an individual student:</p>
+<ol class="arabic simple">
+<li><p>Open the course, go to the <strong>Overview</strong> tab and click the assignment.</p></li>
+<li><p>Find the student and click the <strong>3 blue dot</strong> button on the right.</p></li>
+<li><p>Click the <strong>Reset VM</strong> button.</p></li>
+<li><p>Click <strong>Yes</strong> to confirm the reset.</p></li>
+</ol>
+</div>
+<div class="section" id="updating-the-assignment-content-after-initial-publish">
+<h2>Updating the assignment content after initial publish<a class="headerlink" href="#updating-the-assignment-content-after-initial-publish" title="Permalink to this headline">¶</a></h2>
+<p>Any changes to the actual assignment (ie in Guides or the file structure) only require the assignment to be published in the usual manner either from the publish button in the upper right corner or from <strong>Education&gt;Publish Assignment</strong> menu item..</p>
+</div>
+<div class="section" id="automatically-starting-opening-virtual-machine">
+<h2>Automatically starting/opening Virtual Machine<a class="headerlink" href="#automatically-starting-opening-virtual-machine" title="Permalink to this headline">¶</a></h2>
+<p>You can automatically start/open the <strong>Virtual Machine</strong> for students using <a class="reference internal" href="../authoring/guides/settings/opentabs.html#open-tabs"><span class="std std-ref">Open tab</span></a> setting for <strong>VM</strong> or direct them to <strong>Tools&gt;Virtual Machine&gt;Open</strong> to start themselves.</p>
+</div>
+<div class="section" id="pair-programming">
+<h2>Pair Programming<a class="headerlink" href="#pair-programming" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="assignment-settings/groupwork.html#group-work"><span class="std std-ref">Pair Programming</span></a> is not supported for <strong>Virtual Machines</strong>.</p>
+</div>
+<div class="section" id="interacting-with-guides-and-codio-file-system">
+<span id="interactwithguides"></span><h2>Interacting with guides and Codio file system<a class="headerlink" href="#interacting-with-guides-and-codio-file-system" title="Permalink to this headline">¶</a></h2>
+<p>You can interact with Virtual Machine using commands that can run from the <a class="reference internal" href="../../common/develop/ide/boxes/terminal.html#terminal"><span class="std std-ref">Terminal</span></a></p>
+<div class="figure align-default">
+<img alt="VM Commands" src="../../_images/vm-commands.png" />
+</div>
+<p>or from a <a class="reference internal" href="../authoring/guides/custom_button.html#custom-buttons"><span class="std std-ref">Custom Guide Button</span></a></p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">{Try it | terminal}(codio-tools help)</span>
+</pre></div>
+</div>
+<p>The working directories for:</p>
+<ul class="simple">
+<li><p>Codio - “/home/codio/workspace”</p></li>
+<li><p>Windows Virtual Machine - “C:\”</p></li>
+<li><p>Ubuntu Virtual Machine - “/home/ubuntu”</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Instead of <strong>codio-tools</strong> you can also use <strong>codio-vm</strong>, both will work the same.</p>
+</div>
+<p>Following are some example of commands that can be used to interact with Virtual Machine:</p>
+<ul>
+<li><p><strong>codio-tools help</strong> - This command gives you a brief introduction about many commands that can be used to interact with Virtual Machine.</p></li>
+<li><p><strong>codio-tools upload</strong> - This command is used to upload a file from Codio filetree to Virtual Machine.</p>
+<blockquote>
+<div><p>Windows example:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">codio-tools upload &quot;/home/codio/workspace/local_file.sh&quot; &quot;C</span><span class="o">:</span><span class="s">\remote_file.sh&quot;</span>
+</pre></div>
+</div>
+<p>Running above command will upload ‘local_file.sh’ file present in your Codio filetree into the Virtual Machine as ‘remote_file.sh’.</p>
+<p>Same Command in Ubuntu would be:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">codio-tools upload &quot;/home/codio/workspace/local_file.sh&quot; &quot;/home/ubuntu/remote_file.sh&quot;</span>
+</pre></div>
+</div>
+<p>Similar to file, you can also upload the Folder</p>
+<p>In Windows:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">codio-tools upload &quot;/home/codio/workspace/local_folder&quot; &quot;C</span><span class="o">:</span><span class="s">\remote_folder&quot;</span>
+</pre></div>
+</div>
+<p>In Ubuntu:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">codio-tools upload &quot;/home/codio/workspace/local_folder&quot; &quot;/home/ubuntu/remote_folder&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>codio-tools download</strong> - This command is used to download a file from Virtual Machine into your Codio filetree.</p>
+<blockquote>
+<div><p>Windows example:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">codio-tools download &quot;C</span><span class="o">:</span><span class="s">\remote_file.sh&quot; &quot;/home/codio/workspace/local_file.sh&quot;</span>
+</pre></div>
+</div>
+<p>Running above command will download ‘remote_file.sh’ file from your Virtual Machine into your Codio filetree and saves it as ‘local_file.sh’.</p>
+<p>Same Command in Ubuntu would be:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">codio-tools download &quot;/home/ubuntu/remote_file.sh&quot; &quot;/home/codio/workspace/local_file.sh&quot;</span>
+</pre></div>
+</div>
+<p>Similar to file, you can also download the Folder from your Virtual Machine</p>
+<p>In Windows:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">codio-tools download &quot;C</span><span class="o">:</span><span class="s">\remote_folder&quot; /home/codio/workspace/local_folder&quot;</span>
+</pre></div>
+</div>
+<p>In Ubuntu:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">codio-tools download &quot;/home/ubuntu/remote_folder&quot; /home/codio/workspace/local_folder&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>codio-tools start</strong> - This command is used to start the Virtual Machine.</p></li>
+<li><p><strong>codio-tools restart</strong> -  This command is used to restart the Virtual Machine.</p></li>
+<li><p><strong>codio-tools terminate</strong> -  This command is used to reset the Virtual Machine.</p></li>
+<li><p><strong>codio-tools status</strong> - This command will return the current state of Virtual Machine. The returned value will be one of RUNNING, INACTIVE, STARTING, STOPPING.</p></li>
+<li><p><strong>codio-tools get-ip</strong> - This command will return the IP address of Virtual Machine.</p></li>
+<li><p><strong>codio-tools get-host-name</strong>  - This command will return the Host Name of Virtual Machine.</p></li>
+<li><p><strong>codio-tools exec/codio-tools exec-async</strong> - This command is used to execute a command on Virtual Machine.</p>
+<blockquote>
+<div><p>For example</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">codio-tools exec mkdir -p “my_folder”</span>
+</pre></div>
+</div>
+<p>Running above command will create “my_folder” folder in the working directories of your Virtual Machine.</p>
+<p>You can also open the Chrome browser using this command</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">codio-tools exec start chrome</span>
+</pre></div>
+</div>
+<p>Can also open a particular URL in the Chrome browser</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">codio-tools exec start chrome /incognito  https</span><span class="o">:</span><span class="s">//codio.com</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>codio-tools vm download &lt;vm-name&gt;</strong> - This command is used to download the specified virtual machine, saving its current state for reuse or backup purposes.</p></li>
+<li><p><strong>codio-tools vm destroy &lt;vm-name&gt;</strong> - This command is used to permanently remove the specified virtual machine. Use this command with caution, as the VM cannot be recovered after destruction.</p></li>
+<li><p><strong>codio-tools vm start &lt;vm-name&gt;</strong> - This command is used to initiate the specified virtual machine, making it operational and accessible.</p></li>
+<li><p><strong>codio-tools vm stop &lt;vm-name&gt;</strong> - This command is used to stop the specified virtual machine, freeing up resources while preserving its state</p></li>
+<li><p><strong>codio-tools vm restart &lt;vm-name&gt;</strong> - This command is used to restarts the specified virtual machine, applying any changes or updates to its configuration.</p></li>
+<li><p><strong>codio-tools vm status &lt;vm-name&gt;</strong> - This command is used to display the current status of the specified virtual machine, such as running, stopped, or inactive.</p></li>
+<li><p><strong>codio-tools vm list</strong> - This command is used to list all virtual machines, showing their names and statuses (stopped, running, or available).</p></li>
+<li><p><strong>codio-tools vm set &lt;param-name&gt; &lt;value&gt;</strong> - This command is used to updates the configuration of a virtual machine by setting specific parameters to the desired values. For example, memory allocation or other VM properties can be modified.</p></li>
+<li><p><strong>codio-tools sync</strong> - This command is used to sync folder/file between Codio box and Virtual Machine.</p>
+<blockquote>
+<div><p>Windows example:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">codio-tools sync &quot;/home/codio/workspace/folder&quot; &quot;C</span><span class="o">:</span><span class="s">\Users\Administrator\Desktop\folder&quot;</span>
+</pre></div>
+</div>
+<p>Running above command will sync both, ‘folder’ in Codio box and ‘folder’ in Windows VM. The latest changes made to one of ‘folder’ will automatically synced to the other ‘folder’. If the mentioned file/folder does not exist in the Virtual Machine, it will be copied from Codio box to the Virtual Machine at the mentioned path.</p>
+<p>Same Command in Ubuntu would be:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">codio-tools sync &quot;/home/codio/workspace/folder&quot; &quot;/home/ubuntu/folder&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>codio-tools port forwarding</strong> - This command is used to enable access to services running on the Virtual Machine from Codio box.</p>
+<blockquote>
+<div><div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">codio-tools port-forwarding 3355 3344</span>
+</pre></div>
+</div>
+<p>Running above command will enable access to service running on port 3344 in Virtual Machine from port 3355 in Codio box. You can use either Box URL with port 3355 or call ‘curl localhost:3355’ from terminal in Codio box. The port values mentioned here are just an example, you can use different port values.</p>
+</div></blockquote>
+</li>
+<li><p><strong>codio-tools daemonized-list</strong> - This command will list all the daemonized processes.</p></li>
+<li><p><strong>codio-tools kill-all-daemonized</strong> - This command will kill all the daemonized processes.</p></li>
+<li><p><strong>codio-tools kill-daemonized</strong> - This command will kill the specific daemonized process.</p>
+<blockquote>
+<div><div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">codio-tools kill-daemonized 353</span>
+</pre></div>
+</div>
+<p>Running above command will kill the daemonized process whose PID is 353. You can see PID of all daemonized processes using <cite>codio-tools daemonized-list</cite>.</p>
+</div></blockquote>
+</li>
+<li><p><strong>codio-tools get-project-info</strong> - This command will provide the below course/project/user information in Table or JSON format (Table is default).</p>
+<blockquote>
+<div><ul>
+<li><p>codio-tools get-project-info <code class="docutils literal notranslate"><span class="pre">--</span></code> format json:</p>
+<blockquote>
+<div><div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">{</span>
+<span class="w">    </span><span class="na">&quot;user&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">{</span>
+<span class="w">        </span><span class="na">&quot;id&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;6446f386-8cf7-4e8f-ba68-450398e67f0a&quot;,</span>
+<span class="w">        </span><span class="na">&quot;userName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;stud100&quot;,</span>
+<span class="w">        </span><span class="na">&quot;fullName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;stud 100&quot;,</span>
+<span class="w">        </span><span class="na">&quot;email&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;yescodio+stud100@gmail.com&quot;</span>
+<span class="w">    </span><span class="na">},</span>
+<span class="w">    </span><span class="na">&quot;course&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">{</span>
+<span class="w">        </span><span class="na">&quot;id&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;ba9c37a68782692435a47f8087e1b4d0&quot;,</span>
+<span class="w">        </span><span class="na">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;codio-tools get-project-info course&quot;,</span>
+<span class="w">        </span><span class="na">&quot;lti&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">false,</span>
+<span class="w">        </span><span class="na">&quot;assignment&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">{</span>
+<span class="w">        </span><span class="na">&quot;id&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;21fffe6e3932801221b7d5ef03fa646c&quot;,</span>
+<span class="w">        </span><span class="na">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;example assignment&quot;,</span>
+<span class="w">        </span><span class="na">&quot;start&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;2024-07-01T10:44:01Z&quot;,</span>
+<span class="w">        </span><span class="na">&quot;end&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;2024-07-31T10:44:01Z&quot;</span>
+<span class="w">        </span><span class="na">},</span>
+<span class="w">        </span><span class="na">&quot;vm&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">{</span>
+<span class="w">        </span><span class="na">&quot;enabled&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">false</span>
+<span class="w">        </span><span class="na">}</span>
+<span class="w">    </span><span class="na">},</span>
+<span class="w">    </span><span class="na">&quot;project&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">{</span>
+<span class="w">        </span><span class="na">&quot;id&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;c6cfed18-4164-4563-b912-e09d3b773ee1&quot;,</span>
+<span class="w">        </span><span class="na">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;example assignment&quot;,</span>
+<span class="w">        </span><span class="na">&quot;slug&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;example-assignment&quot;,</span>
+<span class="w">        </span><span class="na">&quot;gigabox&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;2gb&quot;</span>
+<span class="w">    </span><span class="na">}</span>
+<span class="na">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>codio-tools get-project-info <code class="docutils literal notranslate"><span class="pre">--</span></code> format table:</p>
+<blockquote>
+<div><div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">+-------------------------+--------------------------------------+</span>
+<span class="na">| project.id              | c6cfed18-4164-4563-b912-e09d3b773ee1 |</span>
+<span class="na">| project.name            | example assignment                   |</span>
+<span class="na">| project.slug            | example-assignment                   |</span>
+<span class="na">| project.gigabox         | 2gb                                  |</span>
+<span class="na">| user.id                 | 6446f386-8cf7-4e8f-ba68-450398e67f0a |</span>
+<span class="na">| user.username           | stud100                              |</span>
+<span class="na">| user.fullName           | stud 100                             |</span>
+<span class="na">| user.email              | yescodio+stud100@gmail.com           |</span>
+<span class="na">| course.id               | ba9c37a68782692435a47f8087e1b4d0     |</span>
+<span class="na">| course.name             | codio-tools get-project-info course     |</span>
+<span class="na">| course.lti              | false                                |</span>
+<span class="na">| course.assignment.id    | 21fffe6e3932801221b7d5ef03fa646c     |</span>
+<span class="na">| course.assignment.name  | example assignment                   |</span>
+<span class="na">| course.assignment.start | 2024-07-01T10</span><span class="o">:</span><span class="s">44:01Z                 |</span>
+<span class="na">| course.assignment.end   | 2024-07-31T10</span><span class="o">:</span><span class="s">44:01Z                 |</span>
+<span class="na">| course.vm.enabled       | false                                |</span>
+<span class="na">+-------------------------+--------------------------------------+</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</div>
+
+
+              </div>
+              
+
+          </main>
+          
+
+      </div>
+    </div>
+    
+  <script src="../../_static/js/index.44f2d10023dc91dde182.js"></script>
+
+
+    
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright Codio 2025. All Rights Reserved.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EL440DKDDY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EL440DKDDY');
+</script>
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/2227229.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+  </body>
+</html>

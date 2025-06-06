@@ -1,0 +1,891 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Cookies, Firewalls, Browser support" name="description" />
+
+    <title>Web Security and Browser Capabilities &#8212;   documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.a51115b1206b8cbfeff9cff2c3058b7d.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.15.3/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.15.3/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.15.3/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/code-tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/codio.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/search.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.44f2d10023dc91dde182.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/code-tabs.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    <script defer="defer" src="../../_static/js/algolia.js"></script>
+    <link rel="canonical" href="https://docs.codio.com/common/develop/websecuritybrowsercapabilities.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Courses Set up" href="../../setupcourses.html" />
+    <link rel="prev" title="Start Debug Session" href="ide/debugger/start-debug.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-dark-codio navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/logo-white.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../getstarted.html">
+  Overview
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../authoring.html">
+  Authoring
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../common.html">
+  Developing Code
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../setupcourses.html">
+  Courses Set up
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../teaching.html">
+  Teaching
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../admin.html">
+  Admin
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        <div id="docsearch"></div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="projects/projects.html">
+   Developing Code
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="projects/project-settings.html">
+     Project Settings
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="projects/create-import-project.html">
+     Create or Import a Project
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="projects/access-projects.html">
+     Access Projects
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="projects/copy-project.html">
+     Copy a Project
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="projects/export-project.html">
+     Export a Project
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="stacks/stacks.html">
+   Stacks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="stacks/using-stacks.html">
+     Using Stacks
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="stacks/stack-planning.html">
+     Stack planning
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="stacks/create-stack.html">
+     Create a Stack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="stacks/modify-stack.html">
+     Modify a Stack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="stacks/update-stack.html">
+     Update a Stack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="stacks/switch-stack.html">
+     Switch Project to New Stack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="packs/packs.html">
+   Starter Packs
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="packs/create-starter-pack.html">
+     Create Starter Pack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="packs/starter-pack-guidelines.html">
+     Starter Pack Guidelines
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="packs/update-starter-pack.html">
+     Update a Starter Pack
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="ide/workspace/workspace.html">
+   IDE Workspace
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/workspace/panels.html">
+     Panels, Tabs, and Layouts
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/workspace/open-file.html">
+     Open a File
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/workspace/upload-download-files.html">
+     Upload and Download Files
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/workspace/add-delete-folders.html">
+     Add and Delete Folders
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/workspace/add-delete-files.html">
+     Add and Delete Files
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="ide/editing/code-editing.html">
+   Code Editing Features
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/editing/abbreviations.html">
+     Abbreviations
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/editing/autocomplete.html">
+     Autocomplete
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/editing/av-chat.html">
+     Audio Video Chat
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/editing/code-beautifier.html">
+     Code Beautifier
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/editing/color-picker.html">
+     Color Picker and Preview
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/editing/command-bar.html">
+     Command Bar
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/editing/connect-github-codio.html">
+     Connecting a Codio Box to a GitHub Repo
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/editing/cursor.html">
+     Cursor Features
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/editing/git.html">
+     Git and GitHub
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/editing/jupyter.html">
+     Jupyter
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/editing/junit.html">
+     JUnit Testing Framework
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/editing/keyboard-shortcuts.html">
+     Keyboard Shortcuts
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/editing/force-language-highlighting.html">
+     Language Highlighting
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/editing/preview.html">
+     Preview
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/editing/quick-open.html">
+     Quick Open
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/editing/save-files.html">
+     Save Files
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/editing/search-replace.html">
+     Search and Replace
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/editing/share-project.html">
+     Share Project
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/editing/vscode.html">
+     VSCode
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../tools/dyslexia.html">
+   Tools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tools/lexikon.html">
+     Lexikon
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tools/code-playback.html">
+     Code Playback
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tools/code-commenting.html">
+     Code Commenting
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="ide/tools/deployment.html">
+   IDE Tools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/tools/ghapi.html">
+     Git Hub API
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/tools/ssh.html">
+     Remote SSH Terminal Access
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/tools/desktopapp.html">
+     Desktop App
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="ide/boxes/overview.html">
+   IDE Box Overview
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/boxes/terminal.html">
+     Terminal Window
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/boxes/ext-access.html">
+     External Access to Boxes and Ports
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/boxes/restart-reset.html">
+     Restart or Reset Box
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/boxes/runmenu.html">
+     Customize Run Button
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/boxes/startup.html">
+     Autostart Services
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="ide/boxes/installsw/install-software.html">
+   Installing Software Packages
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/boxes/installsw/file-locations.html">
+     File and Software Locations
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/boxes/installsw/default-installed.html">
+     Preinstalled Software Packages
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/boxes/installsw/parts-coding.html">
+     Add Your Own Software Packages
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/boxes/installsw/langserver.html">
+     Language Server Protocol
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/boxes/installsw/gui.html">
+     GUI Based Output
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="ide/debugger/debugger.html">
+   Debugger
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/debugger/create-debug-target.html">
+     Create and Manage Debugger Targets
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ide/debugger/start-debug.html">
+     Start Debug Session
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Web Security and Browser Capabilities
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+            
+            
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="ide/debugger/start-debug.html" title="previous page">
+      <i class="left-prev-icon icon fa fa-angle-left"></i>
+      <span class="left-prev-title">Previous</span>
+    </a>
+    <a class='right-next' id="next-link" href="../../setupcourses.html" title="next page">
+      <span class="right-next-title">Next</span>
+      <i class="right-next-icon icon fa fa-angle-right"></i>
+    </a>
+
+              </div>
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="web-security-and-browser-capabilities">
+<h1>Web Security and Browser Capabilities<a class="headerlink" href="#web-security-and-browser-capabilities" title="Permalink to this headline">¶</a></h1>
+<p>On this page you will find instructions on how to configure your <strong>cookies</strong>, <strong>firewalls</strong>, and <strong>browser support</strong>.</p>
+<div class="section" id="cookie-requirements">
+<span id="id1"></span><h2>Cookie Requirements<a class="headerlink" href="#cookie-requirements" title="Permalink to this headline">¶</a></h2>
+<p>To ensure Codio works properly, you must enable cookies in your web browser. Below you will find instructions on how to enable cookies for all sites.
+If you have any questions about how Codio uses cookies, please check our <a class="reference external" href="https://www.codio.com/legal-stuff#pii">Privacy policy</a>.</p>
+<div class="section" id="enabling-cookies-in-chrome">
+<h3>Enabling Cookies in Chrome:<a class="headerlink" href="#enabling-cookies-in-chrome" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Click the three-dot menu in the top right corner.</p></li>
+<li><p>Go to Settings.</p></li>
+<li><p>Click “Privacy and Security” tab in the main menu.</p></li>
+<li><p>Select “Third-party cookies”.</p></li>
+<li><p>Choose “Allow third-party cookies”.</p></li>
+</ol>
+<img alt="Chrome Cookies" src="../../_images/ChromeCookies25.png" />
+</div>
+<div class="section" id="enabling-cookies-in-firefox">
+<h3>Enabling Cookies in Firefox:<a class="headerlink" href="#enabling-cookies-in-firefox" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Open the menu (three horizontal lines) in the top right.</p></li>
+<li><p>Go to Settings.</p></li>
+<li><p>Select “Privacy &amp; Security”.</p></li>
+<li><p>Under “Enhanced Tracking Protection”, choose “Standard” or select “Custom” and uncheck “Cookies”.</p></li>
+<li><p>Ensure third-party cookies are not blocked.</p></li>
+</ol>
+<img alt="Firefox Cookies" src="../../_images/FirefoxCookies25.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ensure third-party cookies are not blocked by checking the box “Allow Firefox to automatically trust third-party…”</p>
+</div>
+<img alt="Firefox Cookies" src="../../_images/FirefoxThirdPartyCookies.png" />
+</div>
+<div class="section" id="enabling-cookies-in-safari">
+<h3>Enabling Cookies in Safari:<a class="headerlink" href="#enabling-cookies-in-safari" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Open the menu by clicking Safari in the top left.</p></li>
+<li><p>Click on Settings.</p></li>
+<li><p>Click the “Advanced” tab.</p></li>
+<li><p>Uncheck “Block all cookies”.</p></li>
+</ol>
+<img alt="Safari Cookies" src="../../_images/SafariCookies25.png" />
+<p>If using an earlier version of Safari, check <strong>Always Allow</strong> in the Cookies and website data section</p>
+</div>
+<div class="section" id="enabling-cookies-in-microsoft-edge">
+<h3>Enabling Cookies in Microsoft Edge:<a class="headerlink" href="#enabling-cookies-in-microsoft-edge" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Open Microsoft Edge on your computer.</p></li>
+<li><p>Click the three dots (…) in the top-right corner to open the menu.</p></li>
+<li><p>Select “Settings”.</p></li>
+<li><p>In the left sidebar, click on “Cookies and site permissions”.</p></li>
+<li><p>Click “Cookies and site data”</p></li>
+<li><p>Make sure the toggle for “Block third-party cookies” is turned OFF.</p></li>
+<li><p>Ensure “Allow sites to save and read cookie data (recommended)” is turned ON.</p></li>
+</ol>
+<img alt="Edge Cookies" src="../../_images/edgecookeis.png" />
+</div>
+</div>
+<div class="section" id="firewall-and-network-settings">
+<span id="firewalls"></span><h2>Firewall and Network Settings<a class="headerlink" href="#firewall-and-network-settings" title="Permalink to this headline">¶</a></h2>
+<p>Codio is designed to work in most browsers without special configuration. However, if you’re accessing it from a K-12 school or university network, certain firewall settings may require additional setup to function properly.</p>
+<p>Below you will find more information about:</p>
+<ul class="simple">
+<li><p>Network system administrators</p></li>
+<li><p>Students and teachers who may be using Codio from home</p></li>
+</ul>
+<div class="section" id="firewall-settings">
+<h3>Firewall Settings<a class="headerlink" href="#firewall-settings" title="Permalink to this headline">¶</a></h3>
+<p>The following is a list of ports and URLs that Codio accesses from time to time. We have put these in priority order.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><cite>*.codio.com</cite> the main Codio site and application</p></li>
+<li><p><cite>*.codio.io</cite> domains that are auto-generated for each user project</p></li>
+<li><p><cite>*.codio.co.uk</cite> the main site for Codio services in the UK.</p></li>
+<li><p><cite>*.codio-box.uk</cite> domains that are auto-generated for user projects in the UK.</p></li>
+<li><p><cite>api.keen.io</cite> statistics gathering to measure student time spent in units   (stats)</p></li>
+<li><p><cite>*.typekit.net</cite> web fonts</p></li>
+<li><p><cite>fonts.gstatic.com</cite> web fonts</p></li>
+<li><p><cite>fast.fonts.net</cite> web fonts</p></li>
+<li><p><cite>*.cloudfront.net</cite> our CDN for speeding up static content</p></li>
+<li><p><cite>*.youtube.com</cite> &amp; <cite>*.vimeo.com</cite> for videos included in Course content</p></li>
+<li><p><cite>gravatar.com</cite> used for user gravatars (pictures)</p></li>
+<li><p><cite>*.intercom.io</cite>, <cite>cdnjs.cloudflare.com</cite> and <cite>*.pubnub.com</cite> are highly recommended as they relate to  the help and support application (Intercom) built into Codio.</p></li>
+</ul>
+</div></blockquote>
+<p>If your institution blocks access to YouTube as a general rule, your IT department can whitelist YouTube access that only allows access to content from registered and accredited educational content repositories. See <a class="reference external" href="https://support.google.com/youtube/answer/2695317?hl=en-GB">here</a> for more information on this.</p>
+</div>
+<div class="section" id="ports">
+<h3>Ports<a class="headerlink" href="#ports" title="Permalink to this headline">¶</a></h3>
+<p>We recommend opening the following ports</p>
+<ul class="simple">
+<li><p><strong>80 and 443</strong> for standard communications</p></li>
+</ul>
+</div>
+<div class="section" id="working-from-home">
+<h3>Working from home<a class="headerlink" href="#working-from-home" title="Permalink to this headline">¶</a></h3>
+<p>Your anti-virus software or firewall settings on personal devices might occasionally interfere with Codio, potentially causing slower performance during home use. Temporarily adjusting these security settings may improve your experience.
+You should check your settings and ensure that items in the above <strong>Firewall Settings</strong> list are added to your exclusion list.</p>
+</div>
+<div class="section" id="connectivity-test">
+<h3>Connectivity Test<a class="headerlink" href="#connectivity-test" title="Permalink to this headline">¶</a></h3>
+<p>If you continue to experience difficulties, visit the <a class="reference external" href="https://codio.com/connectivity/index.html">Connection Diagnostics</a> page and send us back the generated output.</p>
+<p>Steps for sending us the generated output:</p>
+<ol class="arabic simple">
+<li><p>Go to your Codio dashboard.</p></li>
+<li><p>Click on <strong>Support Chat</strong> found on the bottom left corner under “Help”.</p></li>
+<li><p>Attach the output file using the paperclip icon.</p></li>
+<li><p>Send the message.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="browser-support">
+<span id="id2"></span><h2>Browser support<a class="headerlink" href="#browser-support" title="Permalink to this headline">¶</a></h2>
+<p>While Codio works with most browsers we recommend using the most recent versions of our fully supported browsers below:</p>
+<ul class="simple">
+<li><p><strong>Chrome</strong></p></li>
+<li><p><strong>Firefox</strong></p></li>
+<li><p><strong>Edge</strong></p></li>
+<li><p><strong>Safari</strong></p></li>
+</ul>
+<p><strong>Note(s)</strong>:</p>
+<ul class="simple">
+<li><p>If using <strong>Safari</strong> be aware that it can block preview cookies with their ‘Intelligent Tracking Prevention 2.0’ and cause assignments not to load.</p></li>
+<li><p>If using <strong>Safari</strong> and accessing Codio via an LMS (Canvas/Blackboard/D2L/Moodle etc), disable “Prevent cross-site tracking” to ensure access.</p></li>
+</ul>
+<img alt="Safari Settings" src="../../_images/SafariTracking.png" />
+<p>If you continue to experience any disruptions in Codio, please send an email to <a class="reference external" href="https://help&#64;codio.com">help&#64;codio.com</a>.</p>
+<div class="section" id="disable-microsoft-edge-compatibility-view">
+<span id="disable-ie-compatibility-view"></span><h3>Disable Microsoft Edge Compatibility View<a class="headerlink" href="#disable-microsoft-edge-compatibility-view" title="Permalink to this headline">¶</a></h3>
+<p>It’s possible that if you have Microsoft Edge, we detect an older version of the browser(For example Internet Explorer).</p>
+<p>This is due to the <em>Compatibility Mode</em> of the Browser which enables old features we no longer support.</p>
+<p>To disable Compatibility View in Microsoft Edge, follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Open Microsoft Edge.</p></li>
+<li><p>Click on the three dots menu (⋯) in the top-right corner.</p></li>
+<li><p>Select “Settings”.</p></li>
+<li><p>In the left sidebar, click on “Default browser”.</p></li>
+<li><p>Under “Internet Explorer compatibility,” look for the “Allow sites to be reloaded in Internet Explorer mode” option.</p></li>
+<li><p>Click the dropdown menu on the right.</p></li>
+<li><p>Click “Don’t allow”.</p></li>
+</ol>
+<img alt="Microsoft Edge Settings" src="../../_images/MicrosoftCompadability.png" />
+<p><strong>Note: Make sure to reload your browser after editing the setting.</strong></p>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+
+          </main>
+          
+
+      </div>
+    </div>
+    
+  <script src="../../_static/js/index.44f2d10023dc91dde182.js"></script>
+
+
+    
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright Codio 2025. All Rights Reserved.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EL440DKDDY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EL440DKDDY');
+</script>
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/2227229.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+  </body>
+</html>

@@ -1,0 +1,704 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Organization Billing" name="description" />
+
+    <title>Organization Billing &#8212;   documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.a51115b1206b8cbfeff9cff2c3058b7d.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.15.3/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.15.3/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.15.3/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/code-tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/codio.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/search.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.44f2d10023dc91dde182.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/code-tabs.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    <script defer="defer" src="../../_static/js/algolia.js"></script>
+    <link rel="canonical" href="https://docs.codio.com/instructors/admin/orgbilling.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Account Settings" href="../../common/settings/settings.html" />
+    <link rel="prev" title="Course Action Data" href="organization/course-action-data.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-dark-codio navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/logo-white.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../getstarted.html">
+  Overview
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../authoring.html">
+  Authoring
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../common.html">
+  Developing Code
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../setupcourses.html">
+  Courses Set up
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../teaching.html">
+  Teaching
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../admin.html">
+  Admin
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        <div id="docsearch"></div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="integration/intro.html">
+   Integrating with your LMS system (Canvas etc.)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="integration/lms-systems/system-specific-directions.html">
+     System specific instructions
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="integration/lms-systems/canvas.html">
+       LTI 1.1 Setup
+       <i class="fas icon fa-angle-right">
+       </i>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="integration/lms-systems/blackboard.html">
+       Blackboard LTI 1.x
+       <i class="fas icon fa-angle-right">
+       </i>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="integration/lms-systems/d2l.html">
+       D2L
+       <i class="fas icon fa-angle-right">
+       </i>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="integration/lms-systems/moodle.html">
+       Moodle
+       <i class="fas icon fa-angle-right">
+       </i>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="integration/lms-systems/google-classroom.html">
+       Google Classroom
+       <i class="fas icon fa-angle-right">
+       </i>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="integration/lms-systems/schoology.html">
+       Schoology
+       <i class="fas icon fa-angle-right">
+       </i>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration/lms-students.html">
+     Creating User Account
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration/lti-enrol.html">
+     LTI Enroll to Course Only
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration/grading.html">
+     Grading
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration/lti-app.html">
+     LTI App (LTI 1.1 Only)
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration/lti-keys-and-urls-information.html">
+     LTI Keys and URLs
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration/lti-course-copy.html">
+     LTI Course copy
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration/commoncartridge.html">
+     Common Cartridge
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration/lti1-3.html">
+     LTI version 1.3
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration/lti1-3Blackboard.html">
+     LTI 1.3 for Blackboard
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration/lti1-3BS-D2L.html">
+     LTI 1.3 for Brightspace/D2L
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration/lti1-3Canvas.html">
+     LTI 1.3 for Canvas
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integration/lti1-3DynReg.html">
+     LTI 1.3 Dynamic Registration
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="organization/organisation.html">
+   Organization settings
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="organization/add-remove-org-owners.html">
+     Add or Remove Organization Owners
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="organization/add-teachers.html">
+     Add Teachers to Organization
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="organization/student-consent-form.html">
+     Configure Student IP Consent Form
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="organization/view-org-members.html">
+     View Organization Members
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="organization/default-student-dashboard.html">
+     Set Users Dashboard
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="organization/enable-custom-script.html">
+     Enable Custom Script
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="organization/grade-templates.html">
+     Create Grading Templates
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="organization/remove-org-members.html">
+     Remove Organization Members
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="organization/create-org-library.html">
+     Create an Organization Assessments Library
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="organization/public-private-settings.html">
+     Enable or Disable Public/Private Settings
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="organization/gigabox-usage.html">
+     Gigaboxes
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="organization/delete-org.html">
+     Deleting an Organization
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="organization/org-contact-url.html">
+     Set Organization Contact URL
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="organization/auto-release-grades.html">
+     Enable or Disable Releasing Grades Automatically
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="organization/hide-av.html">
+     Hide A/V calls
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="organization/student-email.html">
+     Show Student Emails
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="organization/sso.html">
+     Enable SSO Integration
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="organization/llms.html">
+     Large Language Model
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="organization/webhook.html">
+     Webhooks
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="organization/course-action-data.html">
+     Course Action Data
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Organization Billing
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../common/settings/settings.html">
+   Account Settings
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../common/settings/user-profile.html">
+     User Profile
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../common/settings/manage-password.html">
+     Manage Password
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../common/settings/ssh-key.html">
+     SSH Key
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../common/settings/user-prefs.html">
+     User Preferences
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../common/settings/project-prefs.html">
+     Project Preferences
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../common/settings/env-variables.html">
+     Environment Variables
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../common/settings/bitbucket.html">
+     Connect to BitBucket
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../common/settings/github.html">
+     Connect to GitHub
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../common/settings/upload-ssh-key-remote-server.html">
+     Upload SSH Key to Remote Server
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="legal.html">
+   Legal stuff
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+            
+            
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="organization/course-action-data.html" title="previous page">
+      <i class="left-prev-icon icon fa fa-angle-left"></i>
+      <span class="left-prev-title">Previous</span>
+    </a>
+    <a class='right-next' id="next-link" href="../../common/settings/settings.html" title="next page">
+      <span class="right-next-title">Next</span>
+      <i class="right-next-icon icon fa fa-angle-right"></i>
+    </a>
+
+              </div>
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="organization-billing">
+<span id="org-billing"></span><h1>Organization Billing<a class="headerlink" href="#organization-billing" title="Permalink to this headline">¶</a></h1>
+<p>For K12 and University organizations, the billing screen allows you to generate invoices for your account (for new accounts and renewal of existing accounts) or switch your organization to Student Pay, where students are prompted to enter a credit card when they sign up.</p>
+<div class="section" id="access-billing-page">
+<h2>Access Billing Page<a class="headerlink" href="#access-billing-page" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Click on your <strong>username</strong> in the bottom left corner of your Codio dashboard.</p></li>
+<li><p>Click the name of your organization (under <strong>Organizations</strong>)</p></li>
+</ol>
+<blockquote>
+<div><img alt="Organization" src="../../_images/myschoolorg.png" />
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>You will see the <strong>Billing</strong> option.</p></li>
+</ol>
+<blockquote>
+<div><img alt="Organization Billing" src="../../_images/orgbilltab.png" />
+</div></blockquote>
+</div>
+<div class="section" id="institution-pay">
+<h2>Institution Pay<a class="headerlink" href="#institution-pay" title="Permalink to this headline">¶</a></h2>
+<p>To generate an invoice or a quote, enter your country and follow the steps below:</p>
+<blockquote>
+<div><img alt="Directions Billing" src="../../_images/directions.png" />
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>Enter the number of student licenses required.</p></li>
+<li><p>Enter the student start date.</p></li>
+<li><p>If you have a promotion code, enter it in the appropriate field. Validation is case insensitive.</p></li>
+</ol>
+<ul class="simple">
+<li><p>If the promotion code is invalid, the message
+<code class="docutils literal notranslate"><span class="pre">Invalid</span> <span class="pre">promotion</span> <span class="pre">code</span></code> will be shown</p></li>
+<li><p>If the promotion code has expired, the message
+<code class="docutils literal notranslate"><span class="pre">This</span> <span class="pre">promotion</span> <span class="pre">code</span> <span class="pre">has</span> <span class="pre">expired</span></code> will be shown</p></li>
+<li><p>Promotion codes are only available for new users and not available for student pay plans.</p></li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p>The plans available will be shown (semester or annual), select the plan you require and if you require the invoice to be sent to someone else, you can change the recipient.</p></li>
+<li><p>When you are ready, click the ‘Generate Invoice’ button or ‘Generate Quote’ button as per your requirement, and the invoice or quote will be generated and sent to the email address.</p></li>
+</ol>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can access your invoice from the email, or you can click <strong>View Invoice</strong> from the <strong>Invoice History</strong> section. Pay your invoice at this link.</p>
+</div>
+<img alt="View Invoice" src="../../_images/viewinvoice.png" />
+</div></blockquote>
+</div>
+<div class="section" id="student-pay">
+<h2>Student Pay<a class="headerlink" href="#student-pay" title="Permalink to this headline">¶</a></h2>
+<p>The option to switch to a <strong>Student Pay plan</strong> where students are prompted to enter a credit card when they sign up is also available. Be aware if you have an annual plan and have already paid, this might lead to a conflict.</p>
+<blockquote>
+<div><img alt="Switch to Student Pay" src="../../_images/switchstudentpay.png" />
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>Navigate to the <strong>Billing</strong> page in your organization.</p></li>
+<li><p>Click <strong>Switch to Student Pay.</strong> It will prompt you to confirm this action.</p></li>
+<li><p>Students will now be prompted to make a payment when they access their Codio account, whether it be from Codio or from your LMS.</p></li>
+<li><p>To support students in this process, provide them with <a class="reference external" href="https://docs.codio.com/students/accessing-codio/paying.html#pay-for-codio-subscription">this documentation link</a> with specific emphasis to <a class="reference external" href="https://docs.codio.com/students/accessing-codio/paying.html#problems-setting-up-a-new-subscription-plan">this section</a> in the event they have problems especially if this may be first time they are trying to purchase online and the transaction may be refused by their bank due to the ever increasing fraud prevention measures card issuers are implementing or guide them to contact <a class="reference external" href="mailto:help&#37;&#52;&#48;codio&#46;com">help<span>&#64;</span>codio<span>&#46;</span>com</a>.</p></li>
+</ol>
+</div>
+<div class="section" id="bookstore-pay">
+<h2>Bookstore Pay<a class="headerlink" href="#bookstore-pay" title="Permalink to this headline">¶</a></h2>
+<p>Codio offers the option to provide licenses through an institution’s campus bookstore. This can ensure students on financial aid who need to buy licenses can do so through the bookstore. Students pay the bookstore for the license, the bookstore provides a redemption code, and students enter the code when they first access their Codio account. Codio then invoices the campus bookstore for codes purchased.</p>
+<ol class="arabic">
+<li><p><a class="reference external" href="https://intercom.help/codio/en/articles/3609689-how-do-students-buy-codio-though-the-campus-bookstore">Send this article</a> to your bookstore manager to get the process started.</p></li>
+<li><p>To support students in this process, provide them with <a class="reference external" href="https://docs.codio.com/students/accessing-codio/paying.html#redeeming-code-from-campus-bookstore">this documentation</a> or guide them to contact <a class="reference external" href="mailto:help&#37;&#52;&#48;codio&#46;com">help<span>&#64;</span>codio<span>&#46;</span>com</a>.</p></li>
+<li><p>The available subscription plans and their ISBNs:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>1 Semester  - Codio 1-Semester Plan - ISBN: 978-1-7331872-5-1</p></li>
+<li><p>2 Semesters - Codio 2 Semester Plan ISBN 978-1-7331872-8-2</p></li>
+<li><p>Annual - Codio Annual Plan ISBN # 978-1-7331872-1-3</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="viewing-invoice-history">
+<h2>Viewing Invoice History<a class="headerlink" href="#viewing-invoice-history" title="Permalink to this headline">¶</a></h2>
+<p>To view previous invoices, click on the <strong>View Invoice</strong> link in the <strong>Invoice History</strong> section below:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This is accessed from the Organization screen and having clicked on your Organization. Please do not use the normal Billing area for individuals that you can access by clicking on your name/gravatar (bottom left of screen) and selecting the <strong>Billing</strong> tab unless you wish to subscribe as an <strong>Individual</strong> or already are subscribed as an <strong>Individual</strong>.</p>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+
+          </main>
+          
+
+      </div>
+    </div>
+    
+  <script src="../../_static/js/index.44f2d10023dc91dde182.js"></script>
+
+
+    
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright Codio 2025. All Rights Reserved.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EL440DKDDY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EL440DKDDY');
+</script>
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/2227229.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+  </body>
+</html>

@@ -1,0 +1,350 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Removing Students" name="description" />
+
+    <title>Removing Students &#8212;   documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.a51115b1206b8cbfeff9cff2c3058b7d.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.15.3/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.15.3/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.15.3/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/code-tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/codio.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/search.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.44f2d10023dc91dde182.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/code-tabs.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    <script defer="defer" src="../../_static/js/algolia.js"></script>
+    <link rel="canonical" href="https://docs.codio.com/instructors/teaching/remove.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Plagiarism Checker" href="plagiarism.html" />
+    <link rel="prev" title="Resetting student passwords" href="resetpassword.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-dark-codio navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/logo-white.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../getstarted.html">
+  Overview
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../authoring.html">
+  Authoring
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../common.html">
+  Developing Code
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../setupcourses.html">
+  Courses Set up
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../teaching.html">
+  Teaching
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../admin.html">
+  Admin
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        <div id="docsearch"></div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="viewstudentwork.html">
+   Viewing student work
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="grading/grading.html">
+   Grading
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="grading/grade-freetext.html">
+     Grading Free Text Questions
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="grading/nbgrader.html">
+     Auto-Grade with nbgrader
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="grading/release-grades.html">
+     Release Grades
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="grading/reruncodetests.html">
+     Rerun Code Tests
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="behaviorinsights.html">
+   Behavior Insights
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="insights.html">
+   Learning Insights
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="playback.html">
+   Code Playback
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="commenting.html">
+   Code Commenting
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cursor.html">
+   Cursor Presence
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="resetpassword.html">
+   Resetting student passwords
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Removing Students
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plagiarism.html">
+   Plagiarism Checker
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="addstudents.html">
+   Inviting students to your course
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+            
+            
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="resetpassword.html" title="previous page">
+      <i class="left-prev-icon icon fa fa-angle-left"></i>
+      <span class="left-prev-title">Previous</span>
+    </a>
+    <a class='right-next' id="next-link" href="plagiarism.html" title="next page">
+      <span class="right-next-title">Next</span>
+      <i class="right-next-icon icon fa fa-angle-right"></i>
+    </a>
+
+              </div>
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="removing-students">
+<span id="remove-students"></span><h1>Removing Students<a class="headerlink" href="#removing-students" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic simple">
+<li><p>From the <strong>Courses</strong> area, click on your course to open it.</p></li>
+</ol>
+<ol class="arabic simple">
+<li><p>Click on the <strong>Students</strong> tab.</p></li>
+</ol>
+<ol class="arabic simple">
+<li><p>You will see all students in your course displayed on this screen. Find the student that you want to remove from the course and click on the blue triple dot icon to the right of their name. Choose <strong>Remove student</strong> to take them out of the course. (Note: this does not remove your student entirely from your organization - if you wish to do this, see <a class="reference internal" href="../admin/organization/remove-org-members.html#remove-org-members"><span class="std std-ref">Remove Members</span></a>)</p></li>
+</ol>
+<blockquote>
+<div><img alt="Remove Student" src="../../_images/remove_student.png" />
+</div></blockquote>
+</div>
+
+
+              </div>
+              
+
+          </main>
+          
+
+      </div>
+    </div>
+    
+  <script src="../../_static/js/index.44f2d10023dc91dde182.js"></script>
+
+
+    
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright Codio 2025. All Rights Reserved.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EL440DKDDY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EL440DKDDY');
+</script>
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/2227229.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+  </body>
+</html>

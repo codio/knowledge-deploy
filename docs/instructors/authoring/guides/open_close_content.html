@@ -1,0 +1,731 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Open and close files, previews and the terminal and highlight text using commands in Guides." name="description" />
+
+    <title>Open/close tabs from content &#8212;   documentation</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.a51115b1206b8cbfeff9cff2c3058b7d.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.15.3/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code-tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/codio.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/search.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.44f2d10023dc91dde182.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/code-tabs.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    <script defer="defer" src="../../../_static/js/algolia.js"></script>
+    <link rel="canonical" href="https://docs.codio.com/instructors/authoring/guides/open_close_content.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Hiding folders" href="hide_folders.html" />
+    <link rel="prev" title="Generating Content Drafts with AI" href="generating_content.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-dark-codio navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../index.html">
+  <img src="../../../_static/logo-white.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../getstarted.html">
+  Overview
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../../authoring.html">
+  Authoring
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../common.html">
+  Developing Code
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../setupcourses.html">
+  Courses Set up
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../teaching.html">
+  Teaching
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../admin.html">
+  Admin
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        <div id="docsearch"></div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro.html">
+   Authoring
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="project_book.html">
+     Project or course assignment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="author_student.html">
+     Author and student views
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="toc.html">
+     Table of contents management
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="page_editing.html">
+     Page editing overview
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="authoring_guidelines.html">
+     Authoring Guidelines
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="markdown_content.html">
+     Content editing
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="previewing_content.html">
+     Previewing content
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="teacher_only.html">
+     Teacher only content
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="solution_templating.html">
+     Solution File Templating
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="freeze_code.html">
+     Freezing Code
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="custom_button.html">
+     Custom Buttons in Guides
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="add_media.html">
+     Adding media
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="generating_content.html">
+     Generating Content Drafts with AI
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Open/close tabs from content
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hide_folders.html">
+     Hiding folders
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="excludingfiles.html">
+     Excluding Files/Folders
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="latex.html">
+     Latex for math expressions
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="cpumemdisk.html">
+     System Resources
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="settings/page.html">
+   Guides Settings and Page actions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="settings/opentabs.html">
+     Open tabs
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="settings/assessments.html">
+     Assessment Settings
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="settings/media.html">
+     Media Settings for a Guide
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="settings/global.html">
+     Global Guide Settings
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../assessments/add-assessment.html">
+   Auto-graded assessments
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/assessments.html">
+     Assessments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/advanced-code-test.html">
+     Advanced Code Test
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/ai-assessment-generation.html">
+     Generating Assessments With AI
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/assessment-security.html">
+     Assessment Security
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/autograde-free-text.html">
+     Free Text Autograde
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/auto-grade-scripts.html">
+     Assignment Level Scripts
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/delete-assessment.html">
+     Delete an Assessment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/duplicate-assessment.html">
+     Duplicate an Assessment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/edit-assessment.html">
+     Edit an Assessment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/edit-assessment-points.html">
+     Edit Assessment Points
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/fill-in-blanks.html">
+     Fill in the Blanks
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/free-text.html">
+     Free Text
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/grade-book.html">
+     Grade Book
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/llm-based-rubric.html">
+     LLM-Based Rubric Grader
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/math-assessments.html">
+     Math Assessments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/multiple-choice.html">
+     Multiple Choice
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/parameterized.html">
+     Parameterized assessments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/parsons-puzzle.html">
+     Parsons Puzzle
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/partial-points.html">
+     Partial Points
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/random.html">
+     Random Assessment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/splice.html">
+     SPLICE Assessments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/standard-code-test.html">
+     Standard Code Test
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/student-submission.html">
+     Student submission options
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessments/ungraded-assessments.html">
+     Ungraded Assessments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../setupcourses/library/assessmentslibrary.html">
+   Assessments Libraries
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/library/global-library.html">
+     Codio Global Assessments Library
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/library/search-library.html">
+     Search Assessments Library
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/library/add-questions-from-library.html">
+     Add Questions from Assessments Library
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/library/add-questions-to-library.html">
+     Add Questions to an Assessments Library
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/library/unlink-assessment.html">
+     Unlink an Assessment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../setupcourses/library/update-assess-from-library.html">
+     Update an Existing Assessment in Library
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+            
+            
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="generating_content.html" title="previous page">
+      <i class="left-prev-icon icon fa fa-angle-left"></i>
+      <span class="left-prev-title">Previous</span>
+    </a>
+    <a class='right-next' id="next-link" href="hide_folders.html" title="next page">
+      <span class="right-next-title">Next</span>
+      <i class="right-next-icon icon fa fa-angle-right"></i>
+    </a>
+
+              </div>
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="open-close-tabs-from-content">
+<span id="open-close"></span><h1>Open/close tabs from content<a class="headerlink" href="#open-close-tabs-from-content" title="Permalink to this headline">¶</a></h1>
+<p>You can include links in your content to open and close files in tabs and highlight lines of text similar to what is available in the <a class="reference internal" href="settings/opentabs.html#open-tabs"><span class="std std-ref">open tabs</span></a> dialog.</p>
+<div class="section" id="syntax-summary">
+<h2>Syntax Summary<a class="headerlink" href="#syntax-summary" title="Permalink to this headline">¶</a></h2>
+<p>The syntax is as follows and actions can be chained together using, separated by a <cite>;</cite>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">[Hyperlink</span> <span class="pre">text](open_file</span> <span class="pre">file1</span> <span class="pre">file2;</span> <span class="pre">cmd</span> <span class="pre">ls</span> <span class="pre">-al)</span>
+<span class="pre">`</span></code></p>
+</div>
+<div class="section" id="opening-directives">
+<h2>Opening directives<a class="headerlink" href="#opening-directives" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><cite>open_file file1 file2 fileN panel=A</cite> where panel is optional, in which case the default panel (A) will be used if not specified.</p></li>
+<li><p><cite>open_preview file panel=A</cite> where panel is optional, in which case the default panel (A) will be used if not specified.</p></li>
+<li><p><cite>open_terminal command panel=A</cite> where command (a system command) is optional and where panel is optional, in which case the default panel (A) will be used if not specified.</p></li>
+<li><p><cite>cmd systemcommand argument1 argument2 argumentN</cite></p></li>
+<li><p><cite>open_tutor file panel=A</cite> to open <span class="xref std std-ref">visualiser</span> and where panel is optional, in which case the default panel (A) will be used if not specified.</p></li>
+<li><p><cite>open_vm panel=A</cite> to open <a class="reference internal" href="../../setupcourses/virtualmachine.html#virtualmachine"><span class="std std-ref">virtual machine</span></a> and where panel is optional, in which case the default panel (A) will be used if not specified.</p></li>
+<li><p><cite>open_preview https://{{domain5000}} panel=A</cite> to open preview of the box (on port 5000 in this example) where panel is optional, in which case the default panel (A) will be used if not specified.</p></li>
+<li><p><cite>open_preview https://www.codio.com panel=A</cite> to open defined website where panel is optional, in which case the default panel (A) will be used if not specified.</p></li>
+</ul>
+</div>
+<div class="section" id="closing-directives">
+<h2>Closing directives<a class="headerlink" href="#closing-directives" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><cite>close_all</cite> closes all tabs in all panels, except the Guide itself.</p></li>
+<li><p><cite>close_all panel=A</cite> closes all tabs in panel A.</p></li>
+<li><p><cite>close_file file1</cite> closes <cite>file1</cite> in all panels</p></li>
+<li><p><cite>close_file file1 file2 fileN panel=A</cite> where panel is optional, in which case the default panel (A) will be used.</p></li>
+<li><p><cite>close_preview</cite> behaves like <cite>close_file</cite> for preview tabs.</p></li>
+<li><p><cite>close_terminal</cite> behaves like <cite>close_file</cite> for terminal tabs.</p></li>
+<li><p><cite>close_tutor file panel=A</cite> where visualiser is closed for file open in panel A</p></li>
+</ul>
+</div>
+<div class="section" id="important-spaces-and-in-file-names-and-commands">
+<h2>Important - spaces and ; in file names and commands<a class="headerlink" href="#important-spaces-and-in-file-names-and-commands" title="Permalink to this headline">¶</a></h2>
+<p>If any of your files contain a space in the name, enclose the file name in double quotes.</p>
+<ul class="simple">
+<li><p><cite>open_file “file name.txt”</cite></p></li>
+</ul>
+<p>If you use <cite>cmd</cite> and the command has a <cite>;</cite> character in it, then you should also use quotes.</p>
+<ul class="simple">
+<li><p><cite>cmd “cp file1 file2; cp file3 file4”</cite></p></li>
+</ul>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>Open a file <cite>file.txt</cite></p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">[Click</span> <span class="pre">here](open_file</span> <span class="pre">file.txt)</span>
+<span class="pre">`</span></code></p>
+<p>Open a file <cite>file.txt</cite> in panel B</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">[Click</span> <span class="pre">here](open_file</span> <span class="pre">file.txt</span> <span class="pre">panel=B)</span>
+<span class="pre">`</span></code></p>
+<p>Open a file <cite>file.txt</cite> in panel B, with a code reference and highlight 3 lines</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">[Click</span> <span class="pre">here](open_file</span> <span class="pre">file.txt</span> <span class="pre">panel=B</span> <span class="pre">ref=&quot;some</span> <span class="pre">text</span> <span class="pre">in</span> <span class="pre">your</span> <span class="pre">code&quot;</span> <span class="pre">count=3)</span>
+<span class="pre">`</span></code></p>
+<p>Open files <cite>file.txt</cite> and <cite>file2.txt</cite></p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">[Click</span> <span class="pre">here](open_files</span> <span class="pre">file.txt</span> <span class="pre">file2.txt)</span>
+<span class="pre">`</span></code></p>
+<p>Open a file <cite>file.txt</cite> and preview of <cite>file.txt</cite> in panel C</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">[Click</span> <span class="pre">here](open_file</span> <span class="pre">file.txt;</span> <span class="pre">open_preview</span> <span class="pre">file.txt</span> <span class="pre">panel=C)</span>
+<span class="pre">`</span></code></p>
+<p>Run a command then open a preview of <cite>file.txt</cite> in panel C</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">[Click</span> <span class="pre">here](cmd</span> <span class="pre">cp</span> <span class="pre">source.txt</span> <span class="pre">target.txt;</span> <span class="pre">open_preview</span> <span class="pre">file.txt</span> <span class="pre">panel=C)</span>
+<span class="pre">`</span></code></p>
+<p>Open a Terminal window in panel B</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">[Click</span> <span class="pre">here](open_terminal</span> <span class="pre">panel=C)</span>
+<span class="pre">`</span></code></p>
+<p>Close <cite>file.txt</cite> and open a preview <cite>file.txt</cite></p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">[Click</span> <span class="pre">here](close_file</span> <span class="pre">file.txt;</span> <span class="pre">open_preview</span> <span class="pre">file.txt)</span>
+<span class="pre">`</span></code></p>
+<p>Close all open files, previews and terminals in all panels, then open a file <cite>file.txt</cite></p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">[Click</span> <span class="pre">here](close_all;</span> <span class="pre">open_file</span> <span class="pre">file.txt)</span>
+<span class="pre">`</span></code></p>
+<p>Close all open files, previews and terminals, then open a file <cite>file.txt</cite></p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">[Click</span> <span class="pre">here](close_all;</span> <span class="pre">open_file</span> <span class="pre">file.txt)</span>
+<span class="pre">`</span></code></p>
+<p>Close all open files, previews and terminals that are in panel C, then open a file <cite>file.txt</cite></p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">[Click</span> <span class="pre">here](close_all</span> <span class="pre">panel=C;</span> <span class="pre">open_file</span> <span class="pre">file.txt)</span>
+<span class="pre">`</span></code></p>
+</div>
+</div>
+
+
+              </div>
+              
+
+          </main>
+          
+
+      </div>
+    </div>
+    
+  <script src="../../../_static/js/index.44f2d10023dc91dde182.js"></script>
+
+
+    
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright Codio 2025. All Rights Reserved.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EL440DKDDY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EL440DKDDY');
+</script>
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/2227229.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+  </body>
+</html>

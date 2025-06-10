@@ -1,0 +1,476 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Enable and view behavior insights that combine different IDE logs to identify potential plagiarism." name="description" />
+
+    <title>Behavior Insights &#8212;   documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.a51115b1206b8cbfeff9cff2c3058b7d.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.15.3/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.15.3/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.15.3/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/code-tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/codio.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/search.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.44f2d10023dc91dde182.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/code-tabs.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    <script defer="defer" src="../../_static/js/algolia.js"></script>
+    <link rel="canonical" href="https://docs.codio.com/instructors/teaching/behaviorinsights.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Learning Insights" href="insights.html" />
+    <link rel="prev" title="Rerun Code Tests" href="grading/reruncodetests.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-dark-codio navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/logo-white.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../getstarted.html">
+  Overview
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../authoring.html">
+  Authoring
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../common.html">
+  Developing Code
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../setupcourses.html">
+  Courses Set up
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../teaching.html">
+  Teaching
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../admin.html">
+  Admin
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        <div id="docsearch"></div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="viewstudentwork.html">
+   Viewing student work
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="grading/grading.html">
+   Grading
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="grading/grade-freetext.html">
+     Grading Free Text Questions
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="grading/nbgrader.html">
+     Auto-Grade with nbgrader
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="grading/release-grades.html">
+     Release Grades
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="grading/reruncodetests.html">
+     Rerun Code Tests
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Behavior Insights
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="insights.html">
+   Learning Insights
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="playback.html">
+   Code Playback
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="commenting.html">
+   Code Commenting
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cursor.html">
+   Cursor Presence
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="resetpassword.html">
+   Resetting student passwords
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="remove.html">
+   Removing Students
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plagiarism.html">
+   Plagiarism Checker
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="addstudents.html">
+   Inviting students to your course
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+            
+            
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="grading/reruncodetests.html" title="previous page">
+      <i class="left-prev-icon icon fa fa-angle-left"></i>
+      <span class="left-prev-title">Previous</span>
+    </a>
+    <a class='right-next' id="next-link" href="insights.html" title="next page">
+      <span class="right-next-title">Next</span>
+      <i class="right-next-icon icon fa fa-angle-right"></i>
+    </a>
+
+              </div>
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="behavior-insights">
+<span id="id1"></span><h1>Behavior Insights<a class="headerlink" href="#behavior-insights" title="Permalink to this headline">¶</a></h1>
+<p>All teachers have access to Codio’s Behavior Insights which combines different IDE logs into understandable measures to detect cases of potential plagiarism.</p>
+<div class="section" id="enable-behavior-insights-for-your-course">
+<h2>Enable Behavior Insights for your Course<a class="headerlink" href="#enable-behavior-insights-for-your-course" title="Permalink to this headline">¶</a></h2>
+<p><strong>Behavior Insights</strong> is enabled at the course-level. Navigate to the <strong>Courses</strong> page and select the course to open it. Then choose <strong>Basic Settings</strong> under <strong>Grading</strong> in the left hand menu.</p>
+<blockquote>
+<div><img alt="Select: Course, Basic Settings, Enable behavioral insights, Save Changes" src="../../_images/BehaviorInsightsToggleV2.png" />
+</div></blockquote>
+<p>Toggle on the <strong>Enable Behavioral Insights</strong> setting and click <strong>Save Changes</strong>.</p>
+</div>
+<div class="section" id="configure-behavior-insights-options">
+<h2>Configure Behavior Insights Options<a class="headerlink" href="#configure-behavior-insights-options" title="Permalink to this headline">¶</a></h2>
+<p>You can toggle the availability of individual Behavior Insights tiles and change the minimum and maximum values for a particular option. Values less than or equal to the minimum or greater than or equal to the maximum will trigger an indicator and show up in the Behavior column for that respective student.</p>
+<ul>
+<li><dl>
+<dt><strong>Time Spent (minutes)</strong></dt><dd><p>Codio tracks the amount of time the students spent working on the assignment in our online IDE.</p>
+<blockquote>
+<div><blockquote>
+<div><ul class="simple">
+<li><p>You can set the minimum value in minutes, and students who spent less than or equal to that will trigger an indicator flagging potential plagiarism concerns.</p></li>
+<li><p>You can set the maximum value in minutes, and students who spent greater than or equal to the maximum will trigger an indicator flagging potential student struggle.</p></li>
+</ul>
+</div></blockquote>
+<img alt="Toggle to enable/disable minimum and maximum thresholds on time spent and enter the threshold value in minutes." src="../../_images/BehaviorInsights_Configure_TimeSpent.png" />
+</div></blockquote>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Rate of Edits (Characters per Second)</strong></dt><dd><p>Based on thousands of student submissions, we determined that submissions created with a pace of more than 4 characters edited (inserted or deleted) per second had a high likelihood of being plagiarized.</p>
+<blockquote>
+<div><blockquote>
+<div><ul class="simple">
+<li><p>You can set the minimum value in characters per second, and students who edited at a rate less than or equal to the minimum will trigger an indicator flagging potential student struggle.</p></li>
+<li><p>You can set the maximum value in characters per second, and students who edited at a rate greater than or equal to the maximum will trigger an indicator flagging potential plagiarism concerns.</p></li>
+</ul>
+</div></blockquote>
+<img alt="Toggle to enable/disable minimum and maximum thresholds on rate of edits and enter the threshold value in characters per second." src="../../_images/BehaviorInsights_Configure_RateOfEdits.png" />
+</div></blockquote>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Coding vs Debugging Time</strong></dt><dd><p>You can monitor the percent of time spent students spent in an error state (debugging) vs a non-error state (coding). In the context of detecting plagiarism, it would be odd for students to never have errors or spend no time trying to resolve them. Based on thousands of student submissions, we determined a generalized threshold of less then 4% of the time in an error state (i.e. “debugging”) had a high likelihood of being plagiarized.</p>
+<blockquote>
+<div><blockquote>
+<div><ul class="simple">
+<li><p>You can set the minimum value as a percent, and students who spent less than or equal to the minimum time debugging will trigger an indicator flagging potential plagiarism concerns.</p></li>
+<li><p>You can set the maximum value as a percent, and students who spent greater than or equal to the maximum time debugging will trigger an indicator flagging potential student struggle.</p></li>
+</ul>
+</div></blockquote>
+<img alt="Toggle to enable/disable minimum and maximum thresholds on coding vs debugging time and enter the threshold value as a percent." src="../../_images/BehaviorInsights_Configure_CodingVsDebugging.png" />
+</div></blockquote>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Insertions vs Deletions</strong></dt><dd><p>You can monitor the percent of characters inserted vs characters deleted across assignment code files for the student.</p>
+<blockquote>
+<div><blockquote>
+<div><ul class="simple">
+<li><p>You can set the minimum value as a percent, and students who deleted less than or equal to the minimum will trigger an indicator flagging potential plagiarism concerns.</p></li>
+<li><p>You can set the maximum value as a percent, and students who deleted greater than or equal to the maximum will trigger an indicator flagging potential student struggle.</p></li>
+</ul>
+</div></blockquote>
+<img alt="Toggle to enable/disable minimum and maximum thresholds on insertions vs deletions and enter the threshold value as a percent." src="../../_images/BehaviorInsights_Configure_InsertionsVsDeletions.png" />
+</div></blockquote>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>External Pastes</strong></dt><dd><p>You can monitor each occurrence of a paste that did not come from an assignment code file or the Guide.</p>
+<blockquote>
+<div><blockquote>
+<div><ul class="simple">
+<li><p>You can set the minimum number of lines of code that count as an occurrence of an external paste. <strong>The smallest accepted value is 2 lines of code</strong>, meaning that when students paste 2 or more lines of code, Codio counts that as an external paste occurrence. Students often paste code that is one line or less (e.g. import statement, regular expression from a testing website, symbols they cannot find on their keyboard such as <code class="docutils literal notranslate"><span class="pre">|</span></code>) which is not captured by this dimension due to the lower chance of plagiarism concern. For more fine-grained information on a student’s coding process which would show these smaller pastes, see <a class="reference internal" href="playback.html#code-playback"><span class="std std-ref">Code Playback</span></a>.</p></li>
+<li><p>You can set the maximum number of paste occurrences, and students who had greater than or equal to the number of paste occurrences will trigger an indicator potentially indicating plagiarism concerns.</p></li>
+</ul>
+</div></blockquote>
+<img alt="Toggle to enable/disable external paste threshold and enter the threshold values." src="../../_images/BehaviorInsights_Configure_ExternalPastesV2.png" />
+</div></blockquote>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For reference, the values in the images above are Codio’s default values.</p>
+</div>
+</div>
+<div class="section" id="viewing-behavior-insights">
+<h2>Viewing Behavior Insights<a class="headerlink" href="#viewing-behavior-insights" title="Permalink to this headline">¶</a></h2>
+<p>When you go to the Student progress page of an assignment in that course, you will now see a <strong>Behavior</strong> column and be able to filter and sort based on the behavior indicator.</p>
+<blockquote>
+<div><p>You can see coloured boxes around all behavior insight indicators.When the box is empty(i.e has no tiles)it shows that no thresholds has been broken.</p>
+<blockquote>
+<div><img alt="A Behavior column on the assignment progress dashboard can be filtered and sorted" src="../../_images/Indicators1.png" />
+</div></blockquote>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Behavior Insights will only appear once an assignment is marked as complete. Lack of tiles in the coloured boxes means no behavior thresholds have been met - the student has no indications of the specified behavior which would trigger the indicator.</p>
+</div>
+<p>Click on an indicator under the <strong>Behavior</strong> column to see the Behavior Insights Dashboard.</p>
+<p>When thresholds are broken this would Indicate broken thresholds with red outline .Tiles without broken thresholds should be visible but won’t have red outline or explanatory text beneath.
+Student names with arrows would be visible in top left corner (similar to other grade dialogue that appears when you click on the boxed grade number) so that teachers can cycle through the different student’s to view their insight dashboard.</p>
+<blockquote>
+<div><img alt="Five tiles showing numeric metrics with text descriptions under each" src="../../_images/BehaviourInsightDashboard1.png" />
+</div></blockquote>
+<p>There will be between 1 and 5 tiles displayed. Tiles are only displayed if the student value is outside of a given threshold (indicated by dashed lines or red on the tile). Each tile has a textual description directly below it to help teachers interpret the numerical date presented in graphical form on the tile.</p>
+<p>Click the <strong>Ignore</strong> button at the bottom of the dashboard to remove the behavior indicator for that student on that assignment. This action cannot be undone.</p>
+</div>
+<div class="section" id="behavioral-player">
+<h2>Behavioral Player<a class="headerlink" href="#behavioral-player" title="Permalink to this headline">¶</a></h2>
+<p>You can also view students activity for all files in the assignment going to <strong>Education &gt; Behavioral Player</strong> menu option.</p>
+<blockquote>
+<div><img alt="Behavioral Player with User Events like Try it/Checkit button pressed along with its timeline" src="../../_images/BehaviourInsightUserEvents.png" />
+</div></blockquote>
+<p>From <strong>User Events</strong> row, you can see when the student clicked Try it and Check it button so you will have a complete picture of the student journey as they are constructing their code and when they are testing it. You can also see the Points earned by student at that specific Check it button so you can easily figure out the highest score.</p>
+<p>You can hover over these Check it/Try it boxes from User Events row to know the name of the respective assessment.</p>
+<p>The <strong>Timeline</strong> row provides the details about the date/time when the respective User Event happened.</p>
+</div>
+<div class="section" id="history-of-external-pastes-and-codeplayback">
+<h2>History of External Pastes and CodePlayback<a class="headerlink" href="#history-of-external-pastes-and-codeplayback" title="Permalink to this headline">¶</a></h2>
+<p>If you click on a bar in the <strong>History of External Pastes</strong> tile, you will be presented with that paste in Codio’s Code Playback feature.</p>
+<blockquote>
+<div><img alt="Code playback with code changes on top and a timeline underneath with file name and pastes indicated" src="../../_images/BehaviorInsightsPlayback.png" />
+</div></blockquote>
+<p>The top pane shows the contents of the modified file with the change higlighted in green (inserted characters) or red (deleted characters).</p>
+<p>The timeline at the bottom indicates all detected pastes, and clicking on the paste will bring you to that point in the timeline.</p>
+<p>if History of External Pastes tile is empty, you can still open the player from Education &gt; Behavioral Player as explained in the previous section.</p>
+</div>
+<div class="section" id="no-data">
+<h2>No Data<a class="headerlink" href="#no-data" title="Permalink to this headline">¶</a></h2>
+<p>Behavior Insights is built on Codio’s IDE instrumentation. This means if your students work on their local IDE and simply upload their work to Codio, or you have them working on a 3rd party IDE inside Codio (e.g. VSCode, Jupyter, RStudio, vim, nano), you might see that some tiles are being shown to indicate lack of data:</p>
+<blockquote>
+<div><img alt="No data displayed on Coding vs Debugging and Insertions vs Deletions tiles" src="../../_images/BehaviorInsightsNoData.png" />
+</div></blockquote>
+</div>
+</div>
+
+
+              </div>
+              
+
+          </main>
+          
+
+      </div>
+    </div>
+    
+  <script src="../../_static/js/index.44f2d10023dc91dde182.js"></script>
+
+
+    
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright Codio 2025. All Rights Reserved.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EL440DKDDY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EL440DKDDY');
+</script>
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/2227229.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+  </body>
+</html>

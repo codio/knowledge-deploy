@@ -1,0 +1,427 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Plagiarism detection allows you to check for code copying and potential cases of cheating between members of a course." name="description" />
+
+    <meta property="article:modified_time" content="2025-01-24T16:56:57+00:00" />
+    <title>Plagiarism Checker &#8212;   documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.a51115b1206b8cbfeff9cff2c3058b7d.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.15.3/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.15.3/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.15.3/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/code-tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/codio.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/search.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.44f2d10023dc91dde182.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/code-tabs.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    <script defer="defer" src="../../_static/js/algolia.js"></script>
+    <link rel="canonical" href="https://docs.codio.com/instructors/teaching/plagiarism.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Inviting students to your course" href="addstudents.html" />
+    <link rel="prev" title="Removing Students" href="remove.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-dark-codio navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/logo-white.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../getstarted.html">
+  Overview
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../authoring.html">
+  Authoring
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../common.html">
+  Developing Code
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../setupcourses.html">
+  Courses Set up
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../teaching.html">
+  Teaching
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../admin.html">
+  Admin
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        <div id="docsearch"></div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="viewstudentwork.html">
+   Viewing student work
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="grading/grading.html">
+   Grading
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="grading/grade-freetext.html">
+     Grading Free Text Questions
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="grading/nbgrader.html">
+     Auto-Grade with nbgrader
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="grading/release-grades.html">
+     Release Grades
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="grading/reruncodetests.html">
+     Rerun Code Tests
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="behaviorinsights.html">
+   Behavior Insights
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="insights.html">
+   Learning Insights
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="playback.html">
+   Code Playback
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="commenting.html">
+   Code Commenting
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cursor.html">
+   Cursor Presence
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="resetpassword.html">
+   Resetting student passwords
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="remove.html">
+   Removing Students
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Plagiarism Checker
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="addstudents.html">
+   Inviting students to your course
+   <i class="fas icon fa-angle-right">
+   </i>
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+            
+            
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="remove.html" title="previous page">
+      <i class="left-prev-icon icon fa fa-angle-left"></i>
+      <span class="left-prev-title">Previous</span>
+    </a>
+    <a class='right-next' id="next-link" href="addstudents.html" title="next page">
+      <span class="right-next-title">Next</span>
+      <i class="right-next-icon icon fa fa-angle-right"></i>
+    </a>
+
+              </div>
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="plagiarism-checker">
+<span id="plagiarism"></span><h1>Plagiarism Checker<a class="headerlink" href="#plagiarism-checker" title="Permalink to this headline">¶</a></h1>
+<p>Plagiarism detection allows you to check for code copying and potential cases of cheating between members of a course. With the current version, Codio will compare the code projects of all students within a course for a specific teaching assignment.</p>
+<p>If you want to include other reference code to include in the cross comparison, then you will need to create a dummy student account, add that dummy student to the course and upload the reference code as that student for that assignment. The Codio <a class="reference internal" href="../setupcourses/add-remove-students.html#add-remove-students"><span class="std std-ref">Test Student</span></a> accounts could be used for this purpose</p>
+<p>Plagiarism detection is best used with programming project assignments rather than Codio authored projects. It will work in both cases but it is really designed to test general coding projects rather than lots of auto-graded assessments within a assignment.</p>
+<p>Codio does not determine whether cheating has or has not taken place and leaves the decision making up to you.</p>
+<p>To run the Plagiarism checker you need to first select the assignment within the course and then press the Plagiarism button.</p>
+<blockquote>
+<div><img alt="Plagiarism start" src="../../_images/plag-button.png" />
+</div></blockquote>
+<div class="section" id="courses">
+<h2>Courses<a class="headerlink" href="#courses" title="Permalink to this headline">¶</a></h2>
+<p>In order to use this feature you need to set up a course. If you are not using Codio as your main IDE and want to use only the plagiarism detection feature then you should still follow these instructions and ask your students to upload their code into the project using Git or by uploading files manually.</p>
+</div>
+<div class="section" id="access-plagiarism-features">
+<h2>Access Plagiarism features<a class="headerlink" href="#access-plagiarism-features" title="Permalink to this headline">¶</a></h2>
+<p>When in your course, select your assignment and then click the <strong>Plagiarism</strong> button.</p>
+<blockquote>
+<div><img alt="Plagiarism start" src="../../_images/plag-button.png" />
+</div></blockquote>
+</div>
+<div class="section" id="run">
+<h2>Run<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h2>
+<p>You can see the <strong>Plagiarism</strong> button near in the upper part of the screen. When you press this you are taken to the following screen.</p>
+<blockquote>
+<div><img alt="Plagiarism summary" src="../../_images/plag-summary.png" />
+</div></blockquote>
+<p>This screen will show you any plagiarism reports that were run in the past. You can open these if you wish.</p>
+<p>On the left you can:</p>
+<ul class="simple">
+<li><p>list the exact filenames you want checked. If there are multiple files, list one file per line.</p></li>
+<li><p>enter a relative path in the workspace to check.</p></li>
+<li><p>upload items to compare against (e.g. previous years information), you can also use <a class="reference internal" href="#mossbundle"><span class="std std-ref">moss bundles</span></a> here.</p></li>
+<li><p>filter out template code setting the maximum fingerprint percentage between 0 and 100%. For more information on fingerprinting see <a class="reference external" href="https://dolos.ugent.be/docs/running.html#ignoring-template-code">https://dolos.ugent.be/docs/running.html#ignoring-template-code</a></p></li>
+<li><p>restrict the file types that should be checked. It is possible to add multiple file types by pressing the <strong>Add Extension</strong> button.</p></li>
+<li><p>add the file list in the <strong>Files Excludes</strong> box that you don’t want to be inlcuded. If there are multiple files, add each file on a new line.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Files Excludes</strong> is useful when there is a large data set and reporting on all returns an error.</p>
+</div>
+<p>These filters can be useful to avoid generating unnecessary noise in your report.</p>
+<p>Once you are ready to run a new report, press the <strong>Start</strong> button, which will package up all the files and pass them to the detection engine. You are free to leave the screen at this point and return to it later to see whether the report has been generated.</p>
+<p>Codio will include all code from all students in the report, irrespective of whether the assignment is marked by the student as completed.</p>
+</div>
+<div class="section" id="the-report">
+<h2>The report<a class="headerlink" href="#the-report" title="Permalink to this headline">¶</a></h2>
+<p>Once the report has been generated it can be opened by clicking the <strong>Open</strong> button. A typical report is shown below. The interpretation of the report is explained below.</p>
+<blockquote>
+<div><img alt="Plagiarism main report" src="../../_images/plag-main-report.png" />
+</div></blockquote>
+<p>From the report overview you can also then view by:</p>
+<ul class="simple">
+<li><p>submission</p></li>
+<li><p>clusters</p></li>
+<li><p>graph</p></li>
+<li><p>pair</p></li>
+</ul>
+<p>In the <strong>Global Settings</strong> (under the cog icon at the top right) you can configure global parameters</p>
+<ul class="simple">
+<li><p>Similarity Threshold (The similarity threshold is the minimum similarity a file pair must have to be considered plagiarised)</p></li>
+<li><p>Anonymize Dataset (Anonymize the dataset by removing the names of the authors and the files)</p></li>
+<li><p>Active Labels (Select the labels that should be displayed in the visualizations)</p></li>
+</ul>
+<p>For more information see the <a class="reference external" href="https://dolos.ugent.be/">Dolos</a> documentation and if you have any feedback on the report, raise in the GitHub repository <a class="reference external" href="https://github.com/dodona-edu/dolos/issues">issues</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>if using the <a class="reference external" href="https://dolos.ugent.be/server/#/">Online Version of Dolos</a> where you upload the ZIP file  you will need to specify the programming language as it can’t detect it from the .file extensions.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you can export with the correct language extension (eg username.py or username.java) based on the file extensions so autodetection works.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Manifest.csv does not work with online version but you can rename the csv file so Dolos can pick it up.</p>
+</div>
+</div>
+<div class="section" id="downloading-students-data-for-external-plagiarism-check">
+<span id="mossbundle"></span><h2>Downloading Students Data for External Plagiarism Check<a class="headerlink" href="#downloading-students-data-for-external-plagiarism-check" title="Permalink to this headline">¶</a></h2>
+<p>You can download the files of students and run plagarism on them outside the Codio with either <strong>Dolos</strong> or <strong>Moss</strong>. List the files you want to download in the ‘Which files should be checked’ field and press the relevant <strong>generate bundle</strong> button and it will download selected data/files for all students, this data contain student wise separate data/folders. This feature is helpful if you have large cohort of students or large assignments. If you want to run plagiarism outside of Codio with Dolos, check out <a class="reference external" href="https://dolos.ugent.be/">Dolos</a>.</p>
+<p>If you wish to run with <strong>MOSS</strong>, they can handle directories and parsing out template code (they call it a base file and it’s controlled with -b flag). Put each student’s files into a directory that is their username and include a directory called Starter_code with the template code. See their documentation on usage and explanation of the flags, <a class="reference external" href="http://moss.stanford.edu/general/scripts/mossnet">Here</a> .</p>
+<blockquote>
+<div><img alt="Plagiarism bundle" src="../../_images/Generatemoss-dolos.png" />
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You should always use -d and -b flags with moss for the format that codio provides.</p>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+
+          </main>
+          
+
+      </div>
+    </div>
+    
+  <script src="../../_static/js/index.44f2d10023dc91dde182.js"></script>
+
+
+    
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright Codio 2025. All Rights Reserved.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EL440DKDDY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EL440DKDDY');
+</script>
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/2227229.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+  </body>
+</html>

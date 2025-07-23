@@ -1,0 +1,1085 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Hint-Bot is a quick AI solution for helping students with simple queries." name="description" />
+
+    <title>Virtual Coach &#8212;   documentation</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.a51115b1206b8cbfeff9cff2c3058b7d.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.15.3/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.15.3/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code-tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/codio.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/search.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.44f2d10023dc91dde182.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/code-tabs.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    <script defer="defer" src="../../../_static/js/algolia.js"></script>
+    <link rel="canonical" href="https://docs.codio.com/instructors/setupcourses/assignment-settings/virtual-coach.html" />
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Teaching" href="../../../teaching.html" />
+    <link rel="prev" title="Mandatory Progress" href="mandatory.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-dark-codio navbar-expand-lg bg-dark fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../index.html">
+  <img src="../../../_static/logo-white.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../getstarted.html">
+  Overview
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../authoring.html">
+  Authoring
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../common.html">
+  Developing Code
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../../setupcourses.html">
+  Courses Set up
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../teaching.html">
+  Teaching
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../admin.html">
+  Admin
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        <div id="docsearch"></div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../courses.html">
+   Courses Set Up
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../create-course.html">
+     Create a New Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../clone-course.html">
+     Clone a Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../parent-child-courses.html">
+     Working with Parent/Child Courses
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../export-course-data.html">
+     Data Exports
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../archive-course.html">
+     Archive Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../delete-course.html">
+     Delete Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../rename-course.html">
+     Rename Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../share-course.html">
+     Share Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../search-course.html">
+     Search and Order Courses
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../add-remove-assignment.html">
+     Add and Remove Course Assignments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modify-assignments.html">
+     Modify Assignments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../rename-reorder-assignments.html">
+     Rename/Reorder Modules and Assignments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../preview-course.html">
+     Preview Courses and Assignments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../bulk-assignment-update.html">
+     Bulk Assignment Update
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../batch-groups-upload.html">
+     Batch Groups Upload
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../batch-student-tagging.html">
+     Batch Student Tagging
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../add-teachers.html">
+     Add or Remove Teachers in a Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../add-ta.html">
+     Add Teaching Assistant to a Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../add-remove-students.html">
+     Add, Remove or Archive Students in a Course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../change-student-password.html">
+     Change Student Passwords
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course-contact.html">
+     Course contact URL
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course-revoke-sudo-access.html">
+     Revoke sudo access for all assignments in the course
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course-remove-inactive-students.html">
+     Remove Inactive Students
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../export-assignment-data.html">
+     Export Assignment Data
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../custom-css-url.html">
+     Setting course level custom CSS
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../export-lti.html">
+     Export LTI Settings
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lmsconnect.html">
+     Connecting to your LMS
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mark-assignments-complete.html">
+     Mark Assignment as Complete/Uncomplete
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notification-email.html">
+     Automated Emails
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../view-student-username.html">
+     View Student Usernames
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course-module-progress.html">
+     Gamification
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../virtualmachine.html">
+     Virtual Machines
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course-llm.html">
+     Large Language Model
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../resources/codioresources.html">
+   Codio instructional resources
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../resources/editingresources.html">
+     Editing Resources
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../resources/resourcetools/crunch.html">
+   Additional resources
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../resources/resourcetools/flode.html">
+     Flode
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../resources/resourcetools/jeroo.html">
+     Jeroo
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../resources/resourcetools/scratch.html">
+     Scratch
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../resources/resourcetools/pencilcode.html">
+     Pencil Code
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../resources/resourcetools/draw-io.html">
+     Draw.io
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../resources/resourcetools/pyret.html">
+     Pyret
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../resources/resourcetools/tkinter.html">
+     Tkinter
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../resources/resourcetools/turtle.html">
+     Turtle
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../resources/resourcetools/processing-and-p5.html">
+     Processing and p5
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../admin/integration/intro.html">
+   Integrating with your LMS system (Canvas etc.)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../admin/integration/lms-systems/system-specific-directions.html">
+     System specific instructions
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../admin/integration/lms-systems/canvas.html">
+       LTI 1.1 Setup
+       <i class="fas icon fa-angle-right">
+       </i>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../admin/integration/lms-systems/blackboard.html">
+       Blackboard LTI 1.x
+       <i class="fas icon fa-angle-right">
+       </i>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../admin/integration/lms-systems/d2l.html">
+       D2L
+       <i class="fas icon fa-angle-right">
+       </i>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../admin/integration/lms-systems/moodle.html">
+       Moodle
+       <i class="fas icon fa-angle-right">
+       </i>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../admin/integration/lms-systems/google-classroom.html">
+       Google Classroom
+       <i class="fas icon fa-angle-right">
+       </i>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../admin/integration/lms-systems/schoology.html">
+       Schoology
+       <i class="fas icon fa-angle-right">
+       </i>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../admin/integration/lms-students.html">
+     Creating User Account
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../admin/integration/lti-enrol.html">
+     LTI Enroll to Course Only
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../admin/integration/grading.html">
+     LMS Grading
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../admin/integration/lti-app.html">
+     LTI App (LTI 1.1 Only)
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../admin/integration/lti-keys-and-urls-information.html">
+     LTI Keys and URLs
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../admin/integration/lti-course-copy.html">
+     LTI Course copy
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../admin/integration/commoncartridge.html">
+     Common Cartridge
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../admin/integration/lti1-3.html">
+     LTI version 1.3
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../admin/integration/lti1-3Blackboard.html">
+     LTI 1.3 for Blackboard
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../admin/integration/lti1-3BS-D2L.html">
+     LTI 1.3 for Brightspace/D2L
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../admin/integration/lti1-3Canvas.html">
+     LTI 1.3 for Canvas
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../admin/integration/lti1-3DynReg.html">
+     LTI 1.3 Dynamic Registration
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="assignment-settings.html">
+   Managing assignments
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="assignment-actions.html">
+     Assignment Action Buttons
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pin-assignment.html">
+     Pin and Unpin Assignment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="disable-assignment.html">
+     Disable Assignment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="visibility-completed.html">
+     Visibility on Completed
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="visibility-disabled.html">
+     Visibility on Disabled
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="disable-mark-completed.html">
+     Disable Mark as Completed
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="complete-requires-all-answered.html">
+     Complete Requires All Questions Answered
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="allow-student-reset.html">
+     Reset Assignment by Student
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="allow-regrade-request.html">
+     Allow Regrade Request
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="disable-download.html">
+     Disable Download
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="prerequisite-assignments.html">
+     Prerequisite Assignments
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assignment-duration.html">
+     Assignment Duration
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="penalties.html">
+     Penalties
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exam-proctoring.html">
+     Exam Proctoring
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assignment-surveys.html">
+     Assignment Surveys
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assignment-gigabox.html">
+     Gigabox Slot
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="prime-assignment-containers.html">
+     Prime Assignment Containers
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="groupwork.html">
+     Pair Programming
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="grade-weights.html">
+     Grade Weights
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assign-grade-template.html">
+     Assign Grading Template to an Assignment
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mandatory.html">
+     Mandatory Progress
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Virtual Coach
+     <i class="fas icon fa-angle-right">
+     </i>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+            
+            
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="mandatory.html" title="previous page">
+      <i class="left-prev-icon icon fa fa-angle-left"></i>
+      <span class="left-prev-title">Previous</span>
+    </a>
+    <a class='right-next' id="next-link" href="../../../teaching.html" title="next page">
+      <span class="right-next-title">Next</span>
+      <i class="right-next-icon icon fa fa-angle-right"></i>
+    </a>
+
+              </div>
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="virtual-coach">
+<span id="id1"></span><h1>Virtual Coach<a class="headerlink" href="#virtual-coach" title="Permalink to this headline">¶</a></h1>
+<p>When Virtual Coach is enabled, students can use AI to assist them with their programming tasks. Codio’s prompts to the AI ensure that only assistance is provided, not solutions. The Virtual Coach can help students understand error messages they have received, gain a better understanding of the assignment prompt, or receive a hint about the next possible steps.</p>
+<p>In the assignments settings area, there are three settings you can toggle to enable the following features: <strong>Summarize Prompt</strong>, <strong>Error Augmentation</strong>, and <strong>Next Steps Hint</strong>.</p>
+<img alt="Assignment setting vc" src="../../../_images/Assignment-settings-Vc.png" />
+<p>When a student clicks on the Virtual Coach icon in the bottom right corner, a dialog opens, and they can see up to three options depending on the settings applied. If there is no <a class="reference internal" href="../../../authoring.html#authoring"><span class="std std-ref">Guide</span></a> in the assignment only error message augmentation will be available.</p>
+<p>Students may select one of the options presented by the coach to receive more information.</p>
+<img alt="Hint-Bot" src="../../../_images/Hint-Bot.png" />
+<ul class="simple">
+<li><p><strong>Summarize prompt</strong>: This option summarizes the text in the guide on the page and provides students with an enumerated set of steps.</p></li>
+<li><p><strong>Error Augmentation</strong>: Provides detailed explanations of error messages.</p></li>
+<li><p><strong>Next steps hint</strong>: Provides students with ideas for the next steps they can take to complete their assignment.</p></li>
+</ul>
+<img alt="Summary-Hint" src="../../../_images/Summarise-bot.png" />
+<p>If error output is not directed to the guide, students will need to paste the text of the error message in the prompt field in Virtual Coach.</p>
+<p>If an error message is not provided, the student will receive the following: “The provided text does not look like an error message. Please paste an error message below.” If, on the second attempt, the student still does not provide an error message, they will be returned to the first screen with three buttons.</p>
+<img alt="Explain-Error" src="../../../_images/Explain-error.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Standard and Advanced Code tests have an additional “Explain this error” button that will appear if Error Augmentation is on and running a code test results in an error state.</p>
+</div>
+<p>Students can provide feedback on the Virtual Coach’s responses by using the thumbs up icon to vote up or the thumbs down icon to vote down the responses.
+The Virtual Coach window may be resized by dragging the circle in the upper left corner.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can export Virtual Coach logs using one of the Codio API <strong>codio.course.exportCoachData(courseId)</strong>. For more information on Codio APIs and how to use it, check out <a class="reference external" href="https://github.com/codio/codio-api-js">Codio JS API</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can review how the Virtual Coach interacts with students by exporting the Course Coach Log Data. For more information, see the <a class="reference internal" href="../export-course-data.html#export-course-coach-logs"><span class="std std-ref">Course Coach Log Data</span></a></p>
+</div>
+<div class="section" id="enable-disable-virtual-coach-assistants-via-bulk-settings">
+<span id="enable-vc-bulk"></span><h2>Enable/Disable Virtual Coach Assistants via Bulk Settings<a class="headerlink" href="#enable-disable-virtual-coach-assistants-via-bulk-settings" title="Permalink to this headline">¶</a></h2>
+<p>You can enable/disable these three settings for all assignments in a course at bulk, check out <a class="reference internal" href="../bulk-assignment-update.html#bulk-assignment-update"><span class="std std-ref">Bulk Assignment Update</span></a></p>
+<ul class="simple">
+<li><p>The csv template for bulk assignment settings upload has 3 new columns now, one for each of the virtual coach assistants.</p></li>
+<li><p>These column values in the csv can be set to TRUE to enable any/all of the 3 assistants for any assignments in the course, and FALSE to disable them as part of the bulk settings update process.</p></li>
+</ul>
+</div>
+<div class="section" id="customize-assistants-for-virtual-coach">
+<h2>Customize Assistants for Virtual Coach<a class="headerlink" href="#customize-assistants-for-virtual-coach" title="Permalink to this headline">¶</a></h2>
+<p>You can extend the current capabilities of Coach by adding your own custom assistants as Javascript extensions. You’re going to need a Github account to get started. If you don’t have one, follow the steps by visiting this web page to create: <a class="reference external" href="https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github">https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github</a></p>
+<p>Once you’re signed in to your Github account, you will be able to create, install and test your very own custom AI assistant with Coach.</p>
+<div class="section" id="customize-use-an-existing-custom-assistant-as-a-javascript-extension">
+<h3>Customize/Use an existing custom assistant as a Javascript extension<a class="headerlink" href="#customize-use-an-existing-custom-assistant-as-a-javascript-extension" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Click this link to head over to the Codio Extensions Github Page - <a class="reference external" href="https://github.com/codio-extensions">https://github.com/codio-extensions</a> and scroll down to the Repositories section.</p></li>
+</ol>
+<img alt="Codio-extensions" src="../../../_images/codio-extension-virtual-coach.png" />
+<ol class="arabic simple" start="2">
+<li><p>Choose one of repositories that starts with <strong>custom-assistant-example-&lt;example_name&gt;</strong></p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These examples are experimental and may receive small improvements and updates. If you’re using them as is, please check the respective github repositories for the latest release available.</p>
+</div>
+<ol class="arabic" start="3">
+<li><p>Click on the green <strong>Use This Template</strong> button or the <a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo">Fork</a> button, in the top right corner, to create a copy of the example repo, and give it a unique name - This will be your own copy of the custom assistant where you can make edits to the example code to customize your assistant.</p>
+<blockquote>
+<div><ol class="loweralpha">
+<li><p>You’ll see 2 files in your repo:</p>
+<ol class="lowerroman">
+<li><p><strong>metadata.json</strong>: This file will contain some basic information about your extension:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><strong>name</strong>: The name of your extension - rename this field to describe what your assistant will do</p></li>
+<li><p><strong>type</strong>: For any Coach extension, the default value is “helper”</p></li>
+<li><p><strong>user_type</strong>: Describes who will be able to see the extension - one of 3 possible values: “learner”, “instructor”, “all”</p></li>
+<li><p><strong>component</strong>: For any Coach extension, the default value is “all”</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p><strong>index.js</strong>: This file will contain the Javascript code for the extension.</p></li>
+</ol>
+</li>
+<li><p>The <strong>index.js</strong> file has example code of how you can use the <a class="reference external" href="https://codio.github.io/client/codioIDE.coachBot.html">Coach API</a> to create your own assistant.</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Edit the <strong>metadata.json</strong> file (rename the extension, choose <strong>user_type</strong>). Save and commit the changes to your branch.</p></li>
+<li><p>Refer to the <a class="reference external" href="https://codio.github.io/client/codioIDE.coachBot.html">API documentation</a> and edit the <strong>index.js</strong> file with the Javascript code for your assistant.</p></li>
+</ol>
+<div class="section" id="creating-a-release">
+<span id="create-a-release"></span><h4>Creating a Release<a class="headerlink" href="#creating-a-release" title="Permalink to this headline">¶</a></h4>
+<p>Now that the code for the extension is complete, you’ll have to create a <strong>Release</strong> for your repository, making it deployable and ready to use.</p>
+<ol class="arabic simple">
+<li><p>Navigate back to your repository and on the right panel, click on “Create a new release”.</p></li>
+</ol>
+<img alt="create-release-example" src="../../../_images/creating-a-release-virtual-coach.png" />
+<ol class="arabic simple" start="2">
+<li><p>On this page, in the tags field, write and create a new tag by referring to the tagging suggestions on the right panel. Enter a name and description for this release, and click on the <strong>Publish release</strong> button at the very bottom of the page.</p></li>
+</ol>
+<img alt="publish-release-example" src="../../../_images/publish-release-virtual-coach.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you’ve made any changes, updates or edits to your code files (<strong>index.js</strong> or <strong>metadata.js</strong>) after creating a release, you will need to create a new release in order to propagate those changes to your custom assistant.</p>
+</div>
+</div>
+</div>
+<div class="section" id="deploying-a-custom-assistant-to-your-organization">
+<span id="deploy-your-assistant"></span><h3>Deploying a custom assistant to your organization<a class="headerlink" href="#deploying-a-custom-assistant-to-your-organization" title="Permalink to this headline">¶</a></h3>
+<p>Now that you have authored and tested your very own custom AI assistant, let’s look at the steps to deploy it in your organization:</p>
+<ol class="arabic simple">
+<li><p>Navigate to your extension’s Github repository and copy the webpage URL: it should look something like this: <cite>https://github.com/&lt;your-github-username&gt;/&lt;extension-repository-name&gt;</cite></p></li>
+<li><p>Login to your Codio account, and click on your username or Avatar on the bottom left corner of your screen to open Account Settings.</p></li>
+<li><p>Click on Organizations and choose an Organization that you’re an owner of - this is how you’ll be able to set up your assistant as an extension. If you’re not an owner, contact your Organization Admin to help you set it up.</p></li>
+<li><p>Now click on Extensions, and then click on the Add extension button.</p></li>
+<li><p>Paste the URL of your Github repository’s webpage that you copied in step 1, and click Add Extension. You should now see it pop up as an Inactive Extension. To deploy the assistant to your account, click Use. Now it is active and deployed in your organization.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>This is an experimental feature</strong>. BY adding an assistant to your organization, it will automatically be available to be toggled on/off in every course in that organization. It will appear as an assignment level setting, in the Virtual Coach section.</p>
+</div>
+</div>
+<div class="section" id="applying-updates-to-a-custom-assistant-after-creating-a-new-release">
+<h3>Applying updates to a custom assistant after creating a new release<a class="headerlink" href="#applying-updates-to-a-custom-assistant-after-creating-a-new-release" title="Permalink to this headline">¶</a></h3>
+<p>Once you’ve made more edits to your code files and created a new release, here’s how you can apply the updates to your assistant:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Login to your Codio account, and click on your username or Avatar on the bottom left corner of your screen to open Account Settings.</p></li>
+<li><p>Click on Organizations and choose an Organization that you’re an owner of - this is how you’ll be able to set up your assistant as an extension. If you’re not an owner, contact your Organization Admin to help you set it up.</p></li>
+<li><p>Now click on Extensions. You should be able to see your Custom Assistant under Active Extensions.</p></li>
+<li><p>Click on the Check for Updates button in the top right corner.</p></li>
+<li><p>If there are any updates to be applied, you will be prompted to do so!</p></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="authoring-your-own-custom-assistant-as-a-javascript-extension">
+<h3>Authoring your own custom assistant as a Javascript extension<a class="headerlink" href="#authoring-your-own-custom-assistant-as-a-javascript-extension" title="Permalink to this headline">¶</a></h3>
+<p>1. Click this link to head over to the Coach Custom Assistant Template repository -
+<a class="reference external" href="https://github.com/codio-extensions/coach-custom-assistant-template-simple">https://github.com/codio-extensions/coach-custom-assistant-template-simple</a></p>
+<blockquote>
+<div><img alt="Coach extensions example Github repository" src="../../../_images/create-a-new-repository.png" />
+</div></blockquote>
+<ol class="arabic" start="2">
+<li><p>Click on the green <strong>Use This Template</strong> button in the top right corner, and select <strong>Create a new repository</strong> from the drop down menu to create your own repo from the template. Now pick an owner for this repository, give it a unique name and click <strong>Create Repository</strong> - This is where you will be making the edits to the template code to create your own custom assistant.</p>
+<blockquote>
+<div><ol class="loweralpha">
+<li><p>You’ll see 2 files in your repo:</p>
+<ol class="lowerroman">
+<li><p><strong>metadata.json</strong>: This file will contain some basic information about your extension:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><strong>name</strong>: The name of your extension - rename this field to describe what your assistant will do</p></li>
+<li><p><strong>type</strong>: For any Coach extension, the default value is “helper”</p></li>
+<li><p><strong>user_type</strong>: Describes who will be able to see the extension - choose one of 3 possible values: “learner”, “instructor”, “all”</p></li>
+<li><p><strong>component</strong>: For any Coach extension, the default value is “all”</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p><strong>index.js</strong>: This file will contain the Javascript code for the extension.</p></li>
+</ol>
+</li>
+<li><p>The <strong>index.js</strong> file has boilerplate code of how you can use the <a class="reference external" href="https://codio.github.io/client/codioIDE.coachBot.html">Coach API</a> to create your own assistant.</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Edit the <strong>metadata.json</strong> file (rename the extension, choose <strong>user_type</strong>). Save and commit the changes to your branch.</p></li>
+<li><p>Refer to the <a class="reference external" href="https://codio.github.io/client/codioIDE.coachBot.html">API documentation</a> and edit the <strong>index.js</strong> file with the Javascript code for your assistant. The example gives some context about the API elements and how you can use them. Save and commit the changes to your branch.</p></li>
+</ol>
+<p>5. Now that the code for the extension is complete, you’ll have to create a <strong>Release</strong> for your repository, making it deployable and ready to use. Follow the steps in the
+<a class="reference internal" href="#create-a-release"><span class="std std-ref">Creating a Release</span></a> section above.</p>
+<ol class="arabic simple" start="6">
+<li><p>And finally, follow the steps in the <a class="reference internal" href="#deploy-your-assistant"><span class="std std-ref">Deploying a custom assistant</span></a> section to add the custom assistant to your organization.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>This is an experimental feature.</strong> By adding an assistant to your organization, it will automatically be available to be toggled on/off in every course in that organization. It will appear as an assignment level setting, in the Virtual Coach section.</p>
+</div>
+</div>
+<div class="section" id="using-your-own-llms-in-custom-assistants-via-codios-llm-proxy">
+<h3>Using your own LLMs in custom assistants via Codio’s LLM Proxy<a class="headerlink" href="#using-your-own-llms-in-custom-assistants-via-codios-llm-proxy" title="Permalink to this headline">¶</a></h3>
+<p>If you’d prefer sending API requests to your own LLMs (commercial or open-source) instead of Codio’s built-in Anthropic LLMs, you can do so by leveraging your Organization Level LLM API keys via Codio’s LLM Proxy.</p>
+<p>Please refer to our documentation on adding LLM API keys to your Codio Organization and enabling it for a course.
+<a class="reference external" href="https://docs.codio.com/instructors/admin/organization/llms.html">Large Language Models in Codio</a></p>
+<p>Once the API keys are set up and LLMs are enabled in your course, refer to the Coach Custom Assistants <a class="reference external" href="https://codio.github.io/client/codioIDE.coachBot.html#.getLlmProxyDetails">API Reference</a>  to send requests and fetch responses from your own LLMs!</p>
+</div>
+<div class="section" id="testing-your-custom-assistant-using-development-mode">
+<h3>Testing your custom assistant  using Development Mode<a class="headerlink" href="#testing-your-custom-assistant-using-development-mode" title="Permalink to this headline">¶</a></h3>
+<p>If you’d like to test your assistant before deploying it to your organization, you can use the Extension Development Mode to test it.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Navigate to your extension’s Github repository, click on the green <cite>&lt;Code https://github.com/&lt;your-github-username&gt;/&lt;extension-repository-name&gt;</cite> button, then click on SSH and copy the displayed URL.</p></li>
+<li><p>Now, go back to your repository’s home page, click on the <strong>metadata.json</strong> file and copy its contents.</p></li>
+<li><p>Login to your Codio account, click on My Projects on the left panel, and then click New Project on the top left.</p></li>
+<li><p>In the select your starting point section, click Import and then paste the URL you copied in Step 1 in the URL field, and give your project a name in the Add some details section.</p></li>
+<li><p>Make the Project visibility Public, and click Create. This will automatically open the Project as well.</p></li>
+<li><p>Now, you should see the ‘index.js’ file in the filetree on the left. Right click on it, and select Preview Static in the drop down menu.</p></li>
+<li><p>This will open the file and display a web URL. Copy this web URL.</p></li>
+<li><p>Go back to the homepage of your Codio account and click on your username or Avatar on the bottom left corner of your screen to open Account Settings.</p></li>
+<li><p>Now click on <strong>Extensions</strong> at the bottom of the list, and scroll down to the Development mode section.</p></li>
+</ol>
+<img alt="extensions example Github repository" src="../../../_images/extensions-virtual-coach.png" />
+<ol class="arabic simple" start="10">
+<li><p>Paste the <strong>index.js</strong> webpage URL that you copied in Step 1 in the Source Code URL field</p></li>
+<li><p>Paste the contents of the metadata.json file that you copied in Step 2 in the <strong>metadata</strong> section, and click <strong>Save changes</strong>.</p></li>
+</ol>
+</div></blockquote>
+<p>Now you can open any of your assignments or projects and your extension should be visible as a menu item in Coach. Test away, make changes and once you’re happy with it, <a class="reference internal" href="#create-a-release"><span class="std std-ref">create a release</span></a> and <a class="reference internal" href="#deploy-your-assistant"><span class="std std-ref">deploy your assistant</span></a>!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By adding an extension to <strong>your</strong> account or testing it in Development mode, it will <strong>only</strong> be visible to <strong>you</strong>, and <strong>not</strong> your students, even If you’ve chosen “learner” or “all” as the <strong>user_type</strong> in the <strong>metadata.json</strong> file. This will let you test your assistant, giving you the ability to make changes to it before deploying it for your organization.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+
+          </main>
+          
+
+      </div>
+    </div>
+    
+  <script src="../../../_static/js/index.44f2d10023dc91dde182.js"></script>
+
+
+    
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright Codio 2025. All Rights Reserved.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EL440DKDDY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EL440DKDDY');
+</script>
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/2227229.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+  </body>
+</html>

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+
+<html :class="{'dark': darkMode === 'dark' || (darkMode === 'system' &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches)}" class="scroll-smooth" data-content_root="../../../" lang="en" x-data="{ darkMode: localStorage.getItem('darkMode') || localStorage.setItem('darkMode', 'system'), activeSection: '' }" x-init="$watch('darkMode', val =&gt; localStorage.setItem('darkMode', val))">
+<head>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+<meta content="white" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="black" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Documentation,Codio" name="keywords"/>
+<meta content="You can add a new Assessment using the Add Assessment drop-down menu." name="description"/>
+<title>Auto-Graded Assessments | Codio</title>
+<meta content="Auto-Graded Assessments | Codio" property="og:title"/>
+<meta content="Auto-Graded Assessments | Codio" name="twitter:title"/>
+<link href="../../../_static/pygments.css?v=8d216cef" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/theme.css?v=42baaae4" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/code-tabs.css?v=1bc26e2f" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/docsearch.css?v=0bd54598" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/codio.css?v=cb80c467" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/search.css?v=4493af33" rel="stylesheet" type="text/css"/>
+<link href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/awesome-sphinx-design.css?v=15e0fffa" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/awesome-docsearch.css?v=0a5487f3" rel="stylesheet" type="text/css"/>
+<link crossorigin="anonymous" href="https://0MJO9504F8-dsn.algolia.net" rel="preconnect"/>
+<link href="https://docs.codio.com/instructors/authoring/assessments/add-assessment.html" rel="canonical"/>
+<link href="../../../_static/favicon.ico" rel="icon"/>
+<link href="../../../genindex.html" rel="index" title="Index"/>
+<link href="assessments.html" rel="next" title="Assessments"/>
+<link href="../guides/settings/global.html" rel="prev" title="Global Guide Settings"/>
+<script>
+    <!-- Prevent Flash of wrong theme -->
+      const userPreference = localStorage.getItem('darkMode');
+      let mode;
+      if (userPreference === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        mode = 'dark';
+        document.documentElement.classList.add('dark');
+      } else {
+        mode = 'light';
+      }
+      if (!userPreference) {localStorage.setItem('darkMode', mode)}
+    </script>
+<script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('darkMode') || 'auto';
+        var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var scheme = saved === 'auto' ? (systemDark ? 'dark' : 'light') : saved;
+
+        var html = document.documentElement;
+
+        html.setAttribute('data-theme', scheme);
+        html.classList.remove('theme-light','theme-dark','light','dark');
+        html.classList.add('theme-' + scheme, scheme);
+
+        html.style.colorScheme = scheme;
+      } catch (e) { /* ignore */ }
+    })();
+  </script>
+</head>
+<body :class="{ 'overflow-hidden': showSidebar }" class="min-h-screen font-sans antialiased bg-background text-foreground" x-data="{ showSidebar: false, showScrollTop: false }">
+<div @click.self="showSidebar = false" class="fixed inset-0 z-50 overflow-hidden bg-background/80 backdrop-blur-sm md:hidden" x-cloak="" x-show="showSidebar"></div><div class="relative flex flex-col min-h-screen" id="page"><a class="absolute top-0 left-0 z-[100] block bg-background p-4 text-xl transition -translate-x-full opacity-0 focus:translate-x-0 focus:opacity-100" href="#content">
+      Skip to content
+    </a><header class="sticky top-0 z-40 w-full border-b shadow-sm border-border supports-backdrop-blur:bg-background/60 bg-background/95 backdrop-blur"><div class="container flex items-center h-14">
+<div class="hidden mr-4 md:flex">
+<a class="flex items-center mr-6" href="../../../index.html">
+<img alt="Logo" class="mr-2 hidden dark:block" height="24" src="../../../_static/logo-white.svg" width="24"/>
+<img alt="Logo" class="mr-2 dark:hidden" height="24" src="../../../_static/logo-dark.svg" width="24"/><span class="hidden font-bold sm:inline-block text-clip whitespace-nowrap">Codio</span>
+</a><nav class="flex items-center space-x-6 text-sm font-medium">
+<a class="transition-colors hover:text-foreground/80 text-foreground/60" href="/instructors/getstarted/support/changelog.html">Changelog</a>
+</nav></div><button @click="showSidebar = true" class="inline-flex items-center justify-center h-10 px-0 py-2 mr-2 text-base font-medium transition-colors rounded-md hover:text-accent-foreground hover:bg-transparent md:hidden" type="button">
+<svg aria-hidden="true" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M152.587 825.087q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440Zm0-203.587q-19.152 0-32.326-13.174T107.087 576q0-19.152 13.174-32.326t32.326-13.174h320q19.152 0 32.326 13.174T518.087 576q0 19.152-13.174 32.326T472.587 621.5h-320Zm0-203.587q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440ZM708.913 576l112.174 112.174q12.674 12.674 12.674 31.826t-12.674 31.826Q808.413 764.5 789.261 764.5t-31.826-12.674l-144-144Q600 594.391 600 576t13.435-31.826l144-144q12.674-12.674 31.826-12.674t31.826 12.674q12.674 12.674 12.674 31.826t-12.674 31.826L708.913 576Z"></path>
+</svg>
+<span class="sr-only">Toggle navigation menu</span>
+</button>
+<div class="flex items-center justify-between flex-1 space-x-2 sm:space-x-4 md:justify-end">
+<div class="flex-1 w-full md:w-auto md:flex-none"><div id="docsearch"></div>
+</div>
+<nav class="flex items-center space-x-1">
+<button @click="darkMode = darkMode === 'light' ? 'dark' : 'light'" aria-label="Color theme switcher" class="relative inline-flex items-center justify-center px-0 text-sm font-medium transition-colors rounded-md hover:bg-accent hover:text-accent-foreground h-9 w-9" type="button">
+<svg class="absolute transition-all scale-100 rotate-0 dark:-rotate-90 dark:scale-0" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 685q45.456 0 77.228-31.772Q589 621.456 589 576q0-45.456-31.772-77.228Q525.456 467 480 467q-45.456 0-77.228 31.772Q371 530.544 371 576q0 45.456 31.772 77.228Q434.544 685 480 685Zm0 91q-83 0-141.5-58.5T280 576q0-83 58.5-141.5T480 376q83 0 141.5 58.5T680 576q0 83-58.5 141.5T480 776ZM80 621.5q-19.152 0-32.326-13.174T34.5 576q0-19.152 13.174-32.326T80 530.5h80q19.152 0 32.326 13.174T205.5 576q0 19.152-13.174 32.326T160 621.5H80Zm720 0q-19.152 0-32.326-13.174T754.5 576q0-19.152 13.174-32.326T800 530.5h80q19.152 0 32.326 13.174T925.5 576q0 19.152-13.174 32.326T880 621.5h-80Zm-320-320q-19.152 0-32.326-13.174T434.5 256v-80q0-19.152 13.174-32.326T480 130.5q19.152 0 32.326 13.174T525.5 176v80q0 19.152-13.174 32.326T480 301.5Zm0 720q-19.152 0-32.326-13.17Q434.5 995.152 434.5 976v-80q0-19.152 13.174-32.326T480 850.5q19.152 0 32.326 13.174T525.5 896v80q0 19.152-13.174 32.33-13.174 13.17-32.326 13.17ZM222.174 382.065l-43-42Q165.5 327.391 166 308.239t13.174-33.065q13.435-13.674 32.587-13.674t32.065 13.674l42.239 43q12.674 13.435 12.555 31.706-.12 18.272-12.555 31.946-12.674 13.674-31.445 13.413-18.772-.261-32.446-13.174Zm494 494.761-42.239-43q-12.674-13.435-12.674-32.087t12.674-31.565Q686.609 756.5 705.38 757q18.772.5 32.446 13.174l43 41.761Q794.5 824.609 794 843.761t-13.174 33.065Q767.391 890.5 748.239 890.5t-32.065-13.674Zm-42-494.761Q660.5 369.391 661 350.62q.5-18.772 13.174-32.446l41.761-43Q728.609 261.5 747.761 262t33.065 13.174q13.674 13.435 13.674 32.587t-13.674 32.065l-43 42.239q-13.435 12.674-31.706 12.555-18.272-.12-31.946-12.555Zm-495 494.761Q165.5 863.391 165.5 844.239t13.674-32.065l43-42.239q13.435-12.674 32.087-12.674t31.565 12.674Q299.5 782.609 299 801.38q-.5 18.772-13.174 32.446l-41.761 43Q231.391 890.5 212.239 890t-33.065-13.174ZM480 576Z"></path>
+</svg>
+<svg class="absolute transition-all scale-0 rotate-90 dark:rotate-0 dark:scale-100" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 936q-151 0-255.5-104.5T120 576q0-138 90-239.5T440 218q25-3 39 18t-1 44q-17 26-25.5 55t-8.5 61q0 90 63 153t153 63q31 0 61.5-9t54.5-25q21-14 43-1.5t19 39.5q-14 138-117.5 229T480 936Zm0-80q88 0 158-48.5T740 681q-20 5-40 8t-40 3q-123 0-209.5-86.5T364 396q0-20 3-40t8-40q-78 32-126.5 102T200 576q0 116 82 198t198 82Zm-10-270Z"></path>
+</svg>
+</button>
+</nav>
+</div>
+</div>
+</header>
+<div class="flex-1"><div class="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"><aside :aria-hidden="!showSidebar" :class="{ 'translate-x-0': showSidebar }" class="fixed inset-y-0 left-0 md:top-14 z-50 md:z-30 bg-background md:bg-transparent transition-all duration-100 -translate-x-full md:translate-x-0 ml-0 p-6 md:p-0 md:-ml-2 md:h-[calc(100vh-3.5rem)] w-5/6 md:w-full shrink-0 overflow-y-auto border-r border-border md:sticky" id="left-sidebar">
+<a class="!justify-start text-sm md:!hidden bg-background" href="../../../index.html">
+<img alt="Logo" class="mr-2 hidden dark:block" height="16" src="../../../_static/logo-white.svg" width="16"/>
+<img alt="Logo" class="mr-2 dark:hidden" height="16" src="../../../_static/logo-dark.svg" width="16"/><span class="font-bold text-clip whitespace-nowrap">Codio</span>
+</a>
+<div class="relative overflow-hidden md:overflow-auto my-4 md:my-0 h-[calc(100vh-8rem)] md:h-auto">
+<div class="overflow-y-auto h-full w-full relative pr-6"><nav class="flex md:hidden flex-col font-medium mt-4">
+<a href="/instructors/getstarted/support/changelog.html">Changelog</a>
+</nav><nav class="table w-full min-w-full my-6 lg:my-8">
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../../../getstarted.html">Overview<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l2"><a class="reference internal" href="../../getstarted/startlist.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../getstarted/onboard.html">Onboarding Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../getstarted/howto.html">How to Videos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../getstarted/support/support.html">Codio Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../getstarted/support/changelog.html">Changelog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../getstarted/support/generating_har.html">Generating a HAR file for troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../../../authoring.html">Authoring<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul class="current" x-show="expanded">
+<li class="toctree-l2" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../guides/intro.html">Authoring<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l3"><a class="reference internal" href="../guides/project_book.html">Project or course assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/author_student.html">Author and student views</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/toc.html">Table of contents management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/page_editing.html">Page editing overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/authoring_guidelines.html">Authoring Guidelines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/markdown_content.html">Content Editing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/previewing_content.html">Previewing content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/teacher_only.html">Teacher only content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/solution_templating.html">Solution File Templating</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/freeze_code.html">Freezing Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/custom_button.html">Custom Buttons in Guides</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/blueprints.html">Blueprints for Guide Pages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/add_media.html">Adding media</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/generating_content.html">Generating Content Drafts with AI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/open_close_content.html">Open/close tabs from content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/hide_folders.html">Hiding folders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/excludingfiles.html">Excluding Files/Folders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/latex.html">Latex for math expressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/cpumemdisk.html">System Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l2" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../guides/settings/page.html">Guides Settings and Page actions<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l3"><a class="reference internal" href="../guides/settings/opentabs.html">Open Tabs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/settings/assessments.html">Assessment Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/settings/media.html">Media Settings for a Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/settings/global.html">Global Guide Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="current reference internal expandable" href="#">Auto-Graded Assessments<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l3"><a class="reference internal" href="assessments.html">Assessments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced-code-test.html">Advanced Code Test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ai-assessment-generation.html">Generating Assessments With AI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="assessment-security.html">Assessment Security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autograde-free-text.html">Free Text Autograde</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auto-grade-scripts.html">Assignment Level Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="delete-assessment.html">Delete an Assessment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="duplicate-assessment.html">Duplicate an Assessment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edit-assessment.html">Edit an Assessment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edit-assessment-points.html">Edit Assessment Points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fill-in-blanks.html">Fill in the Blanks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="free-text.html">Free Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="grade-book.html">Grade Book</a></li>
+<li class="toctree-l3"><a class="reference internal" href="llm-based-rubric.html">The LLM Rubric Grader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="llm-based-auto-rubric.html">The LLM Rubric Auto-grader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="math-assessments.html">Math Assessments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="multiple-choice.html">Multiple Choice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parsons-puzzle.html">Parsons Puzzle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="partial-points.html">Partial Points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="random.html">Random Assessment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="splice.html">SPLICE Assessments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="standard-code-test.html">Standard Code Test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="student-submission.html">Student Submission Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ungraded-assessments.html">Ungraded Assessments</a></li>
+</ul>
+</li>
+<li class="toctree-l2" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../../setupcourses/library/assessmentslibrary.html">Assessments Libraries<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/library/global-library.html">Codio Global Assessments Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/organization/create-org-library.html">Create an Organization Assessments Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/library/search-library.html">Search Assessments Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/library/add-questions-from-library.html">Add Questions from Assessments Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/library/add-questions-to-library.html">Add Questions to an Assessment Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/library/unlink-assessment.html">Unlink an Assessment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/library/update-assess-from-library.html">Update an Existing Assessment in Library</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../../../common.html">Developing Code<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l2" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../../../common/develop/projects/projects.html">Developing Code<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/projects/project-settings.html">Project Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/projects/create-import-project.html">Create or Import a Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/projects/access-projects.html">Access Projects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/projects/copy-project.html">Copy a Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/projects/export-project.html">Export a Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../../../common/develop/stacks/stacks.html">Stacks<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/stacks/using-stacks.html">Using Stacks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/stacks/stack-planning.html">Stack planning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/stacks/create-stack.html">Create a Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/stacks/modify-stack.html">Modify a Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/stacks/update-stack.html">Update a Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/stacks/switch-stack.html">Switch Project to New Stack</a></li>
+</ul>
+</li>
+<li class="toctree-l2" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../../../common/develop/packs/packs.html">Starter Packs<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/packs/create-starter-pack.html">Create Starter Pack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/packs/starter-pack-guidelines.html">Starter Pack Guidelines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/packs/update-starter-pack.html">Update a Starter Pack</a></li>
+</ul>
+</li>
+<li class="toctree-l2" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../../../common/develop/ide/workspace/workspace.html">IDE Workspace<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/workspace/panels.html">Panels, Tabs, and Layouts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/workspace/open-file.html">Open a File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/workspace/upload-download-files.html">Upload and Download Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/workspace/add-delete-folders.html">Add and Delete Folders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/workspace/add-delete-files.html">Add and Delete Files</a></li>
+</ul>
+</li>
+<li class="toctree-l2" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../../../common/develop/ide/editing/code-editing.html">Code Editing Features<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/editing/abbreviations.html">Abbreviations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/editing/autocomplete.html">Autocomplete</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/editing/av-chat.html">Audio/Video Chat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/editing/code-beautifier.html">Code Beautifier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/editing/color-picker.html">Color Picker and Preview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/editing/command-bar.html">Command Bar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/editing/connect-github-codio.html">Connecting a Codio Box to a GitHub Repo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/editing/cursor.html">Cursor Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/editing/git.html">Git and GitHub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/editing/jupyter.html">JupyterLab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/editing/junit.html">JUnit Testing Framework</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/editing/keyboard-shortcuts.html">Keyboard Shortcuts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/editing/force-language-highlighting.html">Language Highlighting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/editing/preview.html">Preview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/editing/quick-open.html">Quick Open</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/editing/save-files.html">Save Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/editing/search-replace.html">Search and Replace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/editing/share-project.html">Share Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/editing/vscode.html">VSCode</a></li>
+</ul>
+</li>
+<li class="toctree-l2" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../../../common/tools/dyslexia.html">Tools<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l3"><a class="reference internal" href="../../../common/tools/code-playback.html">Code Playback</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/tools/code-commenting.html">Code Commenting</a></li>
+</ul>
+</li>
+<li class="toctree-l2" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../../../common/develop/ide/tools/deployment.html">IDE Tools<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/tools/ghapi.html">Git Hub API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/tools/ssh.html">Remote SSH Terminal Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/tools/desktopapp.html">Desktop App</a></li>
+</ul>
+</li>
+<li class="toctree-l2" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../../../common/develop/ide/boxes/overview.html">IDE Box Overview<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/boxes/terminal.html">Terminal Window</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/boxes/ext-access.html">External Access to Boxes and Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/boxes/restart-reset.html">Restart or Reset Box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/boxes/runmenu.html">Customize Run Button</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/boxes/startup.html">Autostart Services</a></li>
+</ul>
+</li>
+<li class="toctree-l2" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../../../common/develop/ide/boxes/installsw/install-software.html">Installing Software Packages<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/boxes/installsw/file-locations.html">File and Software Locations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/boxes/installsw/default-installed.html">Preinstalled Software Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/boxes/installsw/parts-coding.html">Add Your Own Software Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/boxes/installsw/langserver.html">Language Server Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/boxes/installsw/gui.html">GUI Based Output</a></li>
+</ul>
+</li>
+<li class="toctree-l2" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../../../common/develop/ide/debugger/debugger.html">Debugger<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/debugger/create-debug-target.html">Create and Manage Debugger Targets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/develop/ide/debugger/start-debug.html">Start Debug Session</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../common/develop/general.html">Web Security and Browser Capabilities</a></li>
+</ul>
+</li>
+<li class="toctree-l1" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../../../setupcourses.html">Courses Set up<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l2" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../../setupcourses/courses.html">Courses Set Up<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/create-course.html">Create a New Course</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/clone-course.html">Clone a Course</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/parent-child-courses.html">Working with Parent/Child Courses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/export-course-data.html">Data Exports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/export-course-data.html#course-content-exports">Course Content Exports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/archive-course.html">Archive Course</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/delete-course.html">Delete Course</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/rename-course.html">Rename Course</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/share-course.html">Share Course</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/search-course.html">Search and Order Courses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/add-remove-assignment.html">Add and Remove Course Assignments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/modify-assignments.html">Modify Assignments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/rename-reorder-assignments.html">Rename/Reorder Modules and Assignments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/preview-course.html">Preview Courses and Assignments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/bulk-assignment-update.html">Bulk Assignment Update</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/batch-groups-upload.html">Batch Groups Upload</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/batch-student-tagging.html">Batch Student Tagging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/batch-assessment-update.html">Batch Assessment Update</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/add-teachers.html">Add or Remove Teachers in a Course</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/add-ta.html">Add Teaching Assistant to a Course</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/add-remove-students.html">Add, Remove or Archive Students in a Course</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/change-student-password.html">Change Student Passwords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/course-contact.html">Course contact URL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/course-revoke-sudo-access.html">Revoke sudo access for all assignments in the course</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/course-remove-inactive-students.html">Remove Inactive Students</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/export-assignment-data.html">Assignment Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/custom-css-url.html">Setting course level custom CSS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/export-lti.html">Export LTI Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/lmsconnect.html">Connecting to your LMS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/mark-assignments-complete.html">Mark Assignment as Complete/Uncomplete</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/notification-email.html">Automated Emails</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/view-student-username.html">View Student Usernames</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/course-module-progress.html">Gamification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/virtualmachine.html">Virtual Machines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/common-storage.html">Common Storage for Courses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/common-storage.html#using-common-storage">Using Common Storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/course-llm.html">Large Language Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/course-coach-settings.html">Extension Settings for a Course</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/custom-coach-extensions.html">Custom Assistants for Virtual Coach</a></li>
+</ul>
+</li>
+<li class="toctree-l2" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../../setupcourses/resources/codioresources.html">Codio instructional resources<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/resources/editingresources.html">Editing Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l2" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../../setupcourses/resources/resourcetools/crunch.html">Additional resources<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/resources/resourcetools/flode.html">Flode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/resources/resourcetools/jeroo.html">Jeroo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/resources/resourcetools/scratch.html">Scratch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/resources/resourcetools/pencilcode.html">Pencil Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/resources/resourcetools/draw-io.html">Draw.io</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/resources/resourcetools/tkinter.html">Tkinter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/resources/resourcetools/tkinter.html#tkinter-widgets">TKinter Widgets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/resources/resourcetools/tkinter.html#running-the-python-file">Running the Python file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/resources/resourcetools/turtle.html">Turtle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/resources/resourcetools/processing-and-p5.html">Processing and p5</a></li>
+</ul>
+</li>
+<li class="toctree-l2" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../../admin/integration/intro.html">Integrating with your LMS system (Canvas etc.)<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/lms-systems/system-specific-directions.html">System specific instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/lms-students.html">Creating User Account</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/lti-enrol.html">LTI Enroll to Course Only</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/open-student-assignments-lms.html">Open Student Assignments Directly from LMS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/grading.html">LMS Grading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/lti-app.html">LTI App (LTI 1.1 Only)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/lti-app.html#mapping-an-assignment-to-a-canvas-assignment">Mapping an Assignment to a Canvas Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/lti-keys-and-urls-information.html">LTI Keys and URLs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/lti-keys-and-urls-information.html#export-lti-settings">Export LTI Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/lti-keys-and-urls-information.html#common-cartridge">Common Cartridge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/lti-course-copy.html">LTI Course copy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/commoncartridge.html">Common Cartridge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/lti1-3.html">LTI version 1.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/lti1-3Blackboard.html">LTI 1.3 for Blackboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/lti1-3BS-D2L.html">LTI 1.3 for Brightspace/D2L</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/lti1-3Canvas.html">LTI 1.3 for Canvas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/lti1-3DynReg.html">LTI 1.3 Dynamic Registration</a></li>
+</ul>
+</li>
+<li class="toctree-l2" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../../setupcourses/assignment-settings/assignment-settings.html">Managing assignments<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/assignment-settings/assignment-actions.html">Assignment Action Buttons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/assignment-settings/pin-assignment.html">Pin and Unpin Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/assignment-settings/disable-assignment.html">Disable Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/assignment-settings/visibility-completed.html">Visibility on Completed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/assignment-settings/visibility-disabled.html">Visibility on Disabled</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/assignment-settings/disable-mark-completed.html">Disable Mark as Completed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/assignment-settings/complete-requires-all-answered.html">Complete Requires All Questions Answered</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/assignment-settings/allow-student-reset.html">Reset Assignment by Student</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/assignment-settings/allow-regrade-request.html">Allow Regrade Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/assignment-settings/disable-download.html">Disable Download</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/assignment-settings/prerequisite-assignments.html">Prerequisite Assignments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/assignment-settings/assignment-duration.html">Assignment Duration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/assignment-settings/penalties.html">Penalties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/assignment-settings/exam-proctoring.html">Exam Proctoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/assignment-settings/assignment-surveys.html">Assignment Surveys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/assignment-settings/assignment-gigabox.html">Gigabox Slot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/assignment-settings/prime-assignment-containers.html">Prime Assignment Containers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/assignment-settings/groupwork.html">Pair Programming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/assignment-settings/grade-weights.html">Grade Weights</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/assignment-settings/assign-grade-template.html">Assign Grading Template to an Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/assignment-settings/mandatory.html">Mandatory Progress</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setupcourses/assignment-settings/virtual-coach.html">Virtual Coach</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../setupcourses.html#getting-started">Getting Started</a></li>
+<li class="toctree-l1" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../../../teaching.html">Teaching<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l2"><a class="reference internal" href="../../teaching/viewstudentwork.html">Viewing student work</a></li>
+<li class="toctree-l2" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../../teaching/grading/grading.html">Grading<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l3"><a class="reference internal" href="../../teaching/grading/grade-freetext.html">Grading Free Text Questions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../teaching/grading/nbgrader.html">Auto-Grade with nbgrader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../teaching/grading/release-grades.html">Release Grades</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../teaching/grading/reruncodetests.html">Rerun Code Tests</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../teaching/behaviorinsights.html">Behavior Insights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../teaching/insights.html">Learning Insights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../teaching/playback.html">Code Playback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../teaching/commenting.html">Code Commenting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../teaching/cursor.html">Cursor Presence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../teaching/resetpassword.html">Resetting student passwords</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../teaching/remove.html">Removing Students</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../teaching/plagiarism.html">Plagiarism Checker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../teaching/addstudents.html">Inviting students to your course</a></li>
+</ul>
+</li>
+<li class="toctree-l1" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../../../admin.html">Admin<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l2" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../../admin/integration/intro.html">Integrating with your LMS system (Canvas etc.)<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/lms-systems/system-specific-directions.html">System specific instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/lms-students.html">Creating User Account</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/lti-enrol.html">LTI Enroll to Course Only</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/open-student-assignments-lms.html">Open Student Assignments Directly from LMS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/grading.html">LMS Grading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/lti-app.html">LTI App (LTI 1.1 Only)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/lti-app.html#mapping-an-assignment-to-a-canvas-assignment">Mapping an Assignment to a Canvas Assignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/lti-keys-and-urls-information.html">LTI Keys and URLs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/lti-keys-and-urls-information.html#export-lti-settings">Export LTI Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/lti-keys-and-urls-information.html#common-cartridge">Common Cartridge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/lti-course-copy.html">LTI Course copy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/commoncartridge.html">Common Cartridge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/lti1-3.html">LTI version 1.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/lti1-3Blackboard.html">LTI 1.3 for Blackboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/lti1-3BS-D2L.html">LTI 1.3 for Brightspace/D2L</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/lti1-3Canvas.html">LTI 1.3 for Canvas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/integration/lti1-3DynReg.html">LTI 1.3 Dynamic Registration</a></li>
+</ul>
+</li>
+<li class="toctree-l2" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../../admin/organization/organisation.html">Organization settings<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l3"><a class="reference internal" href="../../admin/organization/add-remove-org-owners.html">Add or Remove Organization Owners</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/organization/add-teachers.html">Add Teachers to Organization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/organization/student-consent-form.html">Configure Student IP Consent Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/organization/view-org-members.html">View Organization Members</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/organization/default-student-dashboard.html">Set Users Dashboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/organization/enable-custom-script.html">Enable Custom Script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/organization/grade-templates.html">Create Grading Templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/organization/remove-org-members.html">Remove Organization Members</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/organization/public-private-settings.html">Enable or Disable Public/Private Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/organization/gigabox-usage.html">Gigaboxes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/organization/delete-org.html">Deleting an Organization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/organization/org-contact-url.html">Set Organization Contact URL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/organization/org-extensions.html">Custom Organization Extensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/organization/auto-release-grades.html">Enable or Disable Releasing Grades Automatically</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/organization/hide-av.html">Hide A/V calls</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/organization/student-email.html">Show Student Emails</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/organization/sso.html">Enable SSO Integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/organization/llms.html">Large Language Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/organization/llms.html#custom-llm-providers">Custom LLM Providers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/organization/webhook.html">Webhooks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/organization/course-action-data.html">Course Action Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin/organization/prompt-management.html">Prompt Management</a></li>
+</ul>
+</li>
+<li class="toctree-l2" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../../../common/settings/settings.html">Account Settings<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l3"><a class="reference internal" href="../../../common/settings/user-profile.html">User Profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/settings/manage-password.html">Manage Password</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/settings/ssh-key.html">SSH Key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/settings/user-prefs.html">User Preferences</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/settings/project-prefs.html">Project Preferences</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/settings/env-variables.html">Environment Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/settings/env-variables.html#student-assignments">Student Assignments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/settings/bitbucket.html">Connect to BitBucket</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../common/settings/github.html">Connect to GitHub</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/sandboxes.html">Sandboxes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/orgbilling.html">Organization Billing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/legal.html">Legal stuff</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<button @click="showSidebar = false" class="absolute md:hidden right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100" type="button">
+<svg class="h-4 w-4" fill="currentColor" height="24" stroke="none" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 632 284 828q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536 576l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480 632Z"></path>
+</svg>
+</button>
+</aside>
+<main class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
+<div class="w-full min-w-0 mx-auto">
+<nav aria-label="breadcrumbs" class="flex items-center mb-4 space-x-1 text-sm text-muted-foreground">
+<a class="overflow-hidden text-ellipsis whitespace-nowrap hover:text-foreground" href="../../../index.html">
+<span class="hidden md:inline">Codio</span>
+<svg aria-label="Home" class="md:hidden" fill="currentColor" height="18" stroke="none" viewbox="0 96 960 960" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm-80 80V456l320-240 320 240v480H520V696h-80v240H160Zm320-350Z"></path>
+</svg>
+</a>
+<div class="mr-1">/</div><a class="hover:text-foreground overflow-hidden text-ellipsis whitespace-nowrap" href="../../../authoring.html">Authoring</a>
+<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Auto-Graded Assessments</span>
+</nav>
+<div id="content" role="main">
+<section id="auto-graded-assessments">
+<span id="add-assessment"></span><h1>Auto-Graded Assessments<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#auto-graded-assessments"><svg height="1em" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h1>
+
+<p>Codio offers a variety of auto-graded assessments to streamline your grading process. Below, you’ll find instructions on how to add assessments to your assignment, along with links to pages detailing specific assessment types and their features. Some auto-graded assessments can also be generated automatically.</p>
+<p>Assessments can be auto-generated based on the content found on a guides page. Currently, the following assessment types support auto-generation: <a class="reference internal" href="multiple-choice.html#multiple-choice"><span class="std std-ref">Multiple Choice</span></a>, <a class="reference internal" href="fill-in-blanks.html#fill-in-blanks"><span class="std std-ref">Fill in the Blanks</span></a>, <a class="reference internal" href="free-text.html#free-text"><span class="std std-ref">Free Text</span></a>, <a class="reference internal" href="standard-code-test.html#standard-code-test"><span class="std std-ref">Standard Code Test</span></a>, and <a class="reference internal" href="parsons-puzzle.html#parsons-puzzle"><span class="std std-ref">Parsons Puzzle</span></a>. For more information, please check out <a class="reference internal" href="ai-assessment-generation.html#ai-assessment-generation"><span class="std std-ref">Generating Assessments With AI</span></a>.</p>
+<section id="how-to-add-a-new-assessment">
+<h2>How to Add a New Assessment<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#how-to-add-a-new-assessment" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#how-to-add-a-new-assessment'"><svg height="1em" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h2>
+<p>To add a new assessment for an assignment, follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Open the assignment in the course, and click the <strong>Edit</strong> button to open the Guide Editor. You can also click the <strong>Tools</strong> menu and choose <strong>Guides &gt; Edit</strong>.</p></li>
+<li><p>Click the <strong>Assessments</strong> button and choose the type of assessment you want to add to the assignment.</p></li>
+</ol>
+<img alt="Add Assessment" src="../../../_images/add_assessment.png"/>
+<ol class="arabic simple" start="3">
+<li><p>Fill the appropriate fields and click <strong>Create</strong>.</p></li>
+</ol>
+<p>While creating/editing the assessment, you can still see/edit the guide page.</p>
+</section>
+<section id="auto-graded-assessment-types">
+<h2>Auto-Graded Assessment Types<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#auto-graded-assessment-types" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#auto-graded-assessment-types'"><svg height="1em" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h2>
+<p>Refer to the specific topics for the type of assessment:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="standard-code-test.html#standard-code-test"><span class="std std-ref">Standard Code Test</span></a></p></li>
+<li><p><a class="reference internal" href="advanced-code-test.html#advanced-code-test"><span class="std std-ref">Advanced Code Test</span></a></p></li>
+<li><p><a class="reference internal" href="multiple-choice.html#multiple-choice"><span class="std std-ref">Multiple Choice</span></a></p></li>
+<li><p><a class="reference internal" href="fill-in-blanks.html#fill-in-blanks"><span class="std std-ref">Fill in the Blanks</span></a></p></li>
+<li><p><a class="reference internal" href="free-text.html#free-text"><span class="std std-ref">Free Text</span></a></p></li>
+<li><p><a class="reference internal" href="autograde-free-text.html#free-text-autograde"><span class="std std-ref">Free Text Autograde</span></a></p></li>
+<li><p><a class="reference internal" href="grade-book.html#grade-book"><span class="std std-ref">Grade Book</span></a></p></li>
+<li><p><a class="reference internal" href="parsons-puzzle.html#parsons-puzzle"><span class="std std-ref">Parsons Puzzle</span></a></p></li>
+<li><p><a class="reference internal" href="random.html#random"><span class="std std-ref">Random Assessment</span></a></p></li>
+<li><p><a class="reference internal" href="llm-based-rubric.html#llm-based-rubric"><span class="std std-ref">LLM Rubric Grader</span></a></p></li>
+<li><p><a class="reference internal" href="llm-based-auto-rubric.html#llm-based-auto-rubric"><span class="std std-ref">LLM Rubric Autograde</span></a></p></li>
+</ul>
+</section>
+<section id="how-to-clear-assessment-answers">
+<h2>How to Clear Assessment Answers<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#how-to-clear-assessment-answers" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#how-to-clear-assessment-answers'"><svg height="1em" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h2>
+<p>To clear assessment answers, navigate to the Education menu and click <strong>Clear Assessment Answers</strong>. A confirmation dialog will appear—click <strong>Yes</strong> to proceed. This removes all answered questions from the database, resetting the assessment to its initial state as if it had never been run.</p>
+<section id="before">
+<h3>Before:<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#before" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#before'"><svg height="1em" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h3>
+<img alt="Clear Assessment Answers" src="../../../_images/clear_assessment_answers.png"/>
+</section>
+<section id="after">
+<h3>After:<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#after" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#after'"><svg height="1em" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h3>
+<img alt="Clear Assessment Answers" src="../../../_images/clear_assessment_answersafter.png"/>
+</section>
+</section>
+</section>
+</div><div class="flex justify-between items-center pt-6 mt-12 border-t border-border gap-4">
+<div class="mr-auto">
+<a class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-input hover:bg-accent hover:text-accent-foreground py-2 px-4" href="../guides/settings/global.html">
+<svg class="mr-2 h-4 w-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+        Global Guide Settings
+      </a>
+</div>
+<div class="ml-auto">
+<a class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-input hover:bg-accent hover:text-accent-foreground py-2 px-4" href="assessments.html">
+        Assessments
+        <svg class="ml-2 h-4 w-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</a>
+</div>
+</div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
+<div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
+<ul>
+<li><a :data-current="activeSection === '#how-to-add-a-new-assessment'" class="reference internal" href="#how-to-add-a-new-assessment">How to Add a New Assessment</a></li>
+<li><a :data-current="activeSection === '#auto-graded-assessment-types'" class="reference internal" href="#auto-graded-assessment-types">Auto-Graded Assessment Types</a></li>
+<li><a :data-current="activeSection === '#how-to-clear-assessment-answers'" class="reference internal" href="#how-to-clear-assessment-answers">How to Clear Assessment Answers</a><ul>
+<li><a :data-current="activeSection === '#before'" class="reference internal" href="#before">Before:</a></li>
+<li><a :data-current="activeSection === '#after'" class="reference internal" href="#after">After:</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</aside>
+</main>
+</div>
+</div>
+<footer class="py-6 border-t border-border md:py-0">
+<div class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+<div class="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
+<p class="text-sm leading-loose text-center text-muted-foreground md:text-left">© Codio 2026. All rights reserved. </p>
+</div>
+</div>
+</footer>
+
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EL440DKDDY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EL440DKDDY');
+</script>
+
+<script async="" defer="" id="hs-script-loader" src="//js.hs-scripts.com/2227229.js" type="text/javascript"></script>
+
+</div>
+<script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+<script src="../../../_static/doctools.js?v=9bcbadda"></script>
+<script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script defer="defer" src="../../../_static/docsearch.js?v=711ed680"></script>
+<script defer="defer" src="../../../_static/docsearch_config.js?v=192cef59"></script>
+<script defer="defer" src="../../../_static/theme.js?v=073f68d9"></script>
+<script src="../../../_static/code-tabs.js?v=c983d12e"></script>
+<script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+<script defer="defer" src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+<script defer="defer" src="../../../_static/js/algolia.js?v=720082ac"></script>
+</body>
+</html>

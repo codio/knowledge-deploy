@@ -1,0 +1,36 @@
+.. meta::
+   :description: This allows you to release all the grades at once after the grading process has been completed.
+   
+.. _release-grades:
+
+Release Grades
+==============
+By default students are not shown the grades until you decide to release them to the course. This allows you to release all the grades at once after the grading process has been completed. To learn more about release grades, view the video
+
+
+.. raw:: html
+
+    <script src="https://fast.wistia.com/embed/medias/63ls7s10qq.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_63ls7s10qq videoFoam=true time=8s" style="height:100%;position:relative;width:100%">&nbsp;</div></div></div>
+
+
+If you want to release the grades as the assignments are graded, follow these steps:
+
+1. Open the course and click the **Basic Settings** tab under **Grading**.
+2. Toggle the **Release Grades Automatically** setting to enable it.
+
+   .. image:: /img/changereleasegrades.png
+      :alt: Release Grades Automatically
+
+Enable Release Grades Toggle
+----------------------------
+You can enable the :ref:`Release Grades Automatically <auto-release-grades>` at the organization level so that the **Release Grades** toggle is visible on the **Course** page.
+
+.. image:: /img/Release-grades.png
+   :alt: Release grades toggle
+
+Release Grade From Assignment
+-----------------------------
+You can also release grades for an assignment by toggling the switch in the **Release grades** column.
+
+.. image:: /img/grading-release2.png
+   :alt: Release grades toggle in assignment

@@ -1,0 +1,111 @@
+/* =========================================
+   Codio Docs — Landing pages (Instructor & Student)
+   Layout resets + shared design tokens
+   ========================================= */
+
+/* Hide the sidebars and unbox the layout on the landing pages */
+.landing-page .bd-sidebar-primary,
+.landing-page .bd-sidebar-secondary {
+  display: none !important;
+}
+
+.landing-page .bd-content,
+.landing-page .bd-article-container {
+  max-width: 1200px;
+  margin-inline: auto !important;
+  padding-inline: clamp(1rem, 5vw, 2.5rem);
+  background: transparent !important;
+}
+
+.landing-page,
+.landing-page .bd-main,
+.landing-page .bd-content,
+.landing-page .bd-article,
+.landing-page .bd-article-container {
+  background: transparent !important;
+}
+
+.landing-page {
+  color-scheme: light dark;
+  color: var(--landing-text);
+  --landing-text: #0f172a;
+  --landing-muted: #475569;
+  --landing-border: rgba(15, 23, 42, 0.12);
+  --landing-surface: rgba(255, 255, 255, 0.85);
+  --landing-surface-hover: rgba(14, 165, 233, 0.08);
+  --landing-accent: #0284c7;
+  --landing-accent-strong: #0369a1;
+  --landing-ring: rgba(14, 165, 233, 0.45);
+  --landing-card-shadow: 0 16px 28px rgba(15, 23, 42, 0.12);
+  --landing-card-shadow-dark: 0 22px 40px rgba(8, 47, 73, 0.45);
+  --landing-button-shadow: 0 14px 28px rgba(2, 132, 199, 0.18);
+  --landing-icon-shadow: 0 14px 28px rgba(2, 132, 199, 0.24);
+  --landing-hero-shadow: 0 24px 48px rgba(15, 118, 210, 0.12);
+  --landing-hero-from: #eff6ff;
+  --landing-hero-to: #dbeafe;
+}
+
+html[data-theme="dark"] .landing-page,
+[data-theme="dark"] .landing-page {
+  --landing-text: #e5edff;
+  --landing-muted: #94a3b8;
+  --landing-border: rgba(148, 163, 184, 0.18);
+  --landing-surface: rgba(15, 23, 42, 0.68);
+  --landing-surface-hover: rgba(56, 189, 248, 0.18);
+  --landing-accent: #38bdf8;
+  --landing-accent-strong: #0ea5e9;
+  --landing-ring: rgba(56, 189, 248, 0.6);
+  --landing-card-shadow: var(--landing-card-shadow-dark);
+  --landing-button-shadow: 0 18px 36px rgba(15, 118, 210, 0.36);
+  --landing-icon-shadow: 0 20px 38px rgba(14, 165, 233, 0.45);
+  --landing-hero-shadow: 0 26px 52px rgba(2, 132, 199, 0.32);
+  --landing-hero-from: #0f172a;
+  --landing-hero-to: #111827;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .landing-page {
+    --landing-text: #e5edff;
+    --landing-muted: #94a3b8;
+    --landing-border: rgba(148, 163, 184, 0.18);
+    --landing-surface: rgba(15, 23, 42, 0.68);
+    --landing-surface-hover: rgba(56, 189, 248, 0.18);
+    --landing-accent: #38bdf8;
+    --landing-accent-strong: #0ea5e9;
+    --landing-ring: rgba(56, 189, 248, 0.6);
+    --landing-card-shadow: var(--landing-card-shadow-dark);
+    --landing-button-shadow: 0 18px 36px rgba(15, 118, 210, 0.36);
+    --landing-icon-shadow: 0 20px 38px rgba(14, 165, 233, 0.45);
+    --landing-hero-shadow: 0 26px 52px rgba(2, 132, 199, 0.32);
+    --landing-hero-from: #0f172a;
+    --landing-hero-to: #111827;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  html:not([data-theme="dark"]) .landing-page {
+    --landing-text: #0f172a;
+    --landing-muted: #475569;
+    --landing-border: rgba(15, 23, 42, 0.12);
+    --landing-surface: rgba(255, 255, 255, 0.85);
+    --landing-surface-hover: rgba(14, 165, 233, 0.08);
+    --landing-accent: #0284c7;
+    --landing-accent-strong: #0369a1;
+    --landing-ring: rgba(14, 165, 233, 0.45);
+    --landing-card-shadow: 0 16px 28px rgba(15, 23, 42, 0.12);
+    --landing-button-shadow: 0 14px 28px rgba(2, 132, 199, 0.18);
+    --landing-icon-shadow: 0 14px 28px rgba(2, 132, 199, 0.24);
+    --landing-hero-shadow: 0 24px 48px rgba(15, 118, 210, 0.12);
+    --landing-hero-from: #eff6ff;
+    --landing-hero-to: #dbeafe;
+  }
+}
+
+.section { scroll-margin-top: 5rem; }
+
+/* Retain backwards-compat class hooks */
+.index-page .home-container,
+.student-page .home-container {
+  max-width: 1100px;
+  margin-inline: auto;
+}
